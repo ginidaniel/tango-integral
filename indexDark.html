@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tango Integral — Argentine Tango Classes in London</title>
+<meta name="description" content="A friendly, professional Argentine tango school in central London. Group and private classes for every level, trained in Argentina. Start with a free taster session.">
+<link rel="canonical" href="https://www.tangointegral.com/">
+
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tango Integral">
+<meta property="og:title" content="Tango Integral — Argentine Tango Classes in London">
+<meta property="og:description" content="A friendly, professional Argentine tango school in central London. Group and private classes for every level. Start with a free taster session.">
+<meta property="og:url" content="https://www.tangointegral.com/">
+<meta property="og:image" content="https://static.wixstatic.com/media/091db1_8843225e8368472cb76aadcc541abf7b~mv2.jpg/v1/fill/w_1200,h_630,al_c,q_85/couple.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tangointegral">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Structured data: helps Google understand this is a local dance school -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["DanceSchool", "LocalBusiness"],
+  "name": "Tango Integral",
+  "description": "Argentine tango school in central London. Group and private classes for every level, taught by teachers trained in Argentina.",
+  "url": "https://www.tangointegral.com/",
+  "email": "info@tangointegral.com",
+  "telephone": "+447751672159",
+  "logo": "https://static.wixstatic.com/media/091db1_be8212c316ce45539b962cf1a59130be~mv2.png/v1/fill/w_190,h_67,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_texto.png",
+  "image": "https://static.wixstatic.com/media/091db1_8843225e8368472cb76aadcc541abf7b~mv2.jpg/v1/fill/w_1200,h_630,al_c,q_85/couple.jpg",
+  "areaServed": "London",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "London",
+    "addressCountry": "GB"
+  },
+  "sameAs": [
+    "https://www.facebook.com/tangointegral",
+    "https://www.instagram.com/tangointegral",
+    "https://www.youtube.com/channel/UCO40L-Ul0BchGnplZlliX-g",
+    "https://twitter.com/tangointegral"
+  ]
+}
+</script>
+
+<style>
+  :root{
+    /* Brand palette — from the logo */
+    --violet:#52498d;       /* logo violet */
+    --violet-1:#6f66b3;     /* lighter violet */
+    --turq:#66c9c4;         /* logo turquoise — accent */
+    --turq-1:#8fdbd7;
+    --coral:#ee7d61;        /* warm spark — primary action */
+    --coral-deep:#e2694b;
+
+    /* Dark neutrals — a violet base */
+    --bg:#2b2557;           /* deep violet base */
+    --panel:#352e69;        /* raised panels */
+    --line:rgba(255,255,255,.14);
+    --text:#f4f2fc;         /* near-white */
+    --text-dim:#c3bce0;     /* muted lavender */
+
+    --step--1:.86rem;
+    --step-0:1.06rem;
+    --step-1:1.32rem;
+    --step-2:clamp(1.5rem,1.1rem + 1.6vw,2rem);
+    --step-3:clamp(2rem,1.4rem + 2.6vw,2.9rem);
+    --hero:clamp(2.7rem,1.6rem + 5.4vw,5.1rem);
+
+    --wrap:1160px;
+    --gutter:clamp(1.15rem,5vw,2.75rem);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:var(--step-0);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.1;margin:0;color:var(--text)}
+  h2{font-size:var(--step-3);letter-spacing:-.01em}
+  h3{font-size:var(--step-1);font-weight:600}
+  p{margin:0 0 1rem}
+  a{color:inherit}
+  img{display:block;max-width:100%}
+
+  .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+  .skip{position:absolute;left:-9999px;top:0}
+  .skip:focus{left:1rem;top:1rem;z-index:99;background:var(--coral);color:#241f47;padding:.6rem 1rem;border-radius:4px}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--turq-1);outline-offset:3px}
+
+  /* ---- Buttons ---- */
+  .btn{
+    display:inline-block;text-decoration:none;font-weight:600;font-size:var(--step--1);
+    padding:.72rem 1.25rem;border-radius:3px;transition:background .2s,color .2s,border-color .2s;
+  }
+  .btn-solid{background:var(--coral);color:#241f47}            /* primary action */
+  .btn-solid:hover{background:var(--coral-deep);color:#fff}
+  .btn-outline{border:1px solid var(--turq);color:var(--turq-1)}    /* secondary */
+  .btn-outline:hover{background:var(--turq);color:#241f47}
+
+  /* ---- Header ---- */
+  .site-head{
+    position:sticky;top:0;z-index:40;
+    background:color-mix(in srgb,var(--bg) 86%,transparent);
+    backdrop-filter:blur(9px);
+    border-bottom:1px solid var(--line);
+  }
+  .head-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+  .brand{display:inline-flex;background:#fff;border-radius:7px;padding:.32rem .55rem}
+  .brand img{height:36px;width:auto;display:block}
+  .nav{display:flex;align-items:center;gap:1.6rem}
+  .nav a.nav-link{text-decoration:none;font-size:var(--step--1);letter-spacing:.01em;color:var(--text-dim);transition:color .2s}
+  .nav a.nav-link:hover{color:var(--text)}
+  .nav-cta{margin-left:.4rem}
+  .theme-link{display:inline-flex;align-items:center;gap:.3rem;font-size:var(--step--1);text-decoration:none;
+    color:var(--turq-1);border:1px solid var(--line);border-radius:20px;padding:.42rem .8rem;transition:background .2s,color .2s,border-color .2s}
+  .theme-link:hover{background:var(--turq);color:#241f47;border-color:var(--turq)}
+  @media(max-width:720px){
+    .nav{gap:1rem}
+    .nav .nav-link{display:none}
+  }
+
+  /* ---- Hero (full-bleed, cinematic) ---- */
+  .hero{position:relative;min-height:84svh;display:flex;align-items:flex-end;overflow:hidden}
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      linear-gradient(to top,rgba(28,22,64,.95) 6%,rgba(43,37,87,.55) 50%,rgba(28,22,64,.72) 100%),
+      url("https://static.wixstatic.com/media/091db1_8843225e8368472cb76aadcc541abf7b~mv2.jpg/v1/fill/w_1700,h_1200,al_c,q_82,enc_auto/couple.jpg") center 22%/cover no-repeat;
+  }
+  .hero-inner{position:relative;padding-block:clamp(3rem,10vh,7rem)}
+  .hero h1{font-size:var(--hero);max-width:16ch;letter-spacing:-.015em}
+  .hero .lede{max-width:46ch;color:var(--text);font-size:var(--step-1);margin-top:1.4rem}
+  .hero .cta-row{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+  .hero .btn{padding:.9rem 1.5rem;font-size:var(--step-0)}
+  .kicker{color:var(--turq-1);font-size:var(--step-1);font-style:italic;font-family:"Fraunces",serif;margin-bottom:.4rem}
+
+  /* fade-up (respects reduced motion) */
+  .rise{opacity:0;transform:translateY(16px);animation:rise .85s .1s ease-out forwards}
+  .rise.d2{animation-delay:.3s}
+  .rise.d3{animation-delay:.46s}
+  @keyframes rise{to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.rise{animation:none;opacity:1;transform:none}}
+
+  /* ---- Sections ---- */
+  section{padding-block:clamp(3.5rem,8vw,6rem)}
+  .lead-line{color:var(--text-dim);max-width:60ch;font-size:var(--step-1);margin-top:1.1rem}
+
+  .split{display:grid;gap:clamp(2rem,5vw,4rem);align-items:center}
+  @media(min-width:860px){.split{grid-template-columns:1.05fr .95fr}}
+  .split img{border-radius:6px;width:100%;height:100%;object-fit:cover;max-height:460px}
+  .eyebrow{color:var(--turq-1);font-family:"Fraunces",serif;font-style:italic;font-size:var(--step-1);margin-bottom:.4rem}
+
+  /* Path (ordered sequence) */
+  .path{border-top:1px solid var(--line)}
+  .path-item{
+    display:grid;grid-template-columns:auto 1fr;gap:1.2rem 1.6rem;
+    padding-block:2rem;border-bottom:1px solid var(--line);align-items:baseline;
+  }
+  .path-num{font-family:"Fraunces",serif;font-size:var(--step-3);color:var(--turq);line-height:1}
+  .path-item h3{margin-bottom:.35rem}
+  .path-item p{color:var(--text-dim);margin:0;max-width:60ch}
+  @media(min-width:860px){.path-item{grid-template-columns:auto 1fr auto;align-items:center}}
+  .path-item .go{white-space:nowrap}
+
+  /* Panel section (method) */
+  .panel{background:var(--panel)}
+
+  /* Buenos Aires image band */
+  .ba{position:relative;overflow:hidden;border-radius:8px;min-height:340px;display:flex;align-items:flex-end;
+    background:linear-gradient(to top,rgba(20,16,44,.9),rgba(20,16,44,.2)),
+      url("https://static.wixstatic.com/media/091db1_b4d0eadca83d4671b36b70cc9ce63d87~mv2.png/v1/fill/w_1200,h_760,al_c,q_85/ba.png") center/cover;
+    color:#fff;padding:clamp(1.6rem,4vw,2.6rem)}
+  .ba h2{color:#fff}
+  .ba p{color:#eceafa;max-width:44ch}
+  .ba .eyebrow{color:var(--turq)}
+
+  /* Quote (panel) */
+  .quote{background:var(--panel);text-align:center}
+  .quote blockquote{font-family:"Fraunces",serif;font-size:var(--step-2);line-height:1.35;font-style:italic;
+    max-width:26ch;margin:0 auto;color:var(--text)}
+  .quote .cite{display:block;margin-top:1.5rem;font-family:"Inter",sans-serif;font-style:normal;
+    font-size:var(--step--1);letter-spacing:.03em;color:var(--turq-1)}
+
+  /* Final CTA (coral band — the one bold moment) */
+  .final{background:var(--coral);text-align:center}
+  .final h2{max-width:20ch;margin-inline:auto;color:#241f47}
+  .final p{color:#4a2b1f;max-width:48ch;margin-inline:auto;margin-top:1rem}
+  .final .btn{margin-top:2rem;padding:1rem 1.8rem;font-size:var(--step-0);background:var(--bg);color:#fff}
+  .final .btn:hover{background:#1f1a44;color:#fff}
+
+  /* Footer */
+  .site-foot{background:var(--panel);border-top:1px solid var(--line);padding-block:3.5rem 2.5rem}
+  .foot-grid{display:grid;gap:2rem}
+  @media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+  .foot-brand{display:inline-flex;background:#fff;border-radius:7px;padding:.4rem .6rem;margin-bottom:1rem}
+  .foot-brand img{height:40px;width:auto;display:block}
+  .site-foot h4{font-family:"Inter",sans-serif;font-size:var(--step--1);letter-spacing:.12em;
+    text-transform:uppercase;color:var(--text-dim);margin:0 0 .9rem;font-weight:600}
+  .site-foot a{color:var(--text);text-decoration:none}
+  .site-foot a:hover{color:var(--turq-1)}
+  .foot-links{list-style:none;padding:0;margin:0;display:grid;gap:.55rem}
+  .socials{display:flex;gap:1rem;margin-top:.4rem}
+  .socials a{font-size:var(--step--1);color:var(--text-dim)}
+  .foot-bar{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line);
+    display:flex;flex-wrap:wrap;gap:.6rem;justify-content:space-between;color:var(--text-dim);font-size:var(--step--1)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="/" aria-label="Tango Integral home">
+      <img src="https://static.wixstatic.com/media/091db1_be8212c316ce45539b962cf1a59130be~mv2.png/v1/fill/w_190,h_67,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_texto.png" alt="Tango Integral" width="102" height="36">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-link" href="/">Home</a>
+      <a class="nav-link" href="/classes">Classes</a>
+      <a class="nav-link" href="/contact">Contact</a>
+      <a class="theme-link" href="index.html" aria-label="View the light version" title="Light version">◑ Light</a>
+      <a class="btn btn-solid nav-cta" href="/contact">Free taster</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Introduction">
+    <div class="wrap hero-inner">
+      <p class="kicker rise">Argentine tango school · Central London</p>
+      <h1 class="rise d2">Tango, the way Buenos Aires dances it.</h1>
+      <p class="lede rise d3">A warm, welcoming school in the heart of London — with teachers fully trained in Argentina. From your very first step to the deepest details of the embrace.</p>
+      <div class="cta-row rise d3">
+        <a class="btn btn-solid" href="/contact">Book a free taster</a>
+        <a class="btn btn-outline" href="/classes">See class times</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WELCOME -->
+  <section>
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">Welcome to Tango Integral</p>
+        <h2>An Argentine tango academy in London — and in Buenos Aires.</h2>
+        <p class="lead-line">Everything you need to learn tango the real way. We built an approach that carries the feel of a Buenos Aires lesson into every class, private or group, from complete beginner to advanced dancer.</p>
+        <p style="margin-top:1.4rem"><a class="btn btn-outline" href="/classes">Meet the classes</a></p>
+      </div>
+      <img src="https://static.wixstatic.com/media/091db1_7b6f6d7f7b8f49139eda9d9cb9fa3e44~mv2.png/v1/fill/w_960,h_640,al_c,q_85/instructors.png" alt="Tango Integral instructors teaching in London" loading="lazy">
+    </div>
+  </section>
+
+  <!-- HOW TO BEGIN -->
+  <section class="path">
+    <div class="wrap">
+      <h2>New to tango? Three ways to begin.</h2>
+      <p class="lead-line">We recommend taking them in order — but you can also jump straight into weekly classes whenever you're ready.</p>
+
+      <div style="margin-top:2.5rem">
+        <div class="path-item">
+          <span class="path-num">01</span>
+          <div>
+            <h3>Free taster workshop</h3>
+            <p>Sixty minutes of pure tango flavour — enough to hook you into the dance. No experience, no partner, no pressure.</p>
+          </div>
+          <a class="btn btn-outline go" href="/contact">Book it free</a>
+        </div>
+        <div class="path-item">
+          <span class="path-num">02</span>
+          <div>
+            <h3>Beginners course</h3>
+            <p>An online module to take the first concepts home with you and arrive to class already moving.</p>
+          </div>
+          <a class="btn btn-outline go" href="/classes">Learn more</a>
+        </div>
+        <div class="path-item">
+          <span class="path-num">03</span>
+          <div>
+            <h3>Weekly classes</h3>
+            <p>The heart of the school. Learn, practise, enjoy, and meet the London tango community every week.</p>
+          </div>
+          <a class="btn btn-outline go" href="/classes">See times</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD / WHY US on panel -->
+  <section class="panel">
+    <div class="wrap split">
+      <img src="https://static.wixstatic.com/media/091db1_f35ce7fe00c3471f84e63a62fd48ac21~mv2.png/v1/fill/w_900,h_620,al_c,q_85/method.png" alt="Close work on tango technique at Tango Integral" loading="lazy">
+      <div>
+        <p class="eyebrow">Our method</p>
+        <h2>We teach the essence, not just the shapes.</h2>
+        <p class="lead-line">Our classes deconstruct the most subtle and interesting parts of the dance, and are structured to be equally valuable to leaders and followers alike. The more you dance, the faster it clicks — so we make room for real practice, and plenty of laughter along the way.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUENOS AIRES -->
+  <section>
+    <div class="wrap">
+      <div class="ba">
+        <div>
+          <p class="eyebrow">Every year</p>
+          <h2>Buenos Aires tango holidays</h2>
+          <p>We travel to the beating heart of tango during the Argentine summer — sleepless nights, packed days, and half a European winter skipped. Come with us.</p>
+          <p style="margin-top:1.4rem"><a class="btn btn-solid" href="/contact">Join the next trip</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote">
+    <div class="wrap">
+      <blockquote>They focus on the essence of tango rather than its form — and structure every class to serve leaders and followers equally.</blockquote>
+      <span class="cite">Ioana Dalca · Tango Integral student</span>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Your first class is on us.</h2>
+      <p>Come to a free taster session and feel what tango is really about. Bring a friend or come on your own — everyone's welcome.</p>
+      <a class="btn btn-solid" href="/contact">Book a free taster</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <span class="foot-brand"><img src="https://static.wixstatic.com/media/091db1_be8212c316ce45539b962cf1a59130be~mv2.png/v1/fill/w_190,h_67,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_texto.png" alt="Tango Integral" width="114" height="40"></span>
+        <p style="color:var(--text-dim);max-width:34ch">Argentine tango classes in London — friendly, professional, and rooted in Buenos Aires.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="foot-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/classes">Classes &amp; times</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="https://www.tangointegral.com/blog">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="foot-links">
+          <li><a href="mailto:info@tangointegral.com">info@tangointegral.com</a></li>
+          <li><a href="https://wa.me/447751672159">WhatsApp +44 7751 672159</a></li>
+          <li>London, United Kingdom</li>
+        </ul>
+        <div class="socials">
+          <a href="https://www.instagram.com/tangointegral">Instagram</a>
+          <a href="https://www.facebook.com/tangointegral">Facebook</a>
+          <a href="https://www.youtube.com/channel/UCO40L-Ul0BchGnplZlliX-g">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>© Tango Integral Ltd 2025. All rights reserved.</span>
+      <span>Argentine Tango School · London</span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tango in London — Milongas This Week | Tango Integral</title>
+<meta name="description" content="This week's Argentine tango milongas and prácticas in London, updated weekly. Where to dance tango in London — brought to you by Tango Integral.">
+<link rel="canonical" href="https://www.tangointegral.com/tango-in-london">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tango Integral">
+<meta property="og:title" content="Tango in London — Milongas This Week">
+<meta property="og:description" content="This week's Argentine tango milongas and prácticas in London, updated weekly.">
+<meta property="og:url" content="https://www.tangointegral.com/tango-in-london">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --violet:#52498d; --violet-deep:#413a73;
+    --turq:#66c9c4; --turq-deep:#33a49e;
+    --coral:#ee7d61; --coral-deep:#e2694b;
+    --bg:#ffffff; --bg-tint:#f5f3fb; --bg-turq:#ecf7f6;
+    --ink:#1d1b2e; --ink-dim:#5c5772; --line:#e7e4f0;
+    --step--1:.86rem; --step-0:1.06rem; --step-1:1.32rem;
+    --step-2:clamp(1.5rem,1.1rem + 1.6vw,2rem);
+    --step-3:clamp(2rem,1.4rem + 2.6vw,2.9rem);
+    --wrap:1000px; --gutter:clamp(1.15rem,5vw,2.75rem);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:var(--step-0);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.12;margin:0;color:var(--ink)}
+  h1{font-size:var(--step-3);letter-spacing:-.01em}
+  p{margin:0 0 1rem}
+  a{color:var(--violet)}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+
+  .btn{display:inline-block;text-decoration:none;font-weight:600;font-size:var(--step--1);padding:.72rem 1.25rem;border-radius:3px;transition:background .2s,color .2s,border-color .2s}
+  .btn-solid{background:var(--coral);color:var(--ink)}
+  .btn-solid:hover{background:var(--coral-deep);color:#fff}
+  .btn-outline{border:1px solid var(--violet);color:var(--violet)}
+  .btn-outline:hover{background:var(--violet);color:#fff}
+
+  .site-head{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .head-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+  .brand img{height:40px;width:auto}
+  .nav{display:flex;align-items:center;gap:1.6rem}
+  .nav a.nav-link{text-decoration:none;font-size:var(--step--1);color:var(--ink)}
+  .nav a.nav-link:hover{color:var(--violet)}
+  @media(max-width:720px){.nav .nav-link{display:none}}
+
+  .page-head{padding-block:clamp(2.5rem,6vw,4rem) 1rem}
+  .eyebrow{color:var(--violet);font-family:"Fraunces",serif;font-style:italic;font-size:var(--step-1);margin-bottom:.3rem}
+  .lead{color:var(--ink-dim);max-width:58ch;font-size:var(--step-1);margin-top:.8rem}
+  .points{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+
+  section{padding-block:clamp(1.5rem,4vw,2.5rem)}
+  .week-range{color:var(--ink-dim);font-size:var(--step--1);letter-spacing:.04em;text-transform:uppercase;margin:0 0 .4rem}
+  .note{background:var(--bg-turq);border:1px solid #d3ede9;color:#255a56;padding:.7rem 1rem;border-radius:6px;font-size:var(--step--1);margin:0 0 1.6rem}
+  .empty{color:var(--ink-dim)}
+
+  .day{padding-block:1.2rem;border-top:1px solid var(--line)}
+  .day:first-of-type{border-top:0}
+  .day-head{font-size:var(--step-1);font-weight:600;display:flex;align-items:baseline;gap:.6rem}
+  .day-date{font-family:"Inter",sans-serif;font-style:normal;font-size:var(--step--1);color:var(--turq-deep);font-weight:600;letter-spacing:.02em}
+  .events{list-style:none;margin:.6rem 0 0;padding:0;display:grid;gap:.7rem}
+  .event{display:grid;grid-template-columns:6.5rem 1fr;gap:.2rem 1rem;align-items:baseline}
+  .event-time{font-variant-numeric:tabular-nums;color:var(--ink);font-weight:600;font-size:var(--step--1)}
+  .event-body{display:flex;flex-direction:column;gap:.15rem}
+  .event-name{font-weight:600}
+  .event-name a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--turq)}
+  .event-name a:hover{color:var(--violet)}
+  .event-where{color:var(--ink-dim);font-size:var(--step--1)}
+  @media(max-width:520px){.event{grid-template-columns:1fr}}
+
+  .cta-band{background:var(--bg-tint);margin-top:2rem;border-radius:8px;padding:clamp(1.4rem,4vw,2.2rem);display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
+  .cta-band h2{font-size:var(--step-2)}
+  .cta-band p{margin:.3rem 0 0;color:var(--ink-dim)}
+
+  .site-foot{background:var(--bg-tint);border-top:1px solid var(--line);padding-block:2.5rem;margin-top:3rem;color:var(--ink-dim);font-size:var(--step--1)}
+  .site-foot a{color:var(--ink);text-decoration:none}
+  .site-foot a:hover{color:var(--violet)}
+  .foot-row{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="index.html" aria-label="Tango Integral home">
+      <img src="https://static.wixstatic.com/media/091db1_be8212c316ce45539b962cf1a59130be~mv2.png/v1/fill/w_190,h_67,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo_texto.png" alt="Tango Integral" width="114" height="40">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="/classes">Classes</a>
+      <a class="nav-link" href="tango-in-london.html">Tango in London</a>
+      <a class="btn btn-solid" href="/contact">Free taster</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <p class="eyebrow">Where to dance</p>
+    <h1>Tango in London, this week</h1>
+    <p class="lead">The milongas and prácticas happening around London over the next seven days. Updated weekly — new to the scene? Start with a free taster and we'll show you the ropes.</p>
+    <div class="points">
+      <!-- TODO: point this to the real "Points of Tango — London" page/URL -->
+      <a class="btn btn-outline" href="#points-of-tango">Points of Tango — London</a>
+      <a class="btn btn-solid" href="/contact">Book a free taster</a>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div id="milongas" class="milonga-list" aria-live="polite">Loading this week's milongas…</div>
+    </div>
+  </section>
+
+  <section id="points-of-tango">
+    <div class="wrap">
+      <div class="cta-band">
+        <div>
+          <h2>Points of Tango — London</h2>
+          <p>Your map to the London tango community: venues, teachers, and regular events.</p>
+        </div>
+        <a class="btn btn-outline" href="#">Explore the map</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-row">
+    <span>© Tango Integral Ltd 2025 · Argentine Tango School · London</span>
+    <span><a href="index.html">Home</a> · <a href="/contact">Contact</a> · <a href="https://www.tangointegral.com/blog">Blog</a></span>
+  </div>
+</footer>
+
+<script>
+/* Milongas widget. DATA SOURCE:
+ * Set CONFIG.source to a JSON URL to load live data:
+ *   - a file in this repo:      './data/milongas.json'
+ *   - your app's API endpoint:  'https://api.tangointegral.com/milongas'
+ * If null (default), the embedded SAMPLE_DATA is used so the page always renders.
+ * CORS note: the browser can only fetch APIs that allow cross-origin requests;
+ * if your app's API doesn't, we add a small Cloudflare Worker proxy (see README).
+ * Item shape: { name, weekday("Monday".."Sunday"), start("HH:MM"), end, venue, area, url, organiser } */
+const CONFIG = { source: null };
+
+const SAMPLE_DATA = [
+  { name: "Paciencia Milonga", weekday: "Friday", start: "20:30", end: "01:00", venue: "Add the venue", area: "Central London", url: "https://www.tangointegral.com/milonga-integral", organiser: "Tango Integral" },
+  { name: "Example Milonga (sample)", weekday: "Saturday", start: "21:00", end: "02:00", venue: "Sample venue", area: "Islington", url: "#", organiser: "Sample — replace me" },
+  { name: "Example Práctica (sample)", weekday: "Wednesday", start: "19:00", end: "22:00", venue: "Sample studio", area: "Camden", url: "#", organiser: "Sample — replace me" }
+];
+
+const WEEKDAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+function mondayOfThisWeek(){const d=new Date();const day=(d.getDay()+6)%7;d.setHours(0,0,0,0);d.setDate(d.getDate()-day);return d;}
+function weekDates(){const mon=mondayOfThisWeek();return WEEKDAYS.map((_,i)=>{const d=new Date(mon);d.setDate(mon.getDate()+i);return d;});}
+function fmtShort(d){return `${WEEKDAYS[(d.getDay()+6)%7].slice(0,3)} ${d.getDate()} ${MONTHS[d.getMonth()]}`;}
+function fmtRange(a,b){return `${a.getDate()} ${MONTHS[a.getMonth()]} – ${b.getDate()} ${MONTHS[b.getMonth()]}`;}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+async function loadData(){
+  if(!CONFIG.source) return {items:SAMPLE_DATA,sample:true};
+  try{
+    const res=await fetch(CONFIG.source,{headers:{Accept:"application/json"}});
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    return {items:await res.json(),sample:false};
+  }catch(err){
+    console.warn("Milongas: live data unavailable, showing sample.",err);
+    return {items:SAMPLE_DATA,sample:true,error:true};
+  }
+}
+
+function render(items,sample){
+  const el=document.getElementById("milongas"); if(!el) return;
+  const dates=weekDates();
+  const byDay=WEEKDAYS.map((day,i)=>({day,date:dates[i],
+    events:items.filter(m=>m.weekday===day).sort((a,b)=>(a.start||"").localeCompare(b.start||""))
+  })).filter(g=>g.events.length);
+
+  let html=`<p class="week-range">Week of ${fmtRange(dates[0],dates[6])}</p>`;
+  if(sample) html+=`<p class="note">Showing sample data — connect the Tango Integral app to go live.</p>`;
+  if(!byDay.length){ el.innerHTML=html+`<p class="empty">No milongas listed for this week yet. Check back soon.</p>`; return; }
+
+  for(const g of byDay){
+    html+=`<div class="day"><h3 class="day-head">${esc(g.day)} <span class="day-date">${fmtShort(g.date)}</span></h3><ul class="events">`;
+    for(const m of g.events){
+      const time=m.end?`${esc(m.start)}–${esc(m.end)}`:esc(m.start||"");
+      const where=[m.venue,m.area].filter(Boolean).map(esc).join(" · ");
+      const title=(m.url&&m.url!=="#")?`<a href="${esc(m.url)}">${esc(m.name)}</a>`:esc(m.name);
+      html+=`<li class="event"><span class="event-time">${time}</span><span class="event-body"><span class="event-name">${title}</span><span class="event-where">${where}${m.organiser?" · "+esc(m.organiser):""}</span></span></li>`;
+    }
+    html+=`</ul></div>`;
+  }
+  el.innerHTML=html;
+}
+
+document.addEventListener("DOMContentLoaded",async()=>{const{items,sample}=await loadData();render(items,sample);});
+</script>
+</body>
+</html>

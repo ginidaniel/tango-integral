@@ -1,0 +1,5 @@
+[
+  { "name": "Paciencia Milonga", "weekday": "Friday", "start": "20:30", "end": "01:00", "venue": "Add the venue", "area": "Central London", "url": "https://www.tangointegral.com/milonga-integral", "organiser": "Tango Integral" },
+  { "name": "Example Milonga (sample)", "weekday": "Saturday", "start": "21:00", "end": "02:00", "venue": "Sample venue", "area": "Islington", "url": "#", "organiser": "Sample — replace me" },
+  { "name": "Example Práctica (sample)", "weekday": "Wednesday", "start": "19:00", "end": "22:00", "venue": "Sample studio", "area": "Camden", "url": "#", "organiser": "Sample — replace me" }
+]
