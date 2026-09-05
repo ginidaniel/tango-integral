@@ -91,8 +91,9 @@
   @media(min-width:640px){.people{grid-template-columns:1fr 1fr}}
   @media(min-width:940px){.people{grid-template-columns:repeat(3,1fr)}}
   .person{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
-  /* the portraits come from three different shoots — two black-and-white, one
-     colour. Desaturating the odd one out keeps the row reading as one set. */
+  /* All three sources are colour, so the greyscale is applied here and lifted on
+     hover. Using the already-black-and-white files instead would leave Daniel and
+     Eleonora stuck in mono while only Dana changed. */
   /* height:auto is required: the img height attribute lands as a presentational
      hint and would otherwise beat aspect-ratio, blowing the portrait up to full
      size and spilling it out of the card. */
@@ -164,6 +165,12 @@
           <li><a href="/private-classes">Private Classes</a></li>
         </ul>
       </div>
+      <div class="has-menu">
+        <button class="nav-link menu-trigger" type="button" aria-expanded="false" aria-controls="experiences-menu">Tango experiences<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="experiences-menu">
+          <li><a href="/buenos-aires-trip">Buenos Aires trip</a></li>
+        </ul>
+      </div>
       <a class="nav-link" href="/tango-in-london">Tango in London</a>
       <a class="nav-link" href="/contact">Contact Us</a>
       <a class="nav-link" href="https://www.tangointegral.com/blog">Blog</a>
@@ -184,7 +191,7 @@
       <div class="people">
 
         <div class="person">
-          <img src="/img/daniel-outside-bw.jpg" alt="Daniel, director of Tango Integral" width="1066" height="1600" loading="lazy">
+          <img src="/img/daniel-outside.jpg" alt="Daniel, director of Tango Integral" width="1066" height="1600" loading="lazy">
           <div class="body">
             <p class="role">Director</p>
             <h2>Daniel</h2>
@@ -195,7 +202,7 @@
         </div>
 
         <div class="person">
-          <img src="/img/eleonora-bw.jpg" alt="Eleonora, teacher at Tango Integral" width="1066" height="1600" loading="lazy">
+          <img src="/img/eleonora-move.jpg" alt="Eleonora, teacher at Tango Integral" width="1097" height="1600" loading="lazy">
           <div class="body">
             <p class="role">Teacher</p>
             <h2>Eleonora</h2>

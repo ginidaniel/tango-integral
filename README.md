@@ -176,20 +176,28 @@ A twice-monthly class can't be expressed as `openingHoursSpecification`, so that
 claim was removed from the contact page's JSON-LD rather than left saying
 "every Saturday".
 
+## The Buenos Aires trip
+**20–27 March 2027.** The price is settled but deliberately **not published** —
+the page asks people to write instead, and the enquiry form's subject line says
+`Buenos Aires trip enquiry (Mar 2027)`. If that changes, the number belongs in
+the "How much" card on `buenos-aires-trip.html`.
+
 ## Not yet decided
 - **Beginners.** Under discussion — a 17:00–18:00 beginners slot with improvers
   after, or a short taster folded into the milonga evening. Nothing is on the
   site until the format is settled. Note that a *free* taster would sit oddly
   next to the site-wide removal of the free-taster offer.
 - **Dana's six-week barre cycle** — coming, not yet scheduled or written up.
+- **More Tango experiences.** The nav group exists for exactly this; Buenos Aires
+  is the only one in it so far.
 
 ## The menu
 Modelled on the old Wix menu. There is no Home link — the logo does that job,
 as it does almost everywhere:
 
 ```
-About us ▾   Classes ▾   Tango in London   Contact Us   Blog   [ CTA ]
-  Team         Group Classes
+About us ▾   Classes ▾   Tango experiences ▾   Tango in London   Contact Us   Blog   [ CTA ]
+  Team         Group Classes     Buenos Aires trip
   Method       Private Classes
   Testimonials
 ```
@@ -258,7 +266,6 @@ URLs so SEO/rankings carry over.
 - [ ] Decide the beginners format, then add it to `classes.html`
 - [x] Redistribute the main nav — About us and Classes dropdowns
 - [ ] Build a mobile menu (nothing but the CTA shows below the breakpoint)
-- [ ] `buenos-aires-trip.html` is not in the nav — footer only
 - [ ] `tango-in-london.html` has no CTA button in its nav (removed back when
       every "free taster" button went; the CTA now says "Come to a class",
       so it could come back)

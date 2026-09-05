@@ -101,7 +101,8 @@
   @media(min-width:640px){.people{grid-template-columns:1fr 1fr}}
   .person{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff;
     display:grid;grid-template-columns:34% 1fr;align-items:stretch}
-  .person img{width:100%;height:100%;object-fit:cover;filter:grayscale(1)}
+  .person img{width:100%;height:100%;object-fit:cover;filter:grayscale(1);transition:filter .3s}
+  .person:hover img{filter:grayscale(0)}
   .person .body{padding:1.1rem 1.2rem}
   .person h3{margin-bottom:.1rem}
   .person .where{color:var(--ink-dim);font-size:var(--step--1);margin:0 0 .5rem}
@@ -190,6 +191,12 @@
           <li><a href="/private-classes" aria-current="page">Private Classes</a></li>
         </ul>
       </div>
+      <div class="has-menu">
+        <button class="nav-link menu-trigger" type="button" aria-expanded="false" aria-controls="experiences-menu">Tango experiences<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="experiences-menu">
+          <li><a href="/buenos-aires-trip">Buenos Aires trip</a></li>
+        </ul>
+      </div>
       <a class="nav-link" href="/tango-in-london">Tango in London</a>
       <a class="nav-link" href="/contact">Contact Us</a>
       <a class="nav-link" href="https://www.tangointegral.com/blog">Blog</a>
@@ -239,7 +246,7 @@
       </div>
       <div class="people">
         <div class="person">
-          <img src="/img/daniel-outside-bw.jpg" alt="Daniel" width="1066" height="1600" loading="lazy">
+          <img src="/img/daniel-outside.jpg" alt="Daniel" width="1066" height="1600" loading="lazy">
           <div class="body">
             <h3>Daniel</h3>
             <p class="where">Argentina &middot; Director</p>
@@ -247,7 +254,7 @@
           </div>
         </div>
         <div class="person">
-          <img src="/img/eleonora-bw.jpg" alt="Eleonora" width="1066" height="1600" loading="lazy">
+          <img src="/img/eleonora-move.jpg" alt="Eleonora" width="1097" height="1600" loading="lazy">
           <div class="body">
             <h3>Eleonora</h3>
             <p class="where">Italy &middot; Teacher</p>
