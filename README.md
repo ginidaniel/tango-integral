@@ -21,6 +21,7 @@ host, and easy to keep in version control.
 | `data/milongas.json`    | **Orphaned** — the old hand-kept sample data, superseded by the live API. Safe to delete. |
 | `404.html`              | Not found — also what makes Cloudflare stop soft-404ing  |
 | `robots.txt`            | Allow all, points at the sitemap                        |
+| `img/icon-*.png`        | Favicons, padded square from the brand symbol           |
 | `sitemap.xml`           | The nine real pages                                     |
 | `img/`                  | Every image the site uses — self-hosted, no CDN         |
 
@@ -160,6 +161,11 @@ Small, and worth stating plainly because the whole site is written around it:
 - **Group class — two Saturdays a month**, 17:30–19:00, taught by **Dana and Daniel**.
 - **The Paciencia milonga**, 19:00–23:00, same room, straight after the class.
 - **Private lessons**, 60 minutes, by arrangement, taught by **Daniel and Eleonora**.
+  **£75 for the lesson, and the studio is a separate payment** made directly to
+  the studio: ~£20 near Shepherd's Bush, ~£30 near Barbican, £20 off-peak / £30
+  peak near Camden Town. A student's own space or a studio they suggest can be
+  arranged instead. The page states the split explicitly — it is the thing people
+  get wrong when they only see one number.
 
 Who teaches what matters and is easy to get wrong: Dana teaches the Saturday
 class, Eleonora teaches privates, Daniel does both. Pablo and Anna have left the
