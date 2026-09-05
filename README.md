@@ -23,6 +23,7 @@ host, and easy to keep in version control.
 | `blog.html`             | Blog index                                              |
 | `post/*.html`           | Blog posts — the path is load-bearing, see below        |
 | `404.html`              | Not found — also what makes Cloudflare stop soft-404ing  |
+| `_redirects`            | Old Wix URLs -> new ones (Cloudflare Pages)             |
 | `robots.txt`            | Allow all, points at the sitemap                        |
 | `img/icon-*.png`        | Favicons, padded square from the brand symbol           |
 | `sitemap.xml`           | The nine real pages                                     |
@@ -310,6 +311,26 @@ who never watch — and it would pull about a megabyte of player.
 
 The video is **not ours** — it is by Bournemouth Tango — and the caption says so.
 
+## Redirects from Wix
+`_redirects` covers **51 of the 52 URLs in the old Wix sitemap** — which is three
+times what the menu showed. The sitemap turned up a shop (`/product-page/*`),
+booking pages (`/service-page/*`), `/faqs`, `/beginners`, `/plans-pricing`,
+`/loyalty` and a dozen others that were never linked from the nav.
+
+Ten paths are **unchanged and must stay that way** — `/team`, `/method`,
+`/testimonials`, `/private-classes`, `/contact`, `/tango-in-london`,
+`/buenos-aires-trip`, `/blog`, `/` and above all
+`/post/art-of-cabeceo-part-1-by-the-leader`.
+
+Everything else goes to the closest real page rather than to the home page.
+Pointing a pile of dead URLs at `/` reads as a soft 404 and throws away whatever
+ranking they carry, so old class and pricing pages land on `/classes`, old trips
+on `/buenos-aires-trip`, and so on.
+
+**`/privacy-policy` is deliberately not in the file.** The old site had one and
+the new site does not, so it is left to 404 loudly rather than redirected
+somewhere misleading. That is a gap to close, not a decision — see below.
+
 ## Findability
 Measured against the deployed site, not assumed.
 
@@ -470,8 +491,12 @@ URLs so SEO/rankings carry over.
       Cloudflare Pages Function, with the API key as an env var. That drops the
       third-party script and Google reCAPTCHA entirely and lets the form live in
       the footer again. Verify EmailOctopus's current API before starting.
-- [ ] Migrate blog posts + set 301 redirects
+- [x] Migrate the blog post, keeping its URL
+- [x] Redirect map for the old Wix URLs
+- [ ] **Write a privacy policy.** The old site had `/privacy-policy`; the new one
+      has nothing. Three Formspree forms and an EmailOctopus newsletter collect
+      personal data, so under UK GDPR one is expected — and that URL currently
+      404s.
 - [ ] `_redirects` should include `/indexDark` and `/indexDark.html` -> `/`
       (Cloudflare currently answers those with the home page at 200)
 - [ ] Extract shared CSS to `css/styles.css` once design is locked
-- [ ] Full redirect map old Wix URLs → new URLs before go-live

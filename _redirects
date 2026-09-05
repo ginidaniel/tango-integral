@@ -1,0 +1,58 @@
+# Old Wix URLs -> new ones. Taken from the Wix sitemap (53 URLs), not just the
+# menu. Each goes to the closest real page rather than all landing on the home
+# page: a pile of redirects to "/" is read as a soft 404 and throws away the
+# ranking these URLs carry.
+#
+# Not listed here, because the path is unchanged and must stay that way:
+#   /team  /method  /testimonials  /private-classes  /contact
+#   /tango-in-london  /buenos-aires-trip  /blog
+#   /post/art-of-cabeceo-part-1-by-the-leader   <- ~4,375 views, do not touch
+
+# --- Classes, timetables and anything that was about booking one -------------
+/drop-in                        /classes            301
+/timetable                      /classes            301
+/group-classes                  /classes            301
+/beginners                      /classes            301
+/first-tango-experience         /classes            301
+/tip-tango-integral-practica    /classes            301
+/milonga-integral               /classes            301
+/service-page/*                 /classes            301
+
+# --- Prices, packs and loyalty schemes that no longer exist ------------------
+/packages                       /classes            301
+/plans-pricing                  /classes            301
+/loyalty                        /classes            301
+/ti-rewards                     /classes            301
+/product-page/*                 /classes            301
+
+# --- Trips and one-off experiences ------------------------------------------
+/projects-8                     /buenos-aires-trip  301
+/tangoinparadise                /buenos-aires-trip  301
+/the-macedonian-experience      /buenos-aires-trip  301
+/buenos-aires-brasil            /buenos-aires-trip  301
+/festivals                      /buenos-aires-trip  301
+
+# --- Social events ----------------------------------------------------------
+/milongas                       /tango-in-london    301
+/copy-of-milonga-itinerante     /tango-in-london    301
+/tango-integral-app             /tango-in-london    301
+
+# --- About the school -------------------------------------------------------
+/about-us                       /team               301
+/pablo-majo                     /team               301
+/faqs                           /method             301
+/gallery                        /team               301
+
+# --- Contact and admin ------------------------------------------------------
+/locations                      /contact            301
+/members-1                      /contact            301
+
+# --- Blog categories, which the new blog does not split out ------------------
+/blog/categories/*              /blog               301
+
+# --- Leftovers from this rebuild --------------------------------------------
+/indexDark                      /                   301
+/indexDark.html                 /                   301
+
+# --- TODO: /privacy-policy has no destination yet. It is deliberately absent
+#     from this file so it 404s loudly rather than redirecting somewhere wrong.
