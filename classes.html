@@ -64,7 +64,6 @@
   .nav a.nav-link{text-decoration:none;font-size:var(--step--1);letter-spacing:.01em;color:var(--ink);transition:color .2s}
   .nav a.nav-link:hover{color:var(--violet)}
   .nav a.nav-link[aria-current="page"]{color:var(--violet);border-bottom:2px solid var(--turq)}
-  @media(max-width:760px){.nav{gap:1rem}.nav .nav-link,.has-menu{display:none}}
 
   /* ---- Page head ---- */
   .page-head{padding-block:clamp(2.5rem,6vw,4rem) 0}
@@ -178,6 +177,38 @@
     font-size:var(--step--1);color:var(--ink);white-space:nowrap}
   .menu a:hover{background:var(--bg-tint);color:var(--violet)}
   .menu a[aria-current="page"]{color:var(--violet);font-weight:600}
+
+  /* ---- Mobile menu ---- */
+  /* Nothing wraps in the desktop nav: below 1000px it is replaced wholesale.
+     1000 is where the six items stop fitting on one line beside the logo. */
+  .nav a.nav-link,.nav .menu-trigger,.nav .btn{white-space:nowrap}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line);border-radius:5px;
+    width:2.6rem;height:2.6rem;padding:0;align-items:center;justify-content:center;
+    color:var(--ink);cursor:pointer;flex:none}
+  .menu-toggle svg{width:1.35rem;height:1.35rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+  .menu-toggle .ic-close{display:none}
+  .menu-toggle[aria-expanded="true"] .ic-open{display:none}
+  .menu-toggle[aria-expanded="true"] .ic-close{display:block}
+
+  .site-menu{position:absolute;top:100%;left:0;right:0;display:none;
+    background:var(--bg);border-bottom:1px solid var(--line);
+    box-shadow:0 16px 34px rgba(29,27,46,.14);
+    padding:.6rem var(--gutter) 1.3rem;max-height:calc(100svh - 4.6rem);overflow-y:auto}
+  .site-menu.is-open{display:block}
+  .sm-group{padding-block:.75rem;border-bottom:1px solid var(--line)}
+  .sm-label{font-size:var(--step--1);letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink-dim);font-weight:600;margin:0 0 .3rem}
+  .site-menu a{display:block;padding:.5rem 0;text-decoration:none;color:var(--ink)}
+  .site-menu a:hover{color:var(--violet)}
+  .site-menu a[aria-current="page"]{color:var(--violet);font-weight:600}
+  .sm-top{border-bottom:1px solid var(--line)}
+  .site-menu > .sm-top:last-child{border-bottom:0}
+
+  @media(max-width:1000px){
+    .nav{gap:.7rem}
+    .nav a.nav-link,.has-menu,.nav .theme-link{display:none}
+    .menu-toggle{display:inline-flex}
+  }
 </style>
 </head>
 <body>

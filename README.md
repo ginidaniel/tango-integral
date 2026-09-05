@@ -222,14 +222,21 @@ hover and on keyboard focus** — the `js` class exists to switch those fallback
 off once the script is in charge, otherwise a click to close would immediately
 be undone by the button still being hovered or focused.
 
-Two things it deliberately does not solve:
+Below **1000px** the whole nav is replaced by a hamburger and a drop-down panel.
+1000 is measured, not guessed: the six items need about 997px to sit on one line
+beside the logo, and below that they wrap into an ugly two-line header.
 
-- **Blog still points at Wix** (`tangointegral.com/blog`) until the blog is
-  migrated.
-- **There is no mobile menu.** Below the breakpoint the nav links and the
-  dropdowns are all hidden and only the CTA remains, so on a phone every page
-  except the CTA target is reachable only through the footer. This predates the
-  dropdowns; it now matters more.
+**`js/nav.js` builds that panel from the desktop nav rather than from markup in
+the page.** Ten pages each carry their own header, so a hand-written mobile menu
+would be a tenth chance to drift every time a nav item changes — and every nav
+change so far has meant editing all ten files. Reading `.nav` means the two can
+not disagree. The dropdown groups become labelled sections rather than nested
+accordions: nine destinations do not deserve a second tap. The CTA stays in the
+header; the light/dark toggle moves into the panel, where there is room for it.
+
+Still open: **Blog points at Wix** (`tangointegral.com/blog`) until the blog is
+migrated. With JavaScript off there is no mobile menu at all — the footer
+carries the full sitemap, which is the fallback.
 
 ## A CSS trap worth knowing
 Three separate layout bugs on this site had the same cause: **`width` and
@@ -275,8 +282,8 @@ URLs so SEO/rankings carry over.
 - [x] Build `classes.html` — real timetable, prices, teachers, live dates
 - [x] Build `method.html`, `team.html`, `testimonials.html`, `private-classes.html`
 - [ ] Decide the beginners format, then add it to `classes.html`
-- [x] Redistribute the main nav — About us and Classes dropdowns
-- [ ] Build a mobile menu (nothing but the CTA shows below the breakpoint)
+- [x] Redistribute the main nav — About us / Classes / Tango experiences
+- [x] Mobile menu — hamburger panel, generated from the desktop nav
 - [ ] Bios for Eleonora and Dana — requested, waiting
 - [ ] Add Dana's barre cycle — coming in a few days
 - [ ] Consider a dedicated Paciencia page (the Wix one has DJ, transport and commuter detail this page only summarises)
