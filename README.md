@@ -244,6 +244,13 @@ The home page now uses the full-bleed cinematic hero that used to live on
 dark photo in *both* themes, so its heading and outline button are explicitly
 white — otherwise the global heading colour would render dark on dark.
 
+**The hero scrim is tokenised too** (`--hero-1/2/3`, on the home and the Buenos
+Aires page). It has to be, because a fixed scrim is wrong in one theme or the
+other: the violet-tinted one read as a leftover slab between a white header and a
+white page, and a neutral one looks detached above a violet one. Light gets a
+neutral near-black and shows more of the photo; dark keeps the violet tint so the
+hero joins the page below it.
+
 ## The menu
 Modelled on the old Wix menu. There is no Home link — the logo does that job,
 as it does almost everywhere:

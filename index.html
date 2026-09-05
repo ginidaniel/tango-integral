@@ -81,6 +81,9 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
     --wrap:1160px;
     --gutter:clamp(1.15rem,5vw,2.75rem);
     color-scheme:light;
+    /* Hero scrim. Neutral ink on the light theme — the violet-tinted version
+       reads as a leftover slab between a white header and a white page. */
+    --hero-1:rgba(29,27,46,.92); --hero-2:rgba(29,27,46,.5); --hero-3:rgba(29,27,46,.62);
     --card:#ffffff;
     --line-strong:#cfc9e2;
     --ok-bg:#ecf7f6; --ok-line:#d3ede9; --ok-ink:#255a56;
@@ -140,7 +143,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   .hero::before{
     content:"";position:absolute;inset:0;
     background:
-      linear-gradient(to top,rgba(28,22,64,.95) 6%,rgba(43,37,87,.55) 50%,rgba(28,22,64,.72) 100%),
+      linear-gradient(to top,var(--hero-1) 6%,var(--hero-2) 50%,var(--hero-3) 100%),
       url("/img/daniel-eleonora-studio.jpg") center 22%/cover no-repeat;
   }
   .hero-inner{position:relative;padding-block:clamp(3rem,10vh,7rem)}
@@ -280,6 +283,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
     color-scheme:dark;
+    --hero-1:rgba(28,22,64,.95); --hero-2:rgba(43,37,87,.55); --hero-3:rgba(28,22,64,.72);
     --bg:#2b2557; --bg-tint:#352e69; --bg-turq:#26454c;
     --ink:#f4f2fc; --ink-dim:#c3bce0; --line:rgba(255,255,255,.14);
     --violet:#a79ee4; --violet-deep:#c5bef2; --turq-deep:#8fdbd7;
@@ -293,6 +297,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   }
   :root[data-theme="dark"]{
     color-scheme:dark;
+    --hero-1:rgba(28,22,64,.95); --hero-2:rgba(43,37,87,.55); --hero-3:rgba(28,22,64,.72);
     --bg:#2b2557; --bg-tint:#352e69; --bg-turq:#26454c;
     --ink:#f4f2fc; --ink-dim:#c3bce0; --line:rgba(255,255,255,.14);
     --violet:#a79ee4; --violet-deep:#c5bef2; --turq-deep:#8fdbd7;
