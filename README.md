@@ -18,6 +18,7 @@ host, and easy to keep in version control.
 | `buenos-aires-trip.html`| Buenos Aires tango holidays — details + enquiry form    |
 | `js/form.js`            | Shared AJAX handling for the three Formspree forms      |
 | `js/nav.js`             | Nav dropdowns, mobile menu, theme toggle                |
+| newsletter              | EmailOctopus embed, on `/contact#newsletter` only       |
 | `data/milongas.json`    | **Orphaned** — the old hand-kept sample data, superseded by the live API. Safe to delete. |
 | `404.html`              | Not found — also what makes Cloudflare stop soft-404ing  |
 | `robots.txt`            | Allow all, points at the sitemap                        |
@@ -335,6 +336,33 @@ Still open: **Blog points at Wix** (`tangointegral.com/blog`) until the blog is
 migrated. With JavaScript off there is no mobile menu at all — the footer
 carries the full sitemap, which is the fallback.
 
+## The newsletter
+Signups go straight into **EmailOctopus**, so consent and unsubscribe are handled
+there rather than by hand. Copying addresses out of an inbox does not scale and
+loses the consent record, which matters under UK GDPR/PECR.
+
+EmailOctopus only offers a **JavaScript embed** — there is no plain-HTML option
+in their form builder. Loading it revealed what it actually pulls in:
+
+```
+form action  https://eocampaign1.com/form/55e9988c-…
+fields       field_0 (email) · field_1 · field_2 · consent · honeypot
+and also     Google reCAPTCHA — recaptcha/api.js, a gstatic script, two iframes
+```
+
+The form posts `g-recaptcha-response`, so a hand-built form without reCAPTCHA
+would almost certainly be rejected — which rules out simply reusing the endpoint.
+
+**So the embed lives on `/contact#newsletter` and nowhere else**, with a
+"Newsletter" link in every footer pointing at it. In the site-wide footer it
+would have loaded Google's reCAPTCHA — and its cookies — on all ten pages, which
+is exactly what would force a cookie banner. Contained to one page, the other
+nine stay free of third-party scripts. A few `!important` overrides pull the
+widget's typography and controls back in line with the site.
+
+The fields shown are whatever the EmailOctopus form is set to; trimming it to
+email only is a change there, not here, and fewer fields means more signups.
+
 ## A CSS trap worth knowing
 Three separate layout bugs on this site had the same cause: **`width` and
 `height` attributes on an `<img>` become presentational hints, and those beat
@@ -391,6 +419,10 @@ URLs so SEO/rankings carry over.
 - [x] Connect the milongas widget to the Points of Tango API (no proxy needed)
 - [x] Prepare for the weekly endpoint (`&offset=0` on tango-in-london; classes
       stays unpaginated on purpose) — verify both pages the day it goes live
+- [ ] Replace the EmailOctopus embed with our own form posting through a
+      Cloudflare Pages Function, with the API key as an env var. That drops the
+      third-party script and Google reCAPTCHA entirely and lets the form live in
+      the footer again. Verify EmailOctopus's current API before starting.
 - [ ] Migrate blog posts + set 301 redirects
 - [ ] `_redirects` should include `/indexDark` and `/indexDark.html` -> `/`
       (Cloudflare currently answers those with the home page at 200)
