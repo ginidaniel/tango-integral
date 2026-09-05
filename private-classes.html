@@ -39,7 +39,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
     "@type": "Offer",
     "price": "75",
     "priceCurrency": "GBP",
-    "description": "Per 60-minute lesson. Studio hire is paid separately, directly to the studio (£20–£30)."
+    "description": "Teacher's fee per 60-minute lesson, plus a studio fee of £20–£30 depending on the location."
   }
 }
 </script>
@@ -288,9 +288,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   .pay{display:grid;gap:1.2rem;margin-top:2.2rem}
   @media(min-width:820px){.pay{grid-template-columns:1fr 1.25fr}}
   .pay-card{border:1px solid var(--line);border-radius:8px;padding:1.4rem 1.5rem;background:var(--card)}
-  .pay-card .n{font-size:var(--step--1);letter-spacing:.08em;text-transform:uppercase;
-    color:var(--turq-deep);font-weight:600}
-  .pay-card h3{margin:.25rem 0 .5rem}
+  .pay-card h3{margin:0 0 .5rem}
   .pay-card .amount{font-family:"Fraunces",serif;font-size:var(--step-2);line-height:1;margin:0 0 .5rem}
   .pay-card p{margin:0;color:var(--ink-dim);font-size:var(--step--1);line-height:1.6}
   .studios{list-style:none;padding:0;margin:.9rem 0 0;display:grid;gap:.55rem}
@@ -299,9 +297,12 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
     color:var(--ink);font-size:var(--step--1)}
   .studios li:last-child{border-bottom:0;padding-bottom:0}
   .studios .fee{font-weight:600;white-space:nowrap;color:var(--ink)}
-  .pay-note{border-left:3px solid var(--coral);background:var(--bg-turq);border-radius:0 6px 6px 0;
-    padding:1rem 1.2rem;margin-top:1.6rem;max-width:62ch}
-  .pay-note p{margin:0;color:var(--ok-ink);font-size:var(--step--1);line-height:1.6}
+  .notes{list-style:none;padding:0;margin:2.2rem 0 0;display:grid;gap:1.5rem}
+  @media(min-width:820px){.notes{grid-template-columns:repeat(3,1fr);gap:2rem}}
+  .notes li{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start}
+  .notes .n{font-family:"Fraunces",serif;color:var(--turq-deep);font-size:var(--step--1);letter-spacing:.08em}
+  .notes h3{font-size:var(--step-0);font-weight:600;margin-bottom:.25rem}
+  .notes p{margin:0;color:var(--ink-dim);font-size:var(--step--1);line-height:1.6}
 </style>
 </head>
 <body>
@@ -352,7 +353,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   <div class="wrap page-head">
     <p class="eyebrow">Private lessons</p>
     <h1>The quickest way to learn.</h1>
-    <p class="lead">Sixty minutes, entirely yours, at a time that suits you — and the strongest possible complement to the group class. &pound;75 for the lesson, plus the studio's own fee.</p>
+    <p class="lead">Sixty minutes, entirely yours, at a time that suits you — and the strongest possible complement to the group class. &pound;75 for the lesson, plus the studio fee.</p>
   </div>
 
   <section>
@@ -413,23 +414,21 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   <section>
     <div class="wrap">
       <p class="eyebrow">What it costs</p>
-      <h2>Two payments, not one.</h2>
+      <h2>The lesson, and the room.</h2>
       <div class="prose" style="margin-top:1.1rem">
-        <p>The lesson and the room are billed separately — you pay us for the teaching, and the studio for the space. We keep it that way so you are never paying us a mark-up on somebody else's floor.</p>
+        <p>Two fees make up the price. The teacher's fee is the same wherever we meet; the studio's depends on which one we use.</p>
       </div>
 
       <div class="pay">
         <div class="pay-card">
-          <p class="n">Payment 1 &middot; to us</p>
-          <h3>The lesson</h3>
+          <h3>Teacher's fee</h3>
           <p class="amount">&pound;75</p>
-          <p>Sixty minutes with Daniel or Eleonora. Studio hire is not included.</p>
+          <p>Sixty minutes with Daniel or Eleonora.</p>
         </div>
 
         <div class="pay-card">
-          <p class="n">Payment 2 &middot; to the studio</p>
-          <h3>The room</h3>
-          <p>Paid directly to the studio, at their rate. These three are the ones we know and use:</p>
+          <h3>Studio fee</h3>
+          <p>These three are the ones we know and use:</p>
           <ul class="studios">
             <li><span>Five minutes from Shepherd's Bush station</span> <span class="fee">&pound;20</span></li>
             <li><span>Five minutes from Barbican</span> <span class="fee">&pound;30</span></li>
@@ -438,9 +437,29 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
         </div>
       </div>
 
-      <div class="pay-note">
-        <p>Somewhere else in mind? If you would rather use a different studio, or you have a space of your own, tell us and we will arrange the lesson there instead.</p>
-      </div>
+      <ul class="notes">
+        <li>
+          <span class="n" aria-hidden="true">01</span>
+          <div>
+            <h3>Somewhere else in mind?</h3>
+            <p>If you would rather use a different studio, or you have a space of your own, tell us and we will arrange the lesson there instead.</p>
+          </div>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">02</span>
+          <div>
+            <h3>Cancellations</h3>
+            <p>When you book, we take a deposit covering the studio fee. Studios often cannot be cancelled at short notice, and without the deposit that cost falls on the teacher.</p>
+          </div>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true">03</span>
+          <div>
+            <h3>More than three lessons</h3>
+            <p>Discounts are available for a block of lessons — <a href="#book">get in touch</a> and we will work it out with you.</p>
+          </div>
+        </li>
+      </ul>
     </div>
   </section>
 

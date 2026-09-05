@@ -161,11 +161,14 @@ Small, and worth stating plainly because the whole site is written around it:
 - **Group class — two Saturdays a month**, 17:30–19:00, taught by **Dana and Daniel**.
 - **The Paciencia milonga**, 19:00–23:00, same room, straight after the class.
 - **Private lessons**, 60 minutes, by arrangement, taught by **Daniel and Eleonora**.
-  **£75 for the lesson, and the studio is a separate payment** made directly to
-  the studio: ~£20 near Shepherd's Bush, ~£30 near Barbican, £20 off-peak / £30
-  peak near Camden Town. A student's own space or a studio they suggest can be
-  arranged instead. The page states the split explicitly — it is the thing people
-  get wrong when they only see one number.
+  **£75 teacher's fee, plus a studio fee** of ~£20 near Shepherd's Bush, ~£30
+  near Barbican, £20 off-peak / £30 peak near Camden Town. The page presents them
+  as two fees, not two payments, and deliberately does not say who is paid: the
+  teacher usually books the studio and the student settles once. A student's own
+  space or a studio they suggest can be arranged instead. A deposit covering the
+  studio fee is taken at booking, because studios often cannot be cancelled at
+  short notice and that cost would otherwise fall on the teacher. Discounts exist
+  for blocks of more than three lessons.
 
 Who teaches what matters and is easy to get wrong: Dana teaches the Saturday
 class, Eleonora teaches privates, Daniel does both. Pablo and Anna have left the
