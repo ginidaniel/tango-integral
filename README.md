@@ -19,6 +19,9 @@ host, and easy to keep in version control.
 | `js/form.js`            | Shared AJAX handling for the three Formspree forms      |
 | `js/nav.js`             | Nav dropdowns, mobile menu, theme toggle                |
 | `data/milongas.json`    | **Orphaned** — the old hand-kept sample data, superseded by the live API. Safe to delete. |
+| `404.html`              | Not found — also what makes Cloudflare stop soft-404ing  |
+| `robots.txt`            | Allow all, points at the sitemap                        |
+| `sitemap.xml`           | The nine real pages                                     |
 | `img/`                  | Every image the site uses — self-hosted, no CDN         |
 
 One home page. The sun/moon button in the header switches theme.
@@ -250,6 +253,42 @@ other: the violet-tinted one read as a leftover slab between a white header and 
 white page, and a neutral one looks detached above a violet one. Light gets a
 neutral near-black and shows more of the photo; dark keeps the violet tint so the
 hero joins the page below it.
+
+## Findability
+Measured against the deployed site, not assumed.
+
+**Every page already had** a unique title, a meta description, exactly one `h1`,
+a canonical, `og:image`, and alt text on every image.
+
+**What was missing, and is now there:**
+
+- **`404.html`.** Cloudflare was answering *every* unknown path — `/robots.txt`,
+  `/sitemap.xml`, typos, old Wix URLs — with **the home page at status 200**.
+  That is a soft 404, which Google treats as a fault: it can index unlimited junk
+  URLs all serving the same content. A real `404.html` makes Pages return a 404.
+  **Re-check this after the next deploy** — if unknown paths still return 200, the
+  project's not-found handling is set to single-page-application in the Cloudflare
+  dashboard and has to be changed there.
+- **`robots.txt` and `sitemap.xml`.** Neither existed.
+- **Structured data on six more pages.** Only the home and contact had any. Now:
+  `Course` with the real £15 price and venue on `/classes`, `Service` on
+  `/private-classes`, three `Person` entries on `/team`, `Review` entries on
+  `/testimonials`, and a dated `Event` (20–27 March 2027) on
+  `/buenos-aires-trip`. They all reference one `@id`,
+  `https://www.tangointegral.com/#school`, so search engines and language models
+  read them as one organisation rather than seven unrelated pages.
+
+**Still open:**
+
+- Canonicals point at `www.tangointegral.com`, which today serves Wix. That is
+  protective while the site lives on `pages.dev` — it keeps the preview domain
+  out of the index — but it is only correct once the domain is switched.
+- Nothing links to the new site yet. For both search engines and AI assistants,
+  being cited elsewhere matters more than anything on the page: the Points of
+  Tango listing, Instagram, Facebook and Google Business Profile should point at
+  the real domain once it is live.
+- No Google Business Profile connection is claimed in the markup. For "tango
+  classes near me" that profile matters more than the site.
 
 ## The menu
 Modelled on the old Wix menu. There is no Home link — the logo does that job,
