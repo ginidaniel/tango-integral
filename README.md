@@ -8,7 +8,6 @@ host, and easy to keep in version control.
 | File                    | What it is                                             |
 |-------------------------|--------------------------------------------------------|
 | `index.html`            | Home — light theme (white, black text, brand accents)  |
-| `indexDark.html`        | Home — dark theme variant (violet base). Alternate idea / dark mode |
 | `tango-in-london.html`  | "Tango in London" — live milonga listings (Points of Tango) |
 | `classes.html`          | Classes — schedule, prices, teachers, venue (live dates)|
 | `private-classes.html`  | Private lessons — with Daniel and Eleonora, own form    |
@@ -18,11 +17,11 @@ host, and easy to keep in version control.
 | `contact.html`          | Contact — form and venue                                |
 | `buenos-aires-trip.html`| Buenos Aires tango holidays — details + enquiry form    |
 | `js/form.js`            | Shared AJAX handling for the three Formspree forms      |
-| `js/nav.js`             | Dropdown behaviour for the primary nav                  |
+| `js/nav.js`             | Nav dropdowns, mobile menu, theme toggle                |
 | `data/milongas.json`    | **Orphaned** — the old hand-kept sample data, superseded by the live API. Safe to delete. |
 | `img/`                  | Every image the site uses — self-hosted, no CDN         |
 
-The two home pages link to each other via the ◐ / ◑ toggle in the header.
+One home page. The sun/moon button in the header switches theme.
 
 ## Images
 
@@ -202,6 +201,49 @@ the "How much" card on `buenos-aires-trip.html`.
 - **More Tango experiences.** The nav group exists for exactly this; Buenos Aires
   is the only one in it so far.
 
+## Dark mode
+One set of pages, two palettes. **The theme is not in the URL** — no `/d/classes`
+or `indexDark.html`. That would have meant twenty pages to keep in step,
+duplicate content for Google, a full reload on every toggle, and a preference
+that every internal link had to carry by hand.
+
+Instead every rule is written against CSS custom properties, and only the tokens
+change. Three blocks per page:
+
+```
+:root{ … }                                     light, and the default
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ … }         follows the operating system
+}
+:root[data-theme="dark"]{ … }                  an explicit choice wins
+```
+
+Getting there meant tokenising the colours that had been hardcoded across the
+pages — `#fff` card backgrounds, the form's success and error colours, input
+borders, shadows — into `--card`, `--ok-*`, `--err-*`, `--line-strong` and
+`--shadow`. Anything still hardcoded sits on a permanently dark surface (the
+hero photo, the violet closing band, the Buenos Aires band) and is meant to stay
+white in both themes.
+
+Two details worth keeping:
+
+- **The inline script in each `<head>`** applies the stored theme *before first
+  paint*. Without it the page flashes the wrong palette. It is the one script
+  that cannot be deferred or external. It also sets the `js` class the nav CSS
+  keys off.
+- **The first click flips away from the operating system**, not from a default:
+  with nothing stored, "currently dark" means the OS says dark, so the toggle has
+  to read `prefers-color-scheme` rather than assume light.
+
+`color-scheme` is declared in both themes so scrollbars and native form control
+internals follow. The logo is a violet/turquoise PNG, so dark mode filters it to
+solid white.
+
+The home page now uses the full-bleed cinematic hero that used to live on
+`indexDark.html`; that file is gone (it is in git history). The hero sits on a
+dark photo in *both* themes, so its heading and outline button are explicitly
+white — otherwise the global heading colour would render dark on dark.
+
 ## The menu
 Modelled on the old Wix menu. There is no Home link — the logo does that job,
 as it does almost everywhere:
@@ -275,7 +317,7 @@ Keep the domain `tangointegral.com` and add **301 redirects** from the old Wix
 URLs so SEO/rankings carry over.
 
 ## Roadmap / TODO
-- [ ] Lock the design (light vs dark as primary)
+- [x] Dark mode — one set of pages, tokens swapped by `data-theme`
 - [x] Build `contact.html` (Formspree live)
 - [x] Build `buenos-aires-trip.html` (Formspree live)
 - [x] Remove the free-taster offer site-wide — the CTA is now "Come to a class"

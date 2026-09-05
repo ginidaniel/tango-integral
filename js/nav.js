@@ -132,12 +132,13 @@
         group.appendChild(copyLink(a));
       });
       panel.appendChild(group);
-    } else if (item.classList.contains("nav-link") || item.classList.contains("theme-link")) {
+    } else if (item.classList.contains("nav-link")) {
       var link = copyLink(item);
       link.className = "sm-top";
       panel.appendChild(link);
     }
-    // The CTA button is left out on purpose: it stays visible in the header.
+    // The CTA and the theme toggle are left out on purpose: both stay visible
+    // in the header, where they are small enough to sit beside the hamburger.
   });
 
   if (!panel.children.length) return;
@@ -180,5 +181,30 @@
   // would strand it on screen, since it is only styled below the breakpoint.
   window.addEventListener("resize", function () {
     if (window.innerWidth > BREAKPOINT) closeMenu();
+  });
+})();
+
+/* Theme toggle.
+ *
+ * The stored choice is applied by the inline script in each page's <head>, which
+ * has to run before first paint. This only handles the click.
+ *
+ * "Currently dark" is not simply the presence of data-theme: with no stored
+ * choice the page follows the operating system, so the first click has to flip
+ * away from whatever the OS is showing, not from a default.
+ */
+(function () {
+  var btn = document.querySelector(".theme-toggle");
+  if (!btn) return;
+
+  btn.addEventListener("click", function () {
+    var root = document.documentElement;
+    var set = root.getAttribute("data-theme");
+    var dark = set === "dark" || (!set &&
+      window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches);
+    var next = dark ? "light" : "dark";
+
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("theme", next); } catch (e) {}
   });
 })();

@@ -3,6 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>/* Applies the saved theme before first paint, so the page never flashes the
+   wrong one. Also marks that JS is available, which the nav CSS keys off. */
+(function(){var d=document.documentElement;d.classList.add("js");
+try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribute("data-theme",t);}catch(e){}})();</script>
 <title>Contact — Argentine Tango Classes in London | Tango Integral</title>
 <meta name="description" content="Get in touch with Tango Integral. Argentine tango classes two Saturdays a month at Thistle London Bloomsbury Park, 126 Southampton Row, WC1B 5AD — one minute from Russell Square. No experience or partner needed.">
 <link rel="canonical" href="https://www.tangointegral.com/contact">
@@ -67,6 +71,12 @@
     --step-2:clamp(1.5rem,1.1rem + 1.6vw,2rem);
     --step-3:clamp(2rem,1.4rem + 2.6vw,2.9rem);
     --wrap:1080px; --gutter:clamp(1.15rem,5vw,2.75rem);
+    color-scheme:light;
+    --card:#ffffff;
+    --line-strong:#cfc9e2;
+    --ok-bg:#ecf7f6; --ok-line:#d3ede9; --ok-ink:#255a56;
+    --err-bg:#fdeeea; --err-line:#f6cfc4; --err-ink:#8a3418; --err-strong:#d9694a;
+    --shadow:rgba(29,27,46,.14);
   }
 
   *{box-sizing:border-box}
@@ -119,10 +129,10 @@
   .field .opt{font-weight:400;color:var(--ink-dim)}
   .field input,.field textarea{
     font-family:inherit;font-size:var(--step-0);color:var(--ink);
-    background:#fff;border:1px solid var(--line);border-radius:4px;padding:.65rem .8rem;width:100%;
+    background:var(--card);border:1px solid var(--line);border-radius:4px;padding:.65rem .8rem;width:100%;
     transition:border-color .2s;
   }
-  .field input:hover,.field textarea:hover{border-color:#cfc9e2}
+  .field input:hover,.field textarea:hover{border-color:var(--line-strong)}
   .field input:focus,.field textarea:focus{border-color:var(--violet)}
   .field textarea{min-height:8.5rem;resize:vertical}
   .field-row{display:grid;gap:1.1rem}
@@ -131,12 +141,12 @@
   .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
   .form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-top:.5rem}
   .form-note{font-size:var(--step--1);color:var(--ink-dim);margin:0}
-  .field-err{color:#8a3418;font-size:var(--step--1);line-height:1.4}
+  .field-err{color:var(--err-ink);font-size:var(--step--1);line-height:1.4}
   .field-err:empty{display:none}
-  .field input[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:#d9694a}
+  .field input[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:var(--err-strong)}
   .form-msg{margin:1.2rem 0 0;padding:.8rem 1rem;border-radius:6px;font-size:var(--step--1)}
-  .form-msg.ok{background:var(--bg-turq);border:1px solid #d3ede9;color:#255a56}
-  .form-msg.bad{background:#fdeeea;border:1px solid #f6cfc4;color:#8a3418}
+  .form-msg.ok{background:var(--ok-bg);border:1px solid var(--ok-line);color:var(--ok-ink)}
+  .form-msg.bad{background:var(--err-bg);border:1px solid var(--err-line);color:var(--err-ink)}
   button[disabled]{opacity:.6;cursor:progress}
 
   /* ---- Details column ---- */
@@ -185,7 +195,7 @@
   .menu{position:absolute;top:calc(100% + .8rem);left:50%;transform:translateX(-50%);
     min-width:11.5rem;list-style:none;margin:0;padding:.4rem;display:none;
     background:var(--bg);border:1px solid var(--line);border-radius:6px;
-    box-shadow:0 12px 30px rgba(29,27,46,.13);z-index:50}
+    box-shadow:0 12px 30px var(--shadow);z-index:50}
   /* With JS off these keep the menus reachable by hover and by keyboard;
      js/nav.js adds the `js` class and then drives aria-expanded itself. */
   :root:not(.js) .has-menu:hover > .menu,
@@ -210,7 +220,7 @@
 
   .site-menu{position:absolute;top:100%;left:0;right:0;display:none;
     background:var(--bg);border-bottom:1px solid var(--line);
-    box-shadow:0 16px 34px rgba(29,27,46,.14);
+    box-shadow:0 16px 34px var(--shadow);
     padding:.6rem var(--gutter) 1.3rem;max-height:calc(100svh - 4.6rem);overflow-y:auto}
   .site-menu.is-open{display:block}
   .sm-group{padding-block:.75rem;border-bottom:1px solid var(--line)}
@@ -224,9 +234,59 @@
 
   @media(max-width:1000px){
     .nav{gap:.7rem}
-    .nav a.nav-link,.has-menu,.nav .theme-link{display:none}
+    .nav a.nav-link,.has-menu{display:none}
     .menu-toggle{display:inline-flex}
   }
+
+  /* ---- Dark theme ----
+     Only the tokens change; every rule below is written against them. The
+     no-preference default follows the operating system, and an explicit choice
+     stored by the theme button wins over it in both directions. */
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#2b2557; --bg-tint:#352e69; --bg-turq:#26454c;
+    --ink:#f4f2fc; --ink-dim:#c3bce0; --line:rgba(255,255,255,.14);
+    --violet:#a79ee4; --violet-deep:#c5bef2; --turq-deep:#8fdbd7;
+    --card:#3d3578; --line-strong:rgba(255,255,255,.3);
+    --ok-bg:#24444a; --ok-line:#356b6f; --ok-ink:#b6e7e2;
+    --err-bg:#4a2b24; --err-line:#7a4437; --err-ink:#f5bfae; --err-strong:#c9705a;
+    --shadow:rgba(0,0,0,.5);
+    }
+    :root:not([data-theme="light"]) .brand img,
+    :root:not([data-theme="light"]) .site-foot img{filter:brightness(0) invert(1)}
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --bg:#2b2557; --bg-tint:#352e69; --bg-turq:#26454c;
+    --ink:#f4f2fc; --ink-dim:#c3bce0; --line:rgba(255,255,255,.14);
+    --violet:#a79ee4; --violet-deep:#c5bef2; --turq-deep:#8fdbd7;
+    --card:#3d3578; --line-strong:rgba(255,255,255,.3);
+    --ok-bg:#24444a; --ok-line:#356b6f; --ok-ink:#b6e7e2;
+    --err-bg:#4a2b24; --err-line:#7a4437; --err-ink:#f5bfae; --err-strong:#c9705a;
+    --shadow:rgba(0,0,0,.5);
+  }
+  :root[data-theme="dark"] .brand img,
+  :root[data-theme="dark"] .site-foot img{filter:brightness(0) invert(1)}
+
+  /* ---- Theme toggle ---- */
+  .theme-toggle{background:none;border:1px solid var(--line);border-radius:20px;
+    width:2.3rem;height:2.3rem;padding:0;display:inline-flex;align-items:center;
+    justify-content:center;color:var(--ink-dim);cursor:pointer;flex:none;
+    transition:color .2s,border-color .2s}
+  .theme-toggle:hover{color:var(--violet);border-color:var(--violet)}
+  .theme-toggle svg{width:1.05rem;height:1.05rem;fill:none;stroke:currentColor;
+    stroke-width:1.8;stroke-linecap:round}
+  /* moon while light (click for dark), sun while dark */
+  .theme-toggle .ic-sun{display:none}
+  :root[data-theme="dark"] .theme-toggle .ic-moon{display:none}
+  :root[data-theme="dark"] .theme-toggle .ic-sun{display:block}
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]) .theme-toggle .ic-moon{display:none}
+    :root:not([data-theme="light"]) .theme-toggle .ic-sun{display:block}
+  }
+  /* the button can only work with JS, so hide it when there is none */
+  :root:not(.js) .theme-toggle{display:none}
 </style>
 </head>
 <body>
@@ -262,6 +322,12 @@
       <a class="nav-link" href="/tango-in-london">Tango in London</a>
       <a class="nav-link" href="/contact" aria-current="page">Contact Us</a>
       <a class="nav-link" href="https://www.tangointegral.com/blog">Blog</a>
+      <button class="theme-toggle" type="button" aria-label="Switch between light and dark" title="Switch theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path class="ic-moon" d="M21 12.9A9 9 0 1111.1 3a7 7 0 009.9 9.9z" fill="currentColor" stroke="none"/>
+          <g class="ic-sun"><circle cx="12" cy="12" r="4.1"/><path d="M12 2.7v2.1M12 19.2v2.1M4.8 12H2.7M21.3 12h-2.1M6.7 6.7L5.2 5.2M18.8 18.8l-1.5-1.5M17.3 6.7l1.5-1.5M5.2 18.8l1.5-1.5"/></g>
+        </svg>
+      </button>
       <a class="btn btn-solid" href="#form">Message us</a>
     </nav>
   </div>
