@@ -286,6 +286,30 @@ The Wix post had no images of its own — its social image was a YouTube thumbna
 cabeceo actually happens. Published and updated dates are preserved in the
 `BlogPosting` schema (22 March 2018, updated 8 July 2020).
 
+### Adding a post
+The plan is roughly one a month, with the newsletter going out to carry the
+Saturday dates and that month's post. To add one:
+
+1. Copy `post/art-of-cabeceo-part-1-by-the-leader.html` to
+   `post/<slug>.html`. The slug becomes the URL, so choose it once and keep it.
+2. Change the `<title>`, meta description, canonical, `og:*`, the `BlogPosting`
+   block (headline, description, `datePublished`, image) and the body.
+3. Add a card to the list in `blog.html`, newest first.
+4. Add the URL to `sitemap.xml`.
+
+There is no build step, so nothing generates the index — the card in `blog.html`
+is written by hand. With one post a month that is fine; past a dozen it is worth
+revisiting.
+
+### Video, without the tracking
+The cabeceo post embeds a YouTube video **behind a click-to-load facade**: a
+self-hosted still (28 KB) with a play button, which swaps in a
+`youtube-nocookie.com` iframe only when someone presses play. A plain embed would
+put Google's iframe and cookies on the page for every reader, including the ones
+who never watch — and it would pull about a megabyte of player.
+
+The video is **not ours** — it is by Bournemouth Tango — and the caption says so.
+
 ## Findability
 Measured against the deployed site, not assumed.
 

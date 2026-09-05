@@ -165,6 +165,9 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   /* ---- Header ---- */
   .site-head{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
   .head-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+  /* flex:none so the logo is never squeezed when the nav runs long —
+     flexbox would otherwise shrink the brand instead of the menu */
+  .brand{flex:none}
   .brand img{height:40px;width:auto}
   .nav{display:flex;align-items:center;gap:1.6rem}
   .nav a.nav-link{text-decoration:none;font-size:var(--step--1);letter-spacing:.01em;color:var(--ink);transition:color .2s}

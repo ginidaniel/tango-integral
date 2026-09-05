@@ -88,6 +88,9 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   /* ---- Header ---- */
   .site-head{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
   .head-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+  /* flex:none so the logo is never squeezed when the nav runs long —
+     flexbox would otherwise shrink the brand instead of the menu */
+  .brand{flex:none}
   .brand img{height:40px;width:auto}
   .nav{display:flex;align-items:center;gap:1.6rem}
   .nav a.nav-link{text-decoration:none;font-size:var(--step--1);letter-spacing:.01em;color:var(--ink);transition:color .2s}
@@ -298,6 +301,25 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   .post-card h2 a:hover{color:var(--violet)}
   .post-card p{color:var(--ink-dim);font-size:var(--step--1);margin:0}
   .post-card .byline{margin-top:.8rem}
+
+  /* ---- Video, loaded only on click ----
+     A plain YouTube embed would put Google's iframe and cookies on the page
+     before anyone asks for the video. This shows a self-hosted still and only
+     builds the (nocookie) player when the visitor presses play. It is also
+     faster: 28 KB instead of a megabyte of player. */
+  .video{margin:2rem 0 .6rem}
+  .video-frame{position:relative;width:100%;aspect-ratio:16/9;border:0;padding:0;
+    border-radius:8px;overflow:hidden;background:#000;cursor:pointer;display:block}
+  .video-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .25s}
+  .video-frame:hover img{opacity:.82}
+  .video-frame .play{position:absolute;inset:0;display:grid;place-items:center}
+  .video-frame .play span{width:4.2rem;height:3rem;border-radius:8px;background:rgba(20,16,30,.72);
+    display:grid;place-items:center;transition:background .2s}
+  .video-frame:hover .play span{background:var(--coral)}
+  .video-frame .play svg{width:1.5rem;height:1.5rem;fill:#fff}
+  .video-frame:hover .play svg{fill:var(--ink)}
+  .video iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:8px;display:block}
+  .video figcaption{color:var(--ink-dim);font-size:var(--step--1);margin-top:.7rem}
 </style>
 </head>
 <body>
@@ -356,6 +378,16 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   <article class="wrap post-body">
     <h2>&ldquo;Cabeceo &mdash; what are you talking about?&rdquo;</h2>
     <p>In social tango, the cabeceo is the most common invitation to dance. The method: a dancer, playing the leader role, looks for eye contact with the desired follower. When it happens, the leader nods as an invitation to the dance floor. If the follower agrees, they nod back, keeping the eye contact. After that the leader goes to meet their dance partner.</p>
+
+
+    <figure class="video">
+      <button class="video-frame" type="button" data-yt="0c89r9vVr9A"
+              aria-label="Play the video: Art of the Cabeceo (Mirada) — Invitation to dance">
+        <img src="/img/cabeceo-video-thumb.jpg" alt="A leader catching a follower's eye across a milonga" width="480" height="270">
+        <span class="play" aria-hidden="true"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></span>
+      </button>
+      <figcaption>&ldquo;Art of the Cabeceo (Mirada) &mdash; Invitation to dance&rdquo;, by <a href="https://www.youtube.com/watch?v=0c89r9vVr9A" target="_blank" rel="noopener">Bournemouth Tango</a>. Press play to load it from YouTube.</figcaption>
+    </figure>
 
     <h2>Where does it come from?</h2>
     <p>The cabeceo is really an Argentine cultural thing that goes beyond tango. Eye contact followed by nodding is a traditional Argentine seduction manner. One was able to see it at almost any social event early last century, when the golden age of tango took place. This cultural behaviour still takes place over there, although it is not often seen among the young crowd.</p>
@@ -426,6 +458,23 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
     </div>
   </div>
 </footer>
+
+<script>
+/* Swap the still for the real player on click. youtube-nocookie.com keeps
+   YouTube from writing its usual cookies, and nothing from Google loads at all
+   until someone actually asks for the video. */
+document.querySelectorAll(".video-frame").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    var id = btn.dataset.yt;
+    var frame = document.createElement("iframe");
+    frame.src = "https://www.youtube-nocookie.com/embed/" + id + "?autoplay=1&rel=0";
+    frame.title = "Art of the Cabeceo (Mirada) — Invitation to dance";
+    frame.allow = "accelerometer; autoplay; encrypted-media; picture-in-picture";
+    frame.allowFullscreen = true;
+    btn.replaceWith(frame);
+  });
+});
+</script>
 <script src="/js/nav.js" defer></script>
 </body>
 </html>
