@@ -326,7 +326,9 @@ URLs so SEO/rankings carry over.
 - [ ] Decide the beginners format, then add it to `classes.html`
 - [x] Redistribute the main nav — About us / Classes / Tango experiences
 - [x] Mobile menu — hamburger panel, generated from the desktop nav
-- [ ] Bios for Eleonora and Dana — requested, waiting
+- [x] Bio for Eleonora
+- [ ] Bio for Dana — still the one-line placeholder, and now visibly shorter
+      than Eleonora's on `/team`
 - [ ] Add Dana's barre cycle — coming in a few days
 - [ ] Consider a dedicated Paciencia page (the Wix one has DJ, transport and commuter detail this page only summarises)
 - [x] Download & re-host images (now self-hosted in `img/`)
@@ -335,5 +337,7 @@ URLs so SEO/rankings carry over.
 - [x] Prepare for the weekly endpoint (`&offset=0` on tango-in-london; classes
       stays unpaginated on purpose) — verify both pages the day it goes live
 - [ ] Migrate blog posts + set 301 redirects
+- [ ] `_redirects` should include `/indexDark` and `/indexDark.html` -> `/`
+      (Cloudflare currently answers those with the home page at 200)
 - [ ] Extract shared CSS to `css/styles.css` once design is locked
 - [ ] Full redirect map old Wix URLs → new URLs before go-live
