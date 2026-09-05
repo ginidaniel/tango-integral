@@ -341,25 +341,26 @@ Signups go straight into **EmailOctopus**, so consent and unsubscribe are handle
 there rather than by hand. Copying addresses out of an inbox does not scale and
 loses the consent record, which matters under UK GDPR/PECR.
 
-EmailOctopus only offers a **JavaScript embed** — there is no plain-HTML option
-in their form builder. Loading it revealed what it actually pulls in:
+EmailOctopus only offers a **JavaScript embed** — there is no plain-HTML option.
+It posts to `https://eocampaign1.com/form/55e9988c-…` with `field_0` (email),
+`field_1`, `field_2`, a `consent` checkbox and a honeypot.
 
-```
-form action  https://eocampaign1.com/form/55e9988c-…
-fields       field_0 (email) · field_1 · field_2 · consent · honeypot
-and also     Google reCAPTCHA — recaptcha/api.js, a gstatic script, two iframes
-```
+**The captcha is turned off in the EmailOctopus form settings, and that is what
+makes the footer placement acceptable.** With it on, the widget pulls in Google
+reCAPTCHA — `recaptcha/api.js`, a gstatic script and two iframes — on every page
+carrying the form, which is what would force a cookie banner. With it off:
+verified no Google scripts, no iframes and **no cookies at all**. Spam is held
+off by the honeypot plus EmailOctopus's double opt-in, so a bot signup never
+becomes a confirmed subscriber. If spam ever does become a problem, turning the
+captcha back on means moving the embed off the footer again.
 
-The form posts `g-recaptcha-response`, so a hand-built form without reCAPTCHA
-would almost certainly be rejected — which rules out simply reusing the endpoint.
+**A trap when testing this:** the bundle *contains* the reCAPTCHA code either
+way and only activates it from config, and the browser caches the script hard.
+A stale copy will keep loading reCAPTCHA long after the setting changed. Test
+with a cache-busting query string on the script URL, or you will be reading the
+old behaviour.
 
-**So the embed lives on `/contact#newsletter` and nowhere else**, with a
-"Newsletter" link in every footer pointing at it. In the site-wide footer it
-would have loaded Google's reCAPTCHA — and its cookies — on all ten pages, which
-is exactly what would force a cookie banner. Contained to one page, the other
-nine stay free of third-party scripts. A few `!important` overrides pull the
-widget's typography and controls back in line with the site.
-
+A few `!important` overrides pull the widget's typography and controls into line.
 The fields shown are whatever the EmailOctopus form is set to; trimming it to
 email only is a change there, not here, and fewer fields means more signups.
 

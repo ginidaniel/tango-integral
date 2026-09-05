@@ -295,21 +295,26 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   /* the button can only work with JS, so hide it when there is none */
   :root:not(.js) .theme-toggle{display:none}
 
+
   /* ---- Newsletter (EmailOctopus embed) ---- */
-  /* The widget brings its own markup and, with it, Google reCAPTCHA — which is
-     why it lives on this page only and not in the site-wide footer. These rules
-     pull its typography and controls back in line with the rest of the site. */
-  .newsletter{background:var(--bg-tint);padding-block:clamp(2.5rem,6vw,4rem);margin-top:1rem}
-  .newsletter .lead{margin-bottom:1.6rem}
-  .eo-embed{max-width:32rem}
+  /* The widget brings its own markup; these rules pull its typography and
+     controls back in line with the site. It loads no cookies and, with the
+     captcha turned off in EmailOctopus, no Google scripts either — which is why
+     it is safe to carry on every page. */
+  .foot-news{border-bottom:1px solid var(--line);padding-bottom:2.2rem;margin-bottom:2.2rem;
+    display:grid;gap:1.4rem}
+  @media(min-width:860px){.foot-news{grid-template-columns:.9fr 1.1fr;gap:3rem;align-items:start}}
+  .foot-news h4{margin-bottom:.5rem}
+  .foot-news p{margin:0;color:var(--ink-dim);font-size:var(--step--1);max-width:40ch}
   .eo-embed *{font-family:"Inter",system-ui,sans-serif !important}
-  .eo-embed form{background:none !important;border:0 !important;padding:0 !important;box-shadow:none !important}
+  .eo-embed form{background:none !important;border:0 !important;padding:0 !important;box-shadow:none !important;margin:0 !important}
   .eo-embed input[type="email"],.eo-embed input[type="text"]{
-    font-size:var(--step-0) !important;color:var(--ink) !important;background:var(--card) !important;
-    border:1px solid var(--line) !important;border-radius:4px !important;padding:.65rem .8rem !important}
+    font-size:var(--step--1) !important;color:var(--ink) !important;background:var(--card) !important;
+    border:1px solid var(--line) !important;border-radius:4px !important;padding:.6rem .75rem !important}
   .eo-embed button,.eo-embed input[type="submit"]{
     background:var(--coral) !important;color:var(--ink) !important;border:0 !important;
-    border-radius:3px !important;font-weight:600 !important;padding:.72rem 1.25rem !important;cursor:pointer}
+    border-radius:3px !important;font-weight:600 !important;font-size:var(--step--1) !important;
+    padding:.65rem 1.15rem !important;cursor:pointer}
   .eo-embed label,.eo-embed p,.eo-embed h1,.eo-embed h2,.eo-embed h3{color:var(--ink-dim) !important}
 </style>
 </head>
@@ -469,22 +474,20 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
     </aside>
   </div>
 
-  <section class="newsletter" id="newsletter" aria-labelledby="newsletter-title">
-    <div class="wrap">
-      <p class="eyebrow">Newsletter</p>
-      <h2 id="newsletter-title">Class dates, milongas and the next trip.</h2>
-      <p class="lead">An occasional email — when the Saturday dates are set, when something worth dancing at comes up, and when the Buenos Aires trip opens. Not more than that.</p>
-      <!-- EmailOctopus embed. Subscribers land straight in the list, with the
-           double opt-in and unsubscribe handled there rather than by hand. -->
-      <div class="eo-embed">
-        <script async src="https://eocampaign1.com/form/55e9988c-a91d-11f1-99d6-f92ba149cddb.js" data-form="55e9988c-a91d-11f1-99d6-f92ba149cddb"></script>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer class="site-foot">
   <div class="wrap">
+    <div class="foot-news" id="newsletter">
+      <div>
+        <h4>Newsletter</h4>
+        <p>Class dates, milongas worth going to, and the next Buenos Aires trip. Not more than that.</p>
+      </div>
+      <div class="eo-embed">
+        <script async src="https://eocampaign1.com/form/55e9988c-a91d-11f1-99d6-f92ba149cddb.js" data-form="55e9988c-a91d-11f1-99d6-f92ba149cddb"></script>
+      </div>
+    </div>
+
     <div class="foot-grid">
       <div>
         <img src="/img/logo-wordmark.png" alt="Tango Integral" width="136" height="49" style="margin-bottom:1rem">
@@ -501,7 +504,6 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
           <li><a href="/testimonials">Testimonials</a></li>
           <li><a href="/tango-in-london">Tango in London</a></li>
           <li><a href="/buenos-aires-trip">Buenos Aires trip</a></li>
-          <li><a href="/contact#newsletter">Newsletter</a></li>
           <li><a href="https://www.tangointegral.com/blog">Blog</a></li>
         </ul>
       </div>
