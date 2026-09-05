@@ -4,3 +4,6 @@ node_modules/
 *.log
 .vscode/
 .idea/
+
+# pristine originals scraped from Wix — kept locally, not in git
+.originals/

@@ -11,8 +11,34 @@ host, and easy to keep in version control.
 | `indexDark.html`        | Home — dark theme variant (violet base). Alternate idea / dark mode |
 | `tango-in-london.html`  | "Tango in London" — this week's milongas (dynamic JS)  |
 | `data/milongas.json`    | Template for the live milonga data source              |
+| `img/`                  | Every image the site uses — self-hosted, no CDN         |
 
 The two home pages link to each other via the ◐ / ◑ toggle in the header.
+
+## Images
+
+All images live in **one flat `img/` folder at the repo root**, and every page
+references them with a **root-relative** path — `/img/daniel-eleonora-studio.jpg`,
+with the leading slash. That path resolves identically on `localhost` and on
+`tangointegral.com`, so the site deploys as-is: no rewriting, no rearranging.
+
+Two rules keep it that way:
+
+1. **Filenames are web-safe** — lowercase, hyphens, no spaces, no accents, no
+   parentheses. macOS is forgiving about `In class 2.png`; the Linux box serving
+   the site is case-sensitive and will 404 on it.
+2. **Nothing points at `static.wixstatic.com` any more.** If Wix is ever turned
+   off, the site is unaffected.
+
+Because paths are root-relative, opening `index.html` by double-clicking no
+longer works (`/img/` would resolve to the root of your disk) — use the local
+server below. For the same reason, don't deploy to a **GitHub Pages project
+site** (`user.github.io/repo/`), which serves under a sub-path. Cloudflare Pages
+on the real domain is fine.
+
+The pristine full-size files scraped from Wix are kept in `.originals/`, which is
+gitignored — the versions in `img/` are resized and re-compressed (30 MB → 9 MB).
+Regenerate from `.originals/` if you ever need a bigger crop.
 
 ## Brand palette (from the logo)
 - Violet  `#52498D`  — brand
@@ -37,9 +63,7 @@ Each item is a weekly-recurring event:
 If the app's API doesn't, we put a tiny Cloudflare Worker in front of it as a proxy.
 
 ## Preview locally
-Because pages are self-contained, you can just open `index.html` in a browser.
-For anything that fetches files (e.g. once `CONFIG.source` points to the JSON),
-run a local server so `fetch` works:
+Always through a server — root-relative image paths and `fetch` both need one:
 ```
 python3 -m http.server 8000
 # then open http://localhost:8000
@@ -65,8 +89,8 @@ URLs so SEO/rankings carry over.
 - [ ] Lock the design (light vs dark as primary)
 - [ ] Build `classes.html` and `contact.html` (need real timetable + prices)
 - [ ] Contact form via Formspree / Netlify Forms
-- [ ] Download & re-host images (currently loaded from Wix CDN)
-- [ ] White/mono logo for dark backgrounds
+- [x] Download & re-host images (now self-hosted in `img/`)
+- [x] White/mono logo for dark backgrounds (CSS filter on `indexDark.html`)
 - [ ] Connect the milongas widget to the app API (+ Worker proxy if needed)
 - [ ] Point "Points of Tango — London" to the real page/URL
 - [ ] Migrate blog posts + set 301 redirects
