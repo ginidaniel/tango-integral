@@ -435,6 +435,11 @@
  * from.seconds is London wall-clock time encoded as UTC, so it is read back as
  * UTC and printed as-is. Same as tango-in-london.html — see the README. */
 (function () {
+  /* Deliberately no `offset` parameter, unlike tango-in-london.html. Once the
+     weekly endpoint is live, offset pages the response one week at a time, and
+     the next class dates are often further out than that — today they are the
+     5th and the 19th. Without pagination the API returns everything, which is
+     what this needs. */
   const SOURCE = "https://api.pointsoftango.app/events?country=GBR&region=ENG_GLN";
   const CLASS_START = "17:30", CLASS_END = "19:00";
   const el = document.getElementById("next-dates");

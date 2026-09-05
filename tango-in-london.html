@@ -159,6 +159,7 @@
       <a class="nav-link" href="/tango-in-london" aria-current="page">Tango in London</a>
       <a class="nav-link" href="/contact">Contact Us</a>
       <a class="nav-link" href="https://www.tangointegral.com/blog">Blog</a>
+      <a class="btn btn-solid" href="https://www.pointsoftango.com/events/london?view=calendar" target="_blank" rel="noopener">Full calendar</a>
     </nav>
   </div>
 </header>
@@ -204,10 +205,10 @@
 <script>
 /* This week's London milongas, from the Points of Tango API.
  *
- * The endpoint returns every listed London event — 175 of them at the time of
- * writing, about a year ahead, in one 424 KB response. We filter to the current
- * week here. When the weekly endpoint exists, swap CONFIG.source for it: the
- * filter below is then a harmless no-op, so nothing else has to change.
+ * The endpoint currently returns every listed London event — 175 of them at the
+ * time of writing, about a year ahead, in one 424 KB response — so we filter to
+ * the coming week here. `offset=0` on the URL asks for just this week: it does
+ * nothing until the weekly endpoint is live, and needs no change here when it is.
  *
  * Response shape: { responseCode, message, hits, results: [event] }
  * Event fields we use:
@@ -217,7 +218,12 @@
  * Times arrive as London wall-clock time encoded as UTC, so they are read back
  * as UTC and shown as-is — see the note on TZ below. */
 const CONFIG = {
-  source: "https://api.pointsoftango.app/events?country=GBR&region=ENG_GLN",
+  /* offset=0 means "this week". The parameter is inert until the weekly
+     endpoint ships — without pagination the API returns everything — and from
+     then on it narrows the response to one week, which is all this page shows.
+     filterToWeek stays on either way: today it does the narrowing, afterwards
+     it is a harmless no-op. */
+  source: "https://api.pointsoftango.app/events?country=GBR&region=ENG_GLN&offset=0",
   filterToWeek: true
 };
 

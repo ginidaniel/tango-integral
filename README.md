@@ -73,8 +73,19 @@ the button under the heading and the credit under the listings both go to
 The endpoint returns *every* listed London event: 175 of them, about a year
 ahead, in one 424 KB response. The widget filters to a **rolling seven days from
 today** — deliberately not the Mon–Sun calendar week, because on a Saturday that
-would be five days of events that already happened. When the weekly endpoint
-exists, change `CONFIG.source` and nothing else: the filter becomes a no-op.
+would be five days of events that already happened.
+
+`tango-in-london.html` already sends **`&offset=0`**, which the API ignores today
+and will read as "this week" once the weekly endpoint is live. Nothing needs
+changing here when that happens; the client-side filter simply becomes a no-op.
+
+**`classes.html` deliberately does not send `offset`.** It reads the same API for
+the next Paciencia dates, and those are often more than a week out — as of
+writing, the 5th and the 19th. Paginating a week at a time would hide the second
+one. Its contract is the other half of the same statement: without pagination the
+API returns everything. If that ever stops being true, the next-dates block on
+`classes.html` falls back to "two Saturdays a month" and a link out, so it
+degrades rather than breaking — but the dates would quietly disappear.
 
 Four things the widget has to do because of how the data arrives:
 
@@ -266,16 +277,14 @@ URLs so SEO/rankings carry over.
 - [ ] Decide the beginners format, then add it to `classes.html`
 - [x] Redistribute the main nav — About us and Classes dropdowns
 - [ ] Build a mobile menu (nothing but the CTA shows below the breakpoint)
-- [ ] `tango-in-london.html` has no CTA button in its nav (removed back when
-      every "free taster" button went; the CTA now says "Come to a class",
-      so it could come back)
-- [ ] Bios for Eleonora and Dana (the old Wix team page had none either)
-- [ ] Add Dana's barre cycle once dates exist
+- [ ] Bios for Eleonora and Dana — requested, waiting
+- [ ] Add Dana's barre cycle — coming in a few days
 - [ ] Consider a dedicated Paciencia page (the Wix one has DJ, transport and commuter detail this page only summarises)
 - [x] Download & re-host images (now self-hosted in `img/`)
 - [x] White/mono logo for dark backgrounds (CSS filter on `indexDark.html`)
 - [x] Connect the milongas widget to the Points of Tango API (no proxy needed)
-- [ ] Swap `CONFIG.source` for the weekly endpoint once it exists (drops a 424 KB payload)
+- [x] Prepare for the weekly endpoint (`&offset=0` on tango-in-london; classes
+      stays unpaginated on purpose) — verify both pages the day it goes live
 - [ ] Migrate blog posts + set 301 redirects
 - [ ] Extract shared CSS to `css/styles.css` once design is locked
 - [ ] Full redirect map old Wix URLs → new URLs before go-live
