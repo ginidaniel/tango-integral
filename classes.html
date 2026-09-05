@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classes — Argentine Tango in Central London | Tango Integral</title>
+<meta name="description" content="Argentine tango classes two Saturdays a month at Thistle London Bloomsbury Park, one minute from Russell Square. Class 5.30–7pm, then the Paciencia milonga until 11pm. Private lessons available.">
+<link rel="canonical" href="https://www.tangointegral.com/classes">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tango Integral">
+<meta property="og:title" content="Classes — Argentine Tango in Central London">
+<meta property="og:description" content="Two Saturdays a month by Russell Square: class at 5.30pm, then the Paciencia milonga until 11pm.">
+<meta property="og:url" content="https://www.tangointegral.com/classes">
+<meta property="og:image" content="https://www.tangointegral.com/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tangointegral">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* Brand palette — from the logo */
+    --violet:#52498d; --violet-deep:#413a73;
+    --turq:#66c9c4; --turq-deep:#33a49e;
+    --coral:#ee7d61; --coral-deep:#e2694b;
+    --bg:#ffffff; --bg-tint:#f5f3fb; --bg-turq:#ecf7f6;
+    --ink:#1d1b2e; --ink-dim:#5c5772; --line:#e7e4f0;
+
+    --step--1:.86rem; --step-0:1.06rem; --step-1:1.32rem;
+    --step-2:clamp(1.5rem,1.1rem + 1.6vw,2rem);
+    --step-3:clamp(2rem,1.4rem + 2.6vw,2.9rem);
+    --wrap:1080px; --gutter:clamp(1.15rem,5vw,2.75rem);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:var(--step-0);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.12;margin:0;color:var(--ink)}
+  h1{font-size:var(--step-3);letter-spacing:-.01em}
+  h2{font-size:var(--step-3);letter-spacing:-.01em}
+  h3{font-size:var(--step-1);font-weight:600}
+  p{margin:0 0 1rem}
+  a{color:var(--violet)}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+  .skip{position:absolute;left:-9999px;top:0}
+  .skip:focus{left:1rem;top:1rem;z-index:99;background:var(--coral);color:var(--ink);padding:.6rem 1rem;border-radius:4px}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+
+  .btn{display:inline-block;text-decoration:none;font-weight:600;font-size:var(--step--1);padding:.72rem 1.25rem;border-radius:3px;border:0;font-family:inherit;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+  .btn-solid{background:var(--coral);color:var(--ink)}
+  .btn-solid:hover{background:var(--coral-deep);color:#fff}
+  .btn-outline{border:1px solid var(--violet);color:var(--violet);background:transparent}
+  .btn-outline:hover{background:var(--violet);color:#fff}
+
+  /* ---- Header ---- */
+  .site-head{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .head-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+  .brand img{height:40px;width:auto}
+  .nav{display:flex;align-items:center;gap:1.6rem}
+  .nav a.nav-link{text-decoration:none;font-size:var(--step--1);letter-spacing:.01em;color:var(--ink);transition:color .2s}
+  .nav a.nav-link:hover{color:var(--violet)}
+  .nav a.nav-link[aria-current="page"]{color:var(--violet);border-bottom:2px solid var(--turq)}
+  @media(max-width:760px){.nav{gap:1rem}.nav .nav-link,.has-menu{display:none}}
+
+  /* ---- Page head ---- */
+  .page-head{padding-block:clamp(2.5rem,6vw,4rem) 0}
+  .eyebrow{color:var(--violet);font-family:"Fraunces",serif;font-style:italic;font-size:var(--step-1);margin-bottom:.3rem}
+  .lead{color:var(--ink-dim);max-width:58ch;font-size:var(--step-1);margin-top:.9rem}
+
+  section{padding-block:clamp(2.5rem,6vw,4rem)}
+  .tint{background:var(--bg-tint)}
+  .lead-line{color:var(--ink-dim);max-width:62ch;margin-top:1rem}
+
+  /* ---- Next dates (live) ---- */
+  .dates{margin-top:2rem;border:1px solid var(--line);border-radius:8px;padding:1.4rem 1.6rem}
+  .dates h2{font-size:var(--step-1);font-family:"Inter",sans-serif;font-weight:600;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--ink-dim);font-size:var(--step--1);margin-bottom:.8rem}
+  .date-list{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.6rem 1.6rem}
+  .date-list li{font-weight:600;font-size:var(--step-1);font-family:"Fraunces",serif}
+  .date-list .t{font-family:"Inter",sans-serif;font-weight:400;font-size:var(--step--1);color:var(--ink-dim);margin-left:.4rem}
+  .dates .fallback{margin:0;color:var(--ink-dim);font-size:var(--step--1)}
+
+  /* ---- The Saturday timeline ---- */
+  .timeline{list-style:none;padding:0;margin:2.2rem 0 0;border-top:1px solid var(--line)}
+  .timeline li{display:grid;grid-template-columns:auto 1fr;gap:.3rem 1.6rem;align-items:baseline;
+    padding-block:1.3rem;border-bottom:1px solid var(--line)}
+  @media(min-width:700px){.timeline li{grid-template-columns:9rem 1fr}}
+  .timeline .slot{font-variant-numeric:tabular-nums;font-weight:600;color:var(--turq-deep)}
+  .timeline h3{margin-bottom:.2rem}
+  .timeline p{margin:0;color:var(--ink-dim)}
+
+  /* ---- Prices ---- */
+  .prices{display:grid;gap:1rem;margin-top:2rem}
+  @media(min-width:640px){.prices{grid-template-columns:repeat(3,1fr)}}
+  .price{border:1px solid var(--line);border-radius:8px;padding:1.2rem;background:#fff}
+  .price.best{border-color:var(--turq);box-shadow:0 0 0 1px var(--turq)}
+  .price .what{font-size:var(--step--1);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-dim);font-weight:600}
+  .price .amount{font-family:"Fraunces",serif;font-size:var(--step-2);margin-top:.2rem}
+  .price .note{font-size:var(--step--1);color:var(--ink-dim);margin:0}
+  .book-row{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin-top:1.8rem}
+
+  /* ---- Split blocks ---- */
+  .split{display:grid;gap:clamp(2rem,5vw,3.5rem);align-items:center}
+  @media(min-width:860px){.split{grid-template-columns:1.05fr .95fr}}
+  .split img{border-radius:6px;width:100%;height:100%;object-fit:cover;max-height:420px}
+
+  /* ---- Teachers ---- */
+  /* the photo is a portrait, so it sits beside the cards rather than being
+     squeezed into a wide band that would cut their heads off */
+  .who-grid{display:grid;gap:1.4rem;margin-top:2.2rem}
+  @media(min-width:860px){.who-grid{grid-template-columns:.85fr 1.15fr;gap:2rem}}
+  .pair{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;object-position:center 22%;border-radius:8px}
+  .teachers{display:grid;gap:1.2rem;align-content:start}
+  @media(min-width:640px){.teachers{grid-template-columns:1fr 1fr}}
+  .teacher{border:1px solid var(--line);border-radius:8px;padding:1.4rem;background:#fff}
+  .teacher h3{margin-bottom:.3rem}
+  .teacher p{color:var(--ink-dim);margin:0 0 .8rem}
+  .ig{display:inline-flex;align-items:center;gap:.4rem;font-size:var(--step--1);font-weight:600;
+    text-decoration:none;color:var(--violet)}
+  .ig:hover{color:var(--violet-deep)}
+  .ig svg{width:1em;height:1em;flex:none}
+
+  /* ---- Venue ---- */
+  .venue-grid{display:grid;gap:1.5rem;margin-top:2rem}
+  @media(min-width:760px){.venue-grid{grid-template-columns:1fr 1fr}}
+  .venue-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:1.4rem}
+  .venue-card h3{margin-bottom:.5rem}
+  .venue-card p{margin:0 0 .5rem;color:var(--ink-dim)}
+  address{font-style:normal;color:var(--ink-dim)}
+
+  /* ---- Final CTA ---- */
+  .final{background:var(--violet);text-align:center}
+  .final h2{max-width:20ch;margin-inline:auto;color:#fff}
+  .final p{color:#e5e1f4;max-width:50ch;margin-inline:auto;margin-top:1rem}
+  .final .btn-solid{margin-top:1.8rem;padding:1rem 1.8rem;font-size:var(--step-0)}
+
+  /* ---- Footer ---- */
+  .site-foot{background:var(--bg-tint);border-top:1px solid var(--line);padding-block:3.5rem 2.5rem}
+  .foot-grid{display:grid;gap:2rem}
+  @media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+  .site-foot h4{font-family:"Inter",sans-serif;font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);margin:0 0 .9rem;font-weight:600}
+  .site-foot a{color:var(--ink);text-decoration:none}
+  .site-foot a:hover{color:var(--violet)}
+  .foot-links{list-style:none;padding:0;margin:0;display:grid;gap:.55rem}
+  .socials{display:flex;gap:1rem;margin-top:.4rem}
+  .socials a{font-size:var(--step--1);color:var(--ink-dim)}
+  .foot-bar{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.6rem;justify-content:space-between;color:var(--ink-dim);font-size:var(--step--1)}
+
+  /* ---- Nav dropdowns ---- */
+  .has-menu{position:relative}
+  .menu-trigger{background:none;border:0;padding:0;font:inherit;font-size:var(--step--1);
+    letter-spacing:.01em;color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;
+    gap:.34rem;padding:.35rem 0;transition:color .2s}
+  .menu-trigger:hover{color:var(--violet)}
+  .menu-trigger.is-current{color:var(--violet);border-bottom:2px solid var(--turq)}
+  .caret{width:.36rem;height:.36rem;border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;transform:translateY(-.12em) rotate(45deg);transition:transform .2s}
+  .menu-trigger[aria-expanded="true"] .caret{transform:translateY(.06em) rotate(-135deg)}
+  /* The panel sits below the trigger with a gap. ::before bridges that gap with
+     an invisible strip so the pointer never actually leaves .has-menu on the way
+     down — without it, mouseleave fires mid-travel and the menu shuts before you
+     can reach it. */
+  .menu::before{content:"";position:absolute;left:0;right:0;top:-.9rem;height:.9rem}
+  .menu{position:absolute;top:calc(100% + .8rem);left:50%;transform:translateX(-50%);
+    min-width:11.5rem;list-style:none;margin:0;padding:.4rem;display:none;
+    background:var(--bg);border:1px solid var(--line);border-radius:6px;
+    box-shadow:0 12px 30px rgba(29,27,46,.13);z-index:50}
+  /* With JS off these keep the menus reachable by hover and by keyboard;
+     js/nav.js adds the `js` class and then drives aria-expanded itself. */
+  :root:not(.js) .has-menu:hover > .menu,
+  :root:not(.js) .has-menu:focus-within > .menu,
+  .menu-trigger[aria-expanded="true"] + .menu{display:block}
+  .menu a{display:block;padding:.46rem .7rem;border-radius:4px;text-decoration:none;
+    font-size:var(--step--1);color:var(--ink);white-space:nowrap}
+  .menu a:hover{background:var(--bg-tint);color:var(--violet)}
+  .menu a[aria-current="page"]{color:var(--violet);font-weight:600}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="/" aria-label="Tango Integral home">
+      <img src="/img/logo-wordmark.png" alt="Tango Integral" width="111" height="40">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <div class="has-menu">
+        <button class="nav-link menu-trigger" type="button" aria-expanded="false" aria-controls="about-menu">About us<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="about-menu">
+          <li><a href="/team">Team</a></li>
+          <li><a href="/method">Method</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="has-menu">
+        <button class="nav-link menu-trigger is-current" type="button" aria-expanded="false" aria-controls="classes-menu">Classes<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="classes-menu">
+          <li><a href="/classes" aria-current="page">Group Classes</a></li>
+          <li><a href="/private-classes">Private Classes</a></li>
+        </ul>
+      </div>
+      <a class="nav-link" href="/tango-in-london">Tango in London</a>
+      <a class="nav-link" href="/contact">Contact Us</a>
+      <a class="nav-link" href="https://www.tangointegral.com/blog">Blog</a>
+      <a class="btn btn-solid" href="/contact">Come to a class</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <div class="wrap page-head">
+    <p class="eyebrow">Classes</p>
+    <h1>Two Saturdays a month, then we dance.</h1>
+    <p class="lead">One class, twice a month, a minute from Russell Square — and the Paciencia milonga starts the moment it ends. No experience needed, and no partner: we rotate.</p>
+
+    <!-- Dates come from the Points of Tango API so they can't go stale here.
+         See the script at the bottom of the file. -->
+    <div class="dates">
+      <h2>Next dates</h2>
+      <div id="next-dates">
+        <p class="fallback">Loading the next dates…</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- THE SATURDAY -->
+  <section>
+    <div class="wrap">
+      <h2>How a Saturday goes.</h2>
+      <p class="lead-line">The class runs straight into the milonga, in the same room. You can come for the class, for the dancing, or make an evening of both.</p>
+
+      <ol class="timeline">
+        <li>
+          <span class="slot">17:30–19:00</span>
+          <div>
+            <h3>Class</h3>
+            <p>Ninety minutes with Dana and Daniel. We work on the essence of the dance rather than a catalogue of figures, and structure it to be worth the same to leaders and followers.</p>
+          </div>
+        </li>
+        <li>
+          <span class="slot">19:00–23:00</span>
+          <div>
+            <h3>Paciencia milonga</h3>
+            <p>Four hours of dancing with DJ Diego Doigneau. Because it starts at 19:00, just as the afternoon milongas wrap up, you can carry the day straight through — and it ends early enough to catch a train home.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="prices">
+        <div class="price">
+          <p class="what">Class</p>
+          <p class="amount">£15</p>
+          <p class="note">17:30–19:00</p>
+        </div>
+        <div class="price">
+          <p class="what">Milonga</p>
+          <p class="amount">£17</p>
+          <p class="note">£15 in cash on the door</p>
+        </div>
+        <div class="price best">
+          <p class="what">Class &amp; milonga</p>
+          <p class="amount">£25</p>
+          <p class="note">The whole evening</p>
+        </div>
+      </div>
+
+      <div class="book-row">
+        <a class="btn btn-solid" href="https://www.pointsoftango.com/event/paciencia/booking" target="_blank" rel="noopener">Book on Points of Tango</a>
+        <p class="lead-line" style="margin:0;font-size:var(--step--1)">Pre-book online and the first ten bookings get a 2-for-1 drink voucher.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROUP CLASS -->
+  <section class="tint">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">The group class</p>
+        <h2>We teach the essence, not the shapes.</h2>
+        <p class="lead-line">Our classes take apart the subtle, interesting parts of the dance — the embrace, the walk, how two people agree on what happens next — instead of collecting steps. Leaders and followers get the same amount out of the hour and a half, because the material is built that way.</p>
+        <p class="lead-line">Come on your own or bring someone. We rotate partners through the class, so nobody sits out and nobody is stuck.</p>
+      </div>
+      <img src="/img/dana-daniel.jpg" alt="Dana and Daniel dancing in close embrace" width="787" height="1400" loading="lazy">
+    </div>
+  </section>
+
+  <!-- PRIVATE CLASSES -->
+  <section>
+    <div class="wrap split">
+      <img src="/img/in-class-4.jpg" alt="Close work on technique during a Tango Integral lesson" width="1600" height="1200" loading="lazy">
+      <div>
+        <p class="eyebrow">Private lessons</p>
+        <h2>The quickest way to move forward.</h2>
+        <p class="lead-line">Sixty minutes, entirely yours. We work on whatever is actually holding your dancing back — which is rarely what you think it is. Flexible times, and the strongest possible complement to the group class.</p>
+        <p class="lead-line">Privates are taught by <strong>Daniel and Eleonora</strong>. Tell us what you want to work on and who you'd rather work with, and we'll find a time.</p>
+        <p style="margin-top:1.6rem"><a class="btn btn-outline" href="/private-classes">Arrange a private lesson</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEACHERS -->
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Who teaches</p>
+      <h2>Dana and Daniel.</h2>
+      <p class="lead-line">Dana and Daniel teach the Saturday class together — the same two people every time, so nothing has to be explained twice.</p>
+
+      <div class="who-grid">
+      <img class="pair" src="/img/dana-daniel-2.jpg" alt="Dana and Daniel dancing together" width="1278" height="1400" loading="lazy">
+
+      <div class="teachers">
+        <div class="teacher">
+          <h3>Daniel</h3>
+          <p>Argentine, trained in Buenos Aires. Teaches the Saturday class, gives private lessons, and runs the Buenos Aires trips.</p>
+          <a class="ig" href="https://www.instagram.com/dani.gini/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+            @dani.gini
+          </a>
+        </div>
+        <div class="teacher">
+          <h3>Dana</h3>
+          <p>Teaches the Saturday class alongside Daniel.</p>
+          <a class="ig" href="https://www.instagram.com/tangosubtext/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+            @tangosubtext
+          </a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VENUE -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Where</p>
+      <h2>A minute from Russell Square.</h2>
+
+      <div class="venue-grid">
+        <div class="venue-card">
+          <h3>Thistle London Bloomsbury Park</h3>
+          <address>
+            126 Southampton Row<br>
+            London WC1B 5AD
+          </address>
+          <p style="margin-top:.9rem">
+            <a class="btn btn-outline" href="https://www.google.com/maps/search/?api=1&amp;query=Thistle+London+Bloomsbury+Park%2C+126+Southampton+Row%2C+London+WC1B+5AD" target="_blank" rel="noopener">Open in Google Maps</a>
+          </p>
+        </div>
+        <div class="venue-card">
+          <h3>Getting there — and home</h3>
+          <p>One minute from Russell Square station on the Piccadilly line. Holborn and Tottenham Court Road are both a short walk, and buses 59, 68 and 91 stop outside.</p>
+          <p>We finish at 23:00 on purpose: there is still time for the trains out to Brighton, Reading, Cambridge or Oxford.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Come to the next one.</h2>
+      <p>Book the class on Points of Tango, or write to us first if you'd rather ask something before you turn up.</p>
+      <a class="btn btn-solid" href="https://www.pointsoftango.com/event/paciencia/booking" target="_blank" rel="noopener">Book on Points of Tango</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="/img/logo-wordmark.png" alt="Tango Integral" width="136" height="49" style="margin-bottom:1rem">
+        <p style="color:var(--ink-dim);max-width:34ch">Argentine tango classes in London — friendly, professional, and rooted in Buenos Aires.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="foot-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/classes">Classes &amp; times</a></li>
+          <li><a href="/private-classes">Private lessons</a></li>
+          <li><a href="/method">Method</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+          <li><a href="/tango-in-london">Tango in London</a></li>
+          <li><a href="/buenos-aires-trip">Buenos Aires trip</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="foot-links">
+          <li><a href="mailto:info@tangointegral.com">info@tangointegral.com</a></li>
+          <li><a href="https://wa.me/447751672159">WhatsApp +44 7751 672159</a></li>
+          <li>Thistle London Bloomsbury Park, London WC1B 5AD</li>
+        </ul>
+        <div class="socials">
+          <a href="https://www.instagram.com/tangointegral">Instagram</a>
+          <a href="https://www.facebook.com/tangointegral">Facebook</a>
+          <a href="https://www.youtube.com/channel/UCO40L-Ul0BchGnplZlliX-g">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>© Tango Integral Ltd 2025. All rights reserved.</span>
+      <span>Argentine Tango School · London</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Next class dates, from the Points of Tango API.
+ *
+ * The class and the milonga are one listing there (17:30–23:00, domain
+ * "paciencia"), so the dates of the milonga are the dates of the class. Pulling
+ * them live means this page can't drift the way the old Wix timetable did —
+ * it still says "July: 4th & 18th".
+ *
+ * from.seconds is London wall-clock time encoded as UTC, so it is read back as
+ * UTC and printed as-is. Same as tango-in-london.html — see the README. */
+(function () {
+  const SOURCE = "https://api.pointsoftango.app/events?country=GBR&region=ENG_GLN";
+  const CLASS_START = "17:30", CLASS_END = "19:00";
+  const el = document.getElementById("next-dates");
+  if (!el) return;
+
+  const fmtDate = new Intl.DateTimeFormat("en-GB",
+    { timeZone: "UTC", weekday: "short", day: "numeric", month: "short" });
+
+  function fallback(msg) {
+    el.innerHTML = '<p class="fallback">' + msg + '</p>';
+  }
+
+  async function run() {
+    const res = await fetch(SOURCE, { headers: { Accept: "application/json" } });
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    const body = await res.json();
+    const results = (body && body.results) || [];
+    const now = Math.floor(Date.now() / 1000);
+
+    const dates = results
+      .filter(e => e && e.from && e.from.seconds && !e.cancelled)
+      .filter(e => e.domain === "paciencia" || /paciencia/i.test(e.name || ""))
+      .filter(e => e.from.seconds >= now)
+      .sort((a, b) => a.from.seconds - b.from.seconds)
+      .slice(0, 4);
+
+    if (!dates.length) {
+      fallback("The next dates are being confirmed — " +
+               '<a href="/contact">ask us</a> and we\'ll let you know.');
+      return;
+    }
+
+    el.innerHTML = '<ul class="date-list">' + dates.map(e =>
+      "<li>" + fmtDate.format(new Date(e.from.seconds * 1000)) +
+      '<span class="t">' + CLASS_START + "–" + CLASS_END + "</span></li>"
+    ).join("") + "</ul>";
+  }
+
+  run().catch(err => {
+    console.warn("Classes: could not load the next dates.", err);
+    fallback('Two Saturdays a month, 5.30–7pm. ' +
+             '<a href="https://www.pointsoftango.com/event/paciencia/booking" target="_blank" rel="noopener">See the dates on Points of Tango</a>.');
+  });
+})();
+</script>
+<script src="/js/nav.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Team — The Tango Integral Teachers | London</title>
+<meta name="description" content="Meet the Tango Integral team: Daniel (director), Eleonora and Dana. Argentine tango classes and private lessons in central London.">
+<link rel="canonical" href="https://www.tangointegral.com/team">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tango Integral">
+<meta property="og:title" content="Team — The Tango Integral Teachers">
+<meta property="og:description" content="Daniel, Eleonora and Dana — the people teaching Argentine tango at Tango Integral in London.">
+<meta property="og:url" content="https://www.tangointegral.com/team">
+<meta property="og:image" content="https://www.tangointegral.com/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tangointegral">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* Brand palette — from the logo */
+    --violet:#52498d; --violet-deep:#413a73;
+    --turq:#66c9c4; --turq-deep:#33a49e;
+    --coral:#ee7d61; --coral-deep:#e2694b;
+    --bg:#ffffff; --bg-tint:#f5f3fb; --bg-turq:#ecf7f6;
+    --ink:#1d1b2e; --ink-dim:#5c5772; --line:#e7e4f0;
+
+    --step--1:.86rem; --step-0:1.06rem; --step-1:1.32rem;
+    --step-2:clamp(1.5rem,1.1rem + 1.6vw,2rem);
+    --step-3:clamp(2rem,1.4rem + 2.6vw,2.9rem);
+    --wrap:1080px; --gutter:clamp(1.15rem,5vw,2.75rem);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:var(--step-0);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.12;margin:0;color:var(--ink)}
+  h1,h2{font-size:var(--step-3);letter-spacing:-.01em}
+  h3{font-size:var(--step-1);font-weight:600}
+  p{margin:0 0 1rem}
+  a{color:var(--violet)}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+  .skip{position:absolute;left:-9999px;top:0}
+  .skip:focus{left:1rem;top:1rem;z-index:99;background:var(--coral);color:var(--ink);padding:.6rem 1rem;border-radius:4px}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+
+  .btn{display:inline-block;text-decoration:none;font-weight:600;font-size:var(--step--1);padding:.72rem 1.25rem;border-radius:3px;border:0;font-family:inherit;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+  .btn-solid{background:var(--coral);color:var(--ink)}
+  .btn-solid:hover{background:var(--coral-deep);color:#fff}
+  .btn-outline{border:1px solid var(--violet);color:var(--violet);background:transparent}
+  .btn-outline:hover{background:var(--violet);color:#fff}
+
+  /* ---- Header ---- */
+  .site-head{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .head-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+  .brand img{height:40px;width:auto}
+  .nav{display:flex;align-items:center;gap:1.6rem}
+  .nav a.nav-link{text-decoration:none;font-size:var(--step--1);letter-spacing:.01em;color:var(--ink);transition:color .2s}
+  .nav a.nav-link:hover{color:var(--violet)}
+  .nav a.nav-link[aria-current="page"]{color:var(--violet);border-bottom:2px solid var(--turq)}
+  @media(max-width:760px){.nav{gap:1rem}.nav .nav-link,.has-menu{display:none}}
+
+  /* ---- Page head + sections ---- */
+  .page-head{padding-block:clamp(2.5rem,6vw,4rem) 0}
+  .eyebrow{color:var(--violet);font-family:"Fraunces",serif;font-style:italic;font-size:var(--step-1);margin-bottom:.3rem}
+  .lead{color:var(--ink-dim);max-width:62ch;font-size:var(--step-1);margin-top:.9rem}
+  section{padding-block:clamp(2.5rem,6vw,4rem)}
+  .tint{background:var(--bg-tint)}
+  .prose{max-width:66ch;color:var(--ink-dim)}
+  .prose p{margin-bottom:1.1rem}
+
+  /* ---- Footer ---- */
+  .site-foot{background:var(--bg-tint);border-top:1px solid var(--line);padding-block:3.5rem 2.5rem}
+  .foot-grid{display:grid;gap:2rem}
+  @media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+  .site-foot h4{font-family:"Inter",sans-serif;font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);margin:0 0 .9rem;font-weight:600}
+  .site-foot a{color:var(--ink);text-decoration:none}
+  .site-foot a:hover{color:var(--violet)}
+  .foot-links{list-style:none;padding:0;margin:0;display:grid;gap:.55rem}
+  .socials{display:flex;gap:1rem;margin-top:.4rem}
+  .socials a{font-size:var(--step--1);color:var(--ink-dim)}
+  .foot-bar{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.6rem;justify-content:space-between;color:var(--ink-dim);font-size:var(--step--1)}
+
+  /* ---- Team ---- */
+  .people{display:grid;gap:1.6rem;margin-top:2.5rem}
+  @media(min-width:640px){.people{grid-template-columns:1fr 1fr}}
+  @media(min-width:940px){.people{grid-template-columns:repeat(3,1fr)}}
+  .person{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+  /* the portraits come from three different shoots — two black-and-white, one
+     colour. Desaturating the odd one out keeps the row reading as one set. */
+  /* height:auto is required: the img height attribute lands as a presentational
+     hint and would otherwise beat aspect-ratio, blowing the portrait up to full
+     size and spilling it out of the card. */
+  .person img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;filter:grayscale(1);
+    transition:filter .3s}
+  .person:hover img{filter:grayscale(0)}
+  .person .body{padding:1.2rem 1.3rem 1.4rem}
+  .person h2{font-size:var(--step-1);font-weight:600;margin-bottom:.15rem}
+  .person .role{font-size:var(--step--1);letter-spacing:.08em;text-transform:uppercase;
+    color:var(--turq-deep);font-weight:600}
+  .person .where{color:var(--ink-dim);font-size:var(--step--1);margin:.35rem 0 0}
+  .person p.bio{color:var(--ink-dim);margin:.7rem 0 0;font-size:var(--step--1);line-height:1.6}
+  .ig{display:inline-flex;align-items:center;gap:.4rem;font-size:var(--step--1);font-weight:600;
+    text-decoration:none;color:var(--violet);margin-top:.9rem}
+  .ig:hover{color:var(--violet-deep)}
+  .ig svg{width:1em;height:1em;flex:none}
+
+  /* ---- Nav dropdowns ---- */
+  .has-menu{position:relative}
+  .menu-trigger{background:none;border:0;padding:0;font:inherit;font-size:var(--step--1);
+    letter-spacing:.01em;color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;
+    gap:.34rem;padding:.35rem 0;transition:color .2s}
+  .menu-trigger:hover{color:var(--violet)}
+  .menu-trigger.is-current{color:var(--violet);border-bottom:2px solid var(--turq)}
+  .caret{width:.36rem;height:.36rem;border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;transform:translateY(-.12em) rotate(45deg);transition:transform .2s}
+  .menu-trigger[aria-expanded="true"] .caret{transform:translateY(.06em) rotate(-135deg)}
+  /* The panel sits below the trigger with a gap. ::before bridges that gap with
+     an invisible strip so the pointer never actually leaves .has-menu on the way
+     down — without it, mouseleave fires mid-travel and the menu shuts before you
+     can reach it. */
+  .menu::before{content:"";position:absolute;left:0;right:0;top:-.9rem;height:.9rem}
+  .menu{position:absolute;top:calc(100% + .8rem);left:50%;transform:translateX(-50%);
+    min-width:11.5rem;list-style:none;margin:0;padding:.4rem;display:none;
+    background:var(--bg);border:1px solid var(--line);border-radius:6px;
+    box-shadow:0 12px 30px rgba(29,27,46,.13);z-index:50}
+  /* With JS off these keep the menus reachable by hover and by keyboard;
+     js/nav.js adds the `js` class and then drives aria-expanded itself. */
+  :root:not(.js) .has-menu:hover > .menu,
+  :root:not(.js) .has-menu:focus-within > .menu,
+  .menu-trigger[aria-expanded="true"] + .menu{display:block}
+  .menu a{display:block;padding:.46rem .7rem;border-radius:4px;text-decoration:none;
+    font-size:var(--step--1);color:var(--ink);white-space:nowrap}
+  .menu a:hover{background:var(--bg-tint);color:var(--violet)}
+  .menu a[aria-current="page"]{color:var(--violet);font-weight:600}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="/" aria-label="Tango Integral home">
+      <img src="/img/logo-wordmark.png" alt="Tango Integral" width="111" height="40">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <div class="has-menu">
+        <button class="nav-link menu-trigger is-current" type="button" aria-expanded="false" aria-controls="about-menu">About us<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="about-menu">
+          <li><a href="/team" aria-current="page">Team</a></li>
+          <li><a href="/method">Method</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="has-menu">
+        <button class="nav-link menu-trigger" type="button" aria-expanded="false" aria-controls="classes-menu">Classes<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="classes-menu">
+          <li><a href="/classes">Group Classes</a></li>
+          <li><a href="/private-classes">Private Classes</a></li>
+        </ul>
+      </div>
+      <a class="nav-link" href="/tango-in-london">Tango in London</a>
+      <a class="nav-link" href="/contact">Contact Us</a>
+      <a class="nav-link" href="https://www.tangointegral.com/blog">Blog</a>
+      <a class="btn btn-solid" href="/contact">Come to a class</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <p class="eyebrow">Who we are</p>
+    <h1>The people you'll be dancing with.</h1>
+    <p class="lead">A small team — which is the point. You get taught by the same people every time, so nothing has to be explained twice.</p>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="people">
+
+        <div class="person">
+          <img src="/img/daniel-outside-bw.jpg" alt="Daniel, director of Tango Integral" width="1066" height="1600" loading="lazy">
+          <div class="body">
+            <p class="role">Director</p>
+            <h2>Daniel</h2>
+            <p class="where">Argentina</p>
+            <p class="bio">Trained in Buenos Aires. Teaches the Saturday class and private lessons, and runs the Buenos Aires trips.</p>
+            <a class="ig" href="https://www.instagram.com/dani.gini/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@dani.gini</a>
+          </div>
+        </div>
+
+        <div class="person">
+          <img src="/img/eleonora-bw.jpg" alt="Eleonora, teacher at Tango Integral" width="1066" height="1600" loading="lazy">
+          <div class="body">
+            <p class="role">Teacher</p>
+            <h2>Eleonora</h2>
+            <p class="where">Italy</p>
+            <p class="bio">Teaches private lessons at Tango Integral.</p>
+          </div>
+        </div>
+
+        <div class="person">
+          <img src="/img/dana.jpg" alt="Dana, teacher at Tango Integral" width="841" height="841" loading="lazy">
+          <div class="body">
+            <p class="role">Teacher</p>
+            <h2>Dana</h2>
+            <p class="bio">Teaches the Saturday class alongside Daniel.</p>
+            <a class="ig" href="https://www.instagram.com/tangosubtext/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@tangosubtext</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <h2>Where to find us.</h2>
+      <div class="prose" style="margin-top:1.2rem">
+        <p>Dana and Daniel teach the group class two Saturdays a month; Daniel and Eleonora give private lessons by arrangement.</p>
+        <p style="margin-top:1.6rem">
+          <a class="btn btn-solid" href="/classes">See the classes</a>
+          <a class="btn btn-outline" href="/private-classes" style="margin-left:.6rem">Private lessons</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="/img/logo-wordmark.png" alt="Tango Integral" width="136" height="49" style="margin-bottom:1rem">
+        <p style="color:var(--ink-dim);max-width:34ch">Argentine tango classes in London — friendly, professional, and rooted in Buenos Aires.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="foot-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/classes">Classes &amp; times</a></li>
+          <li><a href="/private-classes">Private lessons</a></li>
+          <li><a href="/method">Method</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+          <li><a href="/tango-in-london">Tango in London</a></li>
+          <li><a href="/buenos-aires-trip">Buenos Aires trip</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="foot-links">
+          <li><a href="mailto:info@tangointegral.com">info@tangointegral.com</a></li>
+          <li><a href="https://wa.me/447751672159">WhatsApp +44 7751 672159</a></li>
+          <li>Thistle London Bloomsbury Park, London WC1B 5AD</li>
+        </ul>
+        <div class="socials">
+          <a href="https://www.instagram.com/tangointegral">Instagram</a>
+          <a href="https://www.facebook.com/tangointegral">Facebook</a>
+          <a href="https://www.youtube.com/channel/UCO40L-Ul0BchGnplZlliX-g">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>&copy; Tango Integral Ltd 2025. All rights reserved.</span>
+      <span>Argentine Tango School &middot; London</span>
+    </div>
+  </div>
+</footer>
+<script src="/js/nav.js" defer></script>
+</body>
+</html>

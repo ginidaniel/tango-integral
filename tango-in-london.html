@@ -12,6 +12,9 @@
 <meta property="og:title" content="Tango in London — Milongas This Week">
 <meta property="og:description" content="This week's Argentine tango milongas and prácticas in London, updated weekly.">
 <meta property="og:url" content="https://www.tangointegral.com/tango-in-london">
+<meta property="og:image" content="https://www.tangointegral.com/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tangointegral">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +54,8 @@
   .nav{display:flex;align-items:center;gap:1.6rem}
   .nav a.nav-link{text-decoration:none;font-size:var(--step--1);color:var(--ink)}
   .nav a.nav-link:hover{color:var(--violet)}
-  @media(max-width:720px){.nav .nav-link{display:none}}
+  .nav a.nav-link[aria-current="page"]{color:var(--violet);border-bottom:2px solid var(--turq)}
+  @media(max-width:720px){.nav .nav-link,.has-menu{display:none}}
 
   .page-head{padding-block:clamp(2.5rem,6vw,4rem) 1rem}
   .eyebrow{color:var(--violet);font-family:"Fraunces",serif;font-style:italic;font-size:var(--step-1);margin-bottom:.3rem}
@@ -62,6 +66,12 @@
   .week-range{color:var(--ink-dim);font-size:var(--step--1);letter-spacing:.04em;text-transform:uppercase;margin:0 0 .4rem}
   .note{background:var(--bg-turq);border:1px solid #d3ede9;color:#255a56;padding:.7rem 1rem;border-radius:6px;font-size:var(--step--1);margin:0 0 1.6rem}
   .empty{color:var(--ink-dim)}
+  .note-bad{background:#fdeeea;border-color:#f6cfc4;color:#8a3418}
+  .tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.3rem}
+  .tag{font-size:.72rem;letter-spacing:.03em;text-transform:uppercase;font-weight:600;
+    color:var(--turq-deep);background:var(--bg-turq);border-radius:3px;padding:.12rem .45rem}
+  .tag-warm{color:#8a4a33;background:#fdeeea}
+  .credit{margin-top:1.8rem;color:var(--ink-dim);font-size:var(--step--1)}
 
   .day{padding-block:1.2rem;border-top:1px solid var(--line)}
   .day:first-of-type{border-top:0}
@@ -78,27 +88,71 @@
   @media(max-width:520px){.event{grid-template-columns:1fr}}
 
   .cta-band{background:var(--bg-tint);margin-top:2rem;border-radius:8px;padding:clamp(1.4rem,4vw,2.2rem);display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between}
-  .cta-band h2{font-size:var(--step-2)}
+  .cta-band h2{font-size:var(--step-2);margin-bottom:.5rem}
+  .pot-logo{height:46px;width:auto}
   .cta-band p{margin:.3rem 0 0;color:var(--ink-dim)}
 
   .site-foot{background:var(--bg-tint);border-top:1px solid var(--line);padding-block:2.5rem;margin-top:3rem;color:var(--ink-dim);font-size:var(--step--1)}
   .site-foot a{color:var(--ink);text-decoration:none}
   .site-foot a:hover{color:var(--violet)}
   .foot-row{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between}
+
+  /* ---- Nav dropdowns ---- */
+  .has-menu{position:relative}
+  .menu-trigger{background:none;border:0;padding:0;font:inherit;font-size:var(--step--1);
+    letter-spacing:.01em;color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;
+    gap:.34rem;padding:.35rem 0;transition:color .2s}
+  .menu-trigger:hover{color:var(--violet)}
+  .menu-trigger.is-current{color:var(--violet);border-bottom:2px solid var(--turq)}
+  .caret{width:.36rem;height:.36rem;border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;transform:translateY(-.12em) rotate(45deg);transition:transform .2s}
+  .menu-trigger[aria-expanded="true"] .caret{transform:translateY(.06em) rotate(-135deg)}
+  /* The panel sits below the trigger with a gap. ::before bridges that gap with
+     an invisible strip so the pointer never actually leaves .has-menu on the way
+     down — without it, mouseleave fires mid-travel and the menu shuts before you
+     can reach it. */
+  .menu::before{content:"";position:absolute;left:0;right:0;top:-.9rem;height:.9rem}
+  .menu{position:absolute;top:calc(100% + .8rem);left:50%;transform:translateX(-50%);
+    min-width:11.5rem;list-style:none;margin:0;padding:.4rem;display:none;
+    background:var(--bg);border:1px solid var(--line);border-radius:6px;
+    box-shadow:0 12px 30px rgba(29,27,46,.13);z-index:50}
+  /* With JS off these keep the menus reachable by hover and by keyboard;
+     js/nav.js adds the `js` class and then drives aria-expanded itself. */
+  :root:not(.js) .has-menu:hover > .menu,
+  :root:not(.js) .has-menu:focus-within > .menu,
+  .menu-trigger[aria-expanded="true"] + .menu{display:block}
+  .menu a{display:block;padding:.46rem .7rem;border-radius:4px;text-decoration:none;
+    font-size:var(--step--1);color:var(--ink);white-space:nowrap}
+  .menu a:hover{background:var(--bg-tint);color:var(--violet)}
+  .menu a[aria-current="page"]{color:var(--violet);font-weight:600}
 </style>
 </head>
 <body>
 
 <header class="site-head">
   <div class="wrap head-row">
-    <a class="brand" href="index.html" aria-label="Tango Integral home">
+    <a class="brand" href="/" aria-label="Tango Integral home">
       <img src="/img/logo-wordmark.png" alt="Tango Integral" width="111" height="40">
     </a>
     <nav class="nav" aria-label="Primary">
-      <a class="nav-link" href="index.html">Home</a>
-      <a class="nav-link" href="/classes">Classes</a>
-      <a class="nav-link" href="tango-in-london.html">Tango in London</a>
-      <a class="btn btn-solid" href="/contact">Free taster</a>
+      <div class="has-menu">
+        <button class="nav-link menu-trigger" type="button" aria-expanded="false" aria-controls="about-menu">About us<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="about-menu">
+          <li><a href="/team">Team</a></li>
+          <li><a href="/method">Method</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="has-menu">
+        <button class="nav-link menu-trigger" type="button" aria-expanded="false" aria-controls="classes-menu">Classes<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="classes-menu">
+          <li><a href="/classes">Group Classes</a></li>
+          <li><a href="/private-classes">Private Classes</a></li>
+        </ul>
+      </div>
+      <a class="nav-link" href="/tango-in-london" aria-current="page">Tango in London</a>
+      <a class="nav-link" href="/contact">Contact Us</a>
+      <a class="nav-link" href="https://www.tangointegral.com/blog">Blog</a>
     </nav>
   </div>
 </header>
@@ -107,11 +161,10 @@
   <div class="wrap page-head">
     <p class="eyebrow">Where to dance</p>
     <h1>Tango in London, this week</h1>
-    <p class="lead">The milongas and prácticas happening around London over the next seven days. Updated weekly — new to the scene? Start with a free taster and we'll show you the ropes.</p>
+    <p class="lead">The milongas and prácticas happening around London over the next seven days, straight from Points of Tango.</p>
     <div class="points">
-      <!-- TODO: point this to the real "Points of Tango — London" page/URL -->
-      <a class="btn btn-outline" href="#points-of-tango">Points of Tango — London</a>
-      <a class="btn btn-solid" href="/contact">Book a free taster</a>
+      <a class="btn btn-outline" href="https://www.pointsoftango.com/events/london"
+         target="_blank" rel="noopener">Points of Tango — London</a>
     </div>
   </div>
 
@@ -125,10 +178,11 @@
     <div class="wrap">
       <div class="cta-band">
         <div>
-          <h2>Points of Tango — London</h2>
+          <h2><img class="pot-logo" src="/img/points-of-tango.png" alt="Points of Tango" width="331" height="130"></h2>
           <p>Your map to the London tango community: venues, teachers, and regular events.</p>
         </div>
-        <a class="btn btn-outline" href="#">Explore the map</a>
+        <a class="btn btn-outline" href="https://www.pointsoftango.com/home"
+           target="_blank" rel="noopener">Explore the map</a>
       </div>
     </div>
   </section>
@@ -137,73 +191,205 @@
 <footer class="site-foot">
   <div class="wrap foot-row">
     <span>© Tango Integral Ltd 2025 · Argentine Tango School · London</span>
-    <span><a href="index.html">Home</a> · <a href="/contact">Contact</a> · <a href="https://www.tangointegral.com/blog">Blog</a></span>
+    <span><a href="/">Home</a> · <a href="/classes">Classes</a> · <a href="/method">Method</a> · <a href="/team">Team</a> · <a href="/contact">Contact</a></span>
   </div>
 </footer>
 
 <script>
-/* Milongas widget. DATA SOURCE:
- * Set CONFIG.source to a JSON URL to load live data:
- *   - a file in this repo:      './data/milongas.json'
- *   - your app's API endpoint:  'https://api.tangointegral.com/milongas'
- * If null (default), the embedded SAMPLE_DATA is used so the page always renders.
- * CORS note: the browser can only fetch APIs that allow cross-origin requests;
- * if your app's API doesn't, we add a small Cloudflare Worker proxy (see README).
- * Item shape: { name, weekday("Monday".."Sunday"), start("HH:MM"), end, venue, area, url, organiser } */
-const CONFIG = { source: null };
+/* This week's London milongas, from the Points of Tango API.
+ *
+ * The endpoint returns every listed London event — 175 of them at the time of
+ * writing, about a year ahead, in one 424 KB response. We filter to the current
+ * week here. When the weekly endpoint exists, swap CONFIG.source for it: the
+ * filter below is then a harmless no-op, so nothing else has to change.
+ *
+ * Response shape: { responseCode, message, hits, results: [event] }
+ * Event fields we use:
+ *   name, venue, address, postCode, link, types[], beginners, cancelled,
+ *   from:{seconds}, to:{seconds}          <- Unix epoch SECONDS, UTC
+ *
+ * Times arrive as London wall-clock time encoded as UTC, so they are read back
+ * as UTC and shown as-is — see the note on TZ below. */
+const CONFIG = {
+  source: "https://api.pointsoftango.app/events?country=GBR&region=ENG_GLN",
+  filterToWeek: true
+};
 
-const SAMPLE_DATA = [
-  { name: "Paciencia Milonga", weekday: "Friday", start: "20:30", end: "01:00", venue: "Add the venue", area: "Central London", url: "https://www.tangointegral.com/milonga-integral", organiser: "Tango Integral" },
-  { name: "Example Milonga (sample)", weekday: "Saturday", start: "21:00", end: "02:00", venue: "Sample venue", area: "Islington", url: "#", organiser: "Sample — replace me" },
-  { name: "Example Práctica (sample)", weekday: "Wednesday", start: "19:00", end: "22:00", venue: "Sample studio", area: "Camden", url: "#", organiser: "Sample — replace me" }
-];
-
+/* The API already sends London wall-clock time, encoded in the epoch as if it
+   were UTC — so read it back as UTC. Converting to Europe/London shifts every
+   listing an hour forward during BST. Cross-checked against the times
+   pointsoftango.com displays for the same events. */
+const TZ = "UTC";
 const WEEKDAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
 const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 
-function mondayOfThisWeek(){const d=new Date();const day=(d.getDay()+6)%7;d.setHours(0,0,0,0);d.setDate(d.getDate()-day);return d;}
-function weekDates(){const mon=mondayOfThisWeek();return WEEKDAYS.map((_,i)=>{const d=new Date(mon);d.setDate(mon.getDate()+i);return d;});}
-function fmtShort(d){return `${WEEKDAYS[(d.getDay()+6)%7].slice(0,3)} ${d.getDate()} ${MONTHS[d.getMonth()]}`;}
-function fmtRange(a,b){return `${a.getDate()} ${MONTHS[a.getMonth()]} – ${b.getDate()} ${MONTHS[b.getMonth()]}`;}
-function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+const fmtDayKey = new Intl.DateTimeFormat("en-CA",
+  { timeZone: TZ, year: "numeric", month: "2-digit", day: "2-digit" });        // -> "2026-09-05"
+const fmtClock = new Intl.DateTimeFormat("en-GB",
+  { timeZone: TZ, hour: "2-digit", minute: "2-digit", hour12: false });        // -> "20:30"
 
-async function loadData(){
-  if(!CONFIG.source) return {items:SAMPLE_DATA,sample:true};
-  try{
-    const res=await fetch(CONFIG.source,{headers:{Accept:"application/json"}});
-    if(!res.ok) throw new Error("HTTP "+res.status);
-    return {items:await res.json(),sample:false};
-  }catch(err){
-    console.warn("Milongas: live data unavailable, showing sample.",err);
-    return {items:SAMPLE_DATA,sample:true,error:true};
-  }
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+function dayKey(d){return fmtDayKey.format(d);}
+function clock(d){return fmtClock.format(d);}
+
+/* Some listings end a minute before the hour (23:59, 00:59) to mean "on the
+   hour". Show what they mean. */
+function endClock(d){
+  const t = clock(d);
+  return t.endsWith(":59") ? clock(new Date(d.getTime() + 60000)) : t;
 }
 
-function render(items,sample){
-  const el=document.getElementById("milongas"); if(!el) return;
-  const dates=weekDates();
-  const byDay=WEEKDAYS.map((day,i)=>({day,date:dates[i],
-    events:items.filter(m=>m.weekday===day).sort((a,b)=>(a.start||"").localeCompare(b.start||""))
-  })).filter(g=>g.events.length);
+/* Addresses are entered by hand, so a few carry a country on the end and stray
+   whitespace. On a London-only page the country is noise. */
+const COUNTRY_TAIL = /,\s*(reino unido|united kingdom|uk|england|inglaterra)\s*$/i;
+function tidy(text){
+  return String(text || "")
+    .replace(COUNTRY_TAIL, "")
+    .replace(/\s+,/g, ",")
+    .replace(/\s{2,}/g, " ")
+    .replace(/[\s,]+$/, "")
+    .trim();
+}
 
-  let html=`<p class="week-range">Week of ${fmtRange(dates[0],dates[6])}</p>`;
-  if(sample) html+=`<p class="note">Showing sample data — connect the Tango Integral app to go live.</p>`;
-  if(!byDay.length){ el.innerHTML=html+`<p class="empty">No milongas listed for this week yet. Check back soon.</p>`; return; }
+/* Calendar dates are handled at noon UTC so that adding days can't be knocked
+   sideways by a daylight-saving change. */
+function keyToNoon(key){const [y,m,d]=key.split("-").map(Number);return new Date(Date.UTC(y,m-1,d,12));}
+function addDays(date,n){const d=new Date(date);d.setUTCDate(d.getUTCDate()+n);return d;}
+function keyOf(noon){return noon.toISOString().slice(0,10);}
+
+/* The next seven London days, today first. Deliberately a rolling window rather
+   than the Mon-Sun calendar week: on a Saturday, "this week" would otherwise be
+   five days of events that have already happened. */
+function weekKeys(){
+  const todayNoon = keyToNoon(dayKey(new Date()));
+  return Array.from({length:7}, (_,i)=>keyOf(addDays(todayNoon,i)));
+}
+
+function labelFor(key){
+  const noon = keyToNoon(key);
+  return {
+    weekday: WEEKDAYS[(noon.getUTCDay()+6)%7],
+    short: `${WEEKDAYS[(noon.getUTCDay()+6)%7].slice(0,3)} ${noon.getUTCDate()} ${MONTHS[noon.getUTCMonth()]}`
+  };
+}
+function rangeLabel(firstKey,lastKey){
+  const a=keyToNoon(firstKey), b=keyToNoon(lastKey);
+  return `${a.getUTCDate()} ${MONTHS[a.getUTCMonth()]} – ${b.getUTCDate()} ${MONTHS[b.getUTCMonth()]}`;
+}
+
+/* Listings are third-party data, so a link is only used if it really is an
+   http(s) URL. Some records store a bare domain ("tango-amistoso.co.uk"),
+   which would otherwise be treated as a path on this site. */
+function safeUrl(raw){
+  if(!raw) return null;
+  let u = String(raw).trim();
+  if(!u || u === "#") return null;
+  if(!/^[a-z][a-z0-9+.-]*:/i.test(u)){
+    if(!/^[\w-]+(\.[\w-]+)+([/?#]|$)/.test(u)) return null;
+    u = "https://" + u;
+  }
+  try{
+    const parsed = new URL(u);
+    return (parsed.protocol === "http:" || parsed.protocol === "https:") ? parsed.href : null;
+  }catch(err){ return null; }
+}
+
+function whereLine(ev){
+  const where = tidy(ev.venue) || tidy(ev.address) || "";
+  const pc = (ev.postCode || "").trim();
+  const flat = t => t.toLowerCase().replace(/\s+/g,"");
+  if(pc && !flat(where).includes(flat(pc))) return where ? `${where} · ${pc.toUpperCase()}` : pc.toUpperCase();
+  return where;
+}
+
+function normalise(results){
+  return results
+    .filter(ev => ev && ev.from && ev.from.seconds && !ev.cancelled)
+    .map(ev => {
+      const start = new Date(ev.from.seconds * 1000);
+      const end = ev.to && ev.to.seconds ? new Date(ev.to.seconds * 1000) : null;
+      return {
+        name: String(ev.name || "").trim() || "Untitled event",
+        key: dayKey(start),
+        startsAt: ev.from.seconds,
+        time: end ? `${clock(start)}–${endClock(end)}` : clock(start),
+        where: whereLine(ev),
+        url: safeUrl(ev.link),
+        types: Array.isArray(ev.types) ? ev.types : [],
+        beginners: !!ev.beginners
+      };
+    });
+}
+
+async function loadEvents(){
+  const res = await fetch(CONFIG.source, { headers: { Accept: "application/json" } });
+  if(!res.ok) throw new Error("HTTP " + res.status);
+  const body = await res.json();
+  const results = Array.isArray(body) ? body : (body && body.results) || [];
+  return normalise(results);
+}
+
+function typeLabel(t){
+  const map = { MILONGA:"Milonga", PRACTICA:"Práctica", CLASS:"Class", BEGINNERS:"Beginners" };
+  return map[t] || t.charAt(0) + t.slice(1).toLowerCase();
+}
+
+function render(events){
+  const el = document.getElementById("milongas");
+  if(!el) return;
+
+  const keys = weekKeys();
+  const inWeek = CONFIG.filterToWeek ? events.filter(e => keys.includes(e.key)) : events;
+  const byDay = keys
+    .map(key => ({ key, events: inWeek.filter(e => e.key === key).sort((a,b)=>a.startsAt-b.startsAt) }))
+    .filter(g => g.events.length);
+
+  let html = `<p class="week-range">Next seven days · ${rangeLabel(keys[0], keys[6])}</p>`;
+
+  if(!byDay.length){
+    el.innerHTML = html + `<p class="empty">Nothing listed for the next seven days yet — check back in a day or two.</p>`;
+    return;
+  }
 
   for(const g of byDay){
-    html+=`<div class="day"><h3 class="day-head">${esc(g.day)} <span class="day-date">${fmtShort(g.date)}</span></h3><ul class="events">`;
-    for(const m of g.events){
-      const time=m.end?`${esc(m.start)}–${esc(m.end)}`:esc(m.start||"");
-      const where=[m.venue,m.area].filter(Boolean).map(esc).join(" · ");
-      const title=(m.url&&m.url!=="#")?`<a href="${esc(m.url)}">${esc(m.name)}</a>`:esc(m.name);
-      html+=`<li class="event"><span class="event-time">${time}</span><span class="event-body"><span class="event-name">${title}</span><span class="event-where">${where}${m.organiser?" · "+esc(m.organiser):""}</span></span></li>`;
+    const label = labelFor(g.key);
+    html += `<div class="day"><h3 class="day-head">${esc(label.weekday)} <span class="day-date">${esc(label.short)}</span></h3><ul class="events">`;
+    for(const ev of g.events){
+      const name = ev.url
+        ? `<a href="${esc(ev.url)}" target="_blank" rel="noopener">${esc(ev.name)}</a>`
+        : esc(ev.name);
+      const tags = ev.types.map(t => `<span class="tag">${esc(typeLabel(t))}</span>`).join("");
+      const beginners = ev.beginners ? `<span class="tag tag-warm">Beginners welcome</span>` : "";
+      html += `<li class="event">`
+            + `<span class="event-time">${esc(ev.time)}</span>`
+            + `<span class="event-body">`
+            +   `<span class="event-name">${name}</span>`
+            +   (ev.where ? `<span class="event-where">${esc(ev.where)}</span>` : "")
+            +   ((tags || beginners) ? `<span class="tags">${tags}${beginners}</span>` : "")
+            + `</span></li>`;
     }
-    html+=`</ul></div>`;
+    html += `</ul></div>`;
   }
-  el.innerHTML=html;
+  html += `<p class="credit">Listings from <a href="https://www.pointsoftango.com/events/london" target="_blank" rel="noopener">Points of Tango</a>.</p>`;
+  el.innerHTML = html;
 }
 
-document.addEventListener("DOMContentLoaded",async()=>{const{items,sample}=await loadData();render(items,sample);});
+function renderError(){
+  const el = document.getElementById("milongas");
+  if(!el) return;
+  el.innerHTML = `<p class="note note-bad">We couldn't load this week's listings just now. `
+               + `Please try again shortly — or <a href="/contact">ask us</a> and we'll point you to a milonga.</p>`;
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  try{
+    render(await loadEvents());
+  }catch(err){
+    console.warn("Milongas: could not load listings.", err);
+    renderError();
+  }
+});
 </script>
+<script src="/js/nav.js" defer></script>
 </body>
 </html>

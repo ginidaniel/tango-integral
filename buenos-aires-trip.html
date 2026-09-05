@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buenos Aires Tango Holidays | Tango Integral</title>
+<meta name="description" content="Travel to the heart of tango with Tango Integral. Apartments in San Telmo, the best milongas, classes with world-class maestros, city and bike tours, and a farewell asado. Very limited places — new dates coming soon.">
+<link rel="canonical" href="https://www.tangointegral.com/buenos-aires-trip">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tango Integral">
+<meta property="og:title" content="Buenos Aires Tango Holidays — Tango Integral">
+<meta property="og:description" content="The most authentic trip to the heart of tango, with people who know the city. Very limited places — new dates coming soon.">
+<meta property="og:url" content="https://www.tangointegral.com/buenos-aires-trip">
+<meta property="og:image" content="https://www.tangointegral.com/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tangointegral">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* Brand palette — from the logo */
+    --violet:#52498d; --violet-deep:#413a73;
+    --turq:#66c9c4; --turq-deep:#33a49e;
+    --coral:#ee7d61; --coral-deep:#e2694b;
+    --bg:#ffffff; --bg-tint:#f5f3fb; --bg-turq:#ecf7f6;
+    --ink:#1d1b2e; --ink-dim:#5c5772; --line:#e7e4f0;
+
+    --step--1:.86rem; --step-0:1.06rem; --step-1:1.32rem;
+    --step-2:clamp(1.5rem,1.1rem + 1.6vw,2rem);
+    --step-3:clamp(2rem,1.4rem + 2.6vw,2.9rem);
+    --hero:clamp(2.4rem,1.4rem + 4.4vw,4rem);
+    --wrap:1080px; --gutter:clamp(1.15rem,5vw,2.75rem);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:var(--step-0);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.12;margin:0;color:var(--ink)}
+  h2{font-size:var(--step-3);letter-spacing:-.01em}
+  h3{font-size:var(--step-1);font-weight:600}
+  p{margin:0 0 1rem}
+  a{color:var(--violet)}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+  .skip{position:absolute;left:-9999px;top:0}
+  .skip:focus{left:1rem;top:1rem;z-index:99;background:var(--coral);color:var(--ink);padding:.6rem 1rem;border-radius:4px}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+
+  .btn{display:inline-block;text-decoration:none;font-weight:600;font-size:var(--step--1);padding:.72rem 1.25rem;border-radius:3px;border:0;font-family:inherit;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+  .btn-solid{background:var(--coral);color:var(--ink)}
+  .btn-solid:hover{background:var(--coral-deep);color:#fff}
+  .btn-outline{border:1px solid var(--violet);color:var(--violet);background:transparent}
+  .btn-outline:hover{background:var(--violet);color:#fff}
+
+  /* ---- Header ---- */
+  .site-head{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .head-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+  .brand img{height:40px;width:auto}
+  .nav{display:flex;align-items:center;gap:1.6rem}
+  .nav a.nav-link{text-decoration:none;font-size:var(--step--1);letter-spacing:.01em;color:var(--ink);transition:color .2s}
+  .nav a.nav-link:hover{color:var(--violet)}
+  @media(max-width:760px){.nav{gap:1rem}.nav .nav-link,.has-menu{display:none}}
+
+  /* ---- Hero ---- */
+  .hero{position:relative;color:#fff;display:flex;align-items:flex-end;min-height:min(70svh,540px);
+    background:
+      /* on narrow screens the copy grows upward into the bright sunset, so the
+         scrim has to stay heavy all the way to the top, not just at the base */
+      linear-gradient(to top,rgba(29,27,46,.94) 0%,rgba(29,27,46,.82) 45%,rgba(29,27,46,.55) 100%),
+      url("/img/buenos-aires-skyline.jpg") center/cover no-repeat;}
+  .hero-inner{padding-block:clamp(2.5rem,7vw,4.5rem)}
+  .hero h1{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:var(--hero);line-height:1.06;
+    letter-spacing:-.015em;margin:0;color:#fff;max-width:16ch}
+  .hero .kicker{color:var(--turq);font-family:"Fraunces",serif;font-style:italic;font-size:var(--step-1);margin:0 0 .4rem}
+  .hero .lede{color:#efedf7;max-width:50ch;font-size:var(--step-1);margin-top:1.1rem}
+  .status{display:inline-block;background:var(--turq);color:var(--ink);font-size:var(--step--1);
+    font-weight:600;padding:.3rem .85rem;border-radius:20px;margin-top:1.5rem}
+
+  /* ---- Sections ---- */
+  section{padding-block:clamp(3rem,7vw,5rem)}
+  .tint{background:var(--bg-tint)}
+  .eyebrow{color:var(--violet);font-family:"Fraunces",serif;font-style:italic;font-size:var(--step-1);margin-bottom:.3rem}
+  .lead{color:var(--ink-dim);max-width:62ch;font-size:var(--step-1);margin-top:1rem}
+
+  /* pull-quote style callout for the "limited spaces" line */
+  .callout{border-left:3px solid var(--coral);background:var(--bg-turq);border-radius:0 6px 6px 0;
+    padding:1.1rem 1.3rem;margin-top:2rem;max-width:62ch}
+  .callout p{margin:0;color:#255a56}
+
+  .reasons{list-style:none;padding:0;margin:2.5rem 0 0;display:grid;gap:1.6rem}
+  @media(min-width:780px){.reasons{grid-template-columns:1fr 1fr;gap:2rem 3rem}}
+  .reasons li{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:start}
+  .reasons .mark{color:var(--turq-deep);font-family:"Fraunces",serif;font-size:var(--step-2);line-height:1}
+  .reasons h3{margin-bottom:.25rem}
+  .reasons p{margin:0;color:var(--ink-dim)}
+
+  /* what's included */
+  .included{list-style:none;padding:0;margin:2.2rem 0 0;display:grid;gap:.9rem}
+  @media(min-width:780px){.included{grid-template-columns:1fr 1fr;gap:.9rem 2.5rem}}
+  .included li{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:baseline;
+    padding-bottom:.9rem;border-bottom:1px solid var(--line)}
+  .included li::before{content:"—";color:var(--turq-deep)}
+  .footnotes{margin-top:1.8rem;color:var(--ink-dim);font-size:var(--step--1)}
+  .footnotes p{margin:0 0 .35rem}
+
+  /* when / how much */
+  .facts{display:grid;gap:1.5rem;margin-top:2rem}
+  @media(min-width:680px){.facts{grid-template-columns:1fr 1fr}}
+  .fact{background:#fff;border:1px solid var(--line);border-radius:8px;padding:1.4rem}
+  .fact h3{margin-bottom:.3rem}
+  .fact p{margin:0;color:var(--ink-dim)}
+
+  /* ---- Enquiry form ---- */
+  .ask-grid{display:grid;gap:clamp(2rem,5vw,3.5rem);align-items:start}
+  @media(min-width:900px){.ask-grid{grid-template-columns:.85fr 1.15fr}}
+  .prompts{display:grid;gap:1.4rem}
+  .prompt h3{margin-bottom:.2rem}
+  .prompt p{margin:0;color:var(--ink-dim)}
+
+  .form-card{border:1px solid var(--line);border-radius:8px;padding:clamp(1.4rem,4vw,2.2rem);background:#fff}
+  .form-card h2{font-size:var(--step-2);margin-bottom:.4rem}
+  .form-intro{color:var(--ink-dim);font-size:var(--step--1);margin-bottom:1.6rem}
+  /* align-content:start keeps label and input top-packed, so an error message
+     under one field of a row doesn't push its neighbour's input down */
+  .field{display:grid;gap:.35rem;margin-bottom:1.1rem;align-content:start}
+  .field label{font-size:var(--step--1);font-weight:600;letter-spacing:.01em}
+  .field .opt{font-weight:400;color:var(--ink-dim)}
+  .field input,.field textarea{
+    font-family:inherit;font-size:var(--step-0);color:var(--ink);
+    background:#fff;border:1px solid var(--line);border-radius:4px;padding:.65rem .8rem;width:100%;
+    transition:border-color .2s;
+  }
+  .field input:hover,.field textarea:hover{border-color:#cfc9e2}
+  .field input:focus,.field textarea:focus{border-color:var(--violet)}
+  .field textarea{min-height:9.5rem;resize:vertical}
+  .field-row{display:grid;gap:1.1rem}
+  @media(min-width:560px){.field-row{grid-template-columns:1fr 1fr}}
+  /* honeypot — hidden from people, tempting to bots */
+  .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+  .form-actions{display:flex;flex-wrap:wrap;align-items:center;gap:1rem;margin-top:.5rem}
+  .form-note{font-size:var(--step--1);color:var(--ink-dim);margin:0}
+  .field-err{color:#8a3418;font-size:var(--step--1);line-height:1.4}
+  .field-err:empty{display:none}
+  .field input[aria-invalid="true"],.field textarea[aria-invalid="true"]{border-color:#d9694a}
+  .form-msg{margin:1.2rem 0 0;padding:.8rem 1rem;border-radius:6px;font-size:var(--step--1)}
+  .form-msg.ok{background:var(--bg-turq);border:1px solid #d3ede9;color:#255a56}
+  .form-msg.bad{background:#fdeeea;border:1px solid #f6cfc4;color:#8a3418}
+  button[disabled]{opacity:.6;cursor:progress}
+
+  /* photo strip */
+  .gallery{list-style:none;padding:0;margin:2.5rem 0 0;display:grid;gap:1rem}
+  @media(min-width:560px){.gallery{grid-template-columns:1fr 1fr}}
+  @media(min-width:900px){.gallery{grid-template-columns:repeat(4,1fr);gap:1.2rem}}
+  .gallery figure{margin:0}
+  /* height:auto is required: the img height attribute lands as a presentational
+     hint and would otherwise beat aspect-ratio, blowing the crop up to full size */
+  .gallery img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+  .gallery figcaption{margin-top:.6rem;color:var(--ink-dim);font-size:var(--step--1);line-height:1.45}
+
+  /* ---- Footer ---- */
+  .site-foot{background:var(--bg-tint);border-top:1px solid var(--line);padding-block:3.5rem 2.5rem}
+  .foot-grid{display:grid;gap:2rem}
+  @media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+  .site-foot h4{font-family:"Inter",sans-serif;font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);margin:0 0 .9rem;font-weight:600}
+  .site-foot a{color:var(--ink);text-decoration:none}
+  .site-foot a:hover{color:var(--violet)}
+  .foot-links{list-style:none;padding:0;margin:0;display:grid;gap:.55rem}
+  .socials{display:flex;gap:1rem;margin-top:.4rem}
+  .socials a{font-size:var(--step--1);color:var(--ink-dim)}
+  .foot-bar{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.6rem;justify-content:space-between;color:var(--ink-dim);font-size:var(--step--1)}
+
+  /* ---- Nav dropdowns ---- */
+  .has-menu{position:relative}
+  .menu-trigger{background:none;border:0;padding:0;font:inherit;font-size:var(--step--1);
+    letter-spacing:.01em;color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;
+    gap:.34rem;padding:.35rem 0;transition:color .2s}
+  .menu-trigger:hover{color:var(--violet)}
+  .menu-trigger.is-current{color:var(--violet);border-bottom:2px solid var(--turq)}
+  .caret{width:.36rem;height:.36rem;border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;transform:translateY(-.12em) rotate(45deg);transition:transform .2s}
+  .menu-trigger[aria-expanded="true"] .caret{transform:translateY(.06em) rotate(-135deg)}
+  /* The panel sits below the trigger with a gap. ::before bridges that gap with
+     an invisible strip so the pointer never actually leaves .has-menu on the way
+     down — without it, mouseleave fires mid-travel and the menu shuts before you
+     can reach it. */
+  .menu::before{content:"";position:absolute;left:0;right:0;top:-.9rem;height:.9rem}
+  .menu{position:absolute;top:calc(100% + .8rem);left:50%;transform:translateX(-50%);
+    min-width:11.5rem;list-style:none;margin:0;padding:.4rem;display:none;
+    background:var(--bg);border:1px solid var(--line);border-radius:6px;
+    box-shadow:0 12px 30px rgba(29,27,46,.13);z-index:50}
+  /* With JS off these keep the menus reachable by hover and by keyboard;
+     js/nav.js adds the `js` class and then drives aria-expanded itself. */
+  :root:not(.js) .has-menu:hover > .menu,
+  :root:not(.js) .has-menu:focus-within > .menu,
+  .menu-trigger[aria-expanded="true"] + .menu{display:block}
+  .menu a{display:block;padding:.46rem .7rem;border-radius:4px;text-decoration:none;
+    font-size:var(--step--1);color:var(--ink);white-space:nowrap}
+  .menu a:hover{background:var(--bg-tint);color:var(--violet)}
+  .menu a[aria-current="page"]{color:var(--violet);font-weight:600}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="/" aria-label="Tango Integral home">
+      <img src="/img/logo-wordmark.png" alt="Tango Integral" width="111" height="40">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <div class="has-menu">
+        <button class="nav-link menu-trigger" type="button" aria-expanded="false" aria-controls="about-menu">About us<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="about-menu">
+          <li><a href="/team">Team</a></li>
+          <li><a href="/method">Method</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="has-menu">
+        <button class="nav-link menu-trigger" type="button" aria-expanded="false" aria-controls="classes-menu">Classes<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="classes-menu">
+          <li><a href="/classes">Group Classes</a></li>
+          <li><a href="/private-classes">Private Classes</a></li>
+        </ul>
+      </div>
+      <a class="nav-link" href="/tango-in-london">Tango in London</a>
+      <a class="nav-link" href="/contact">Contact Us</a>
+      <a class="nav-link" href="https://www.tangointegral.com/blog">Blog</a>
+      <a class="btn btn-solid" href="#enquire">Save my place</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero" aria-label="Buenos Aires tango holidays">
+    <div class="wrap hero-inner">
+      <p class="kicker">Tango holidays</p>
+      <h1>The heart of tango, with people who know it.</h1>
+      <p class="lede">The most authentic, unforgettable trip to Buenos Aires — exploring tango and the magic of this city with those who know it best. A journey you will never forget.</p>
+      <p class="status">New dates coming soon</p>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Why come with us</p>
+      <h2>Buenos Aires from the inside.</h2>
+      <p class="lead">Anyone can book a flight. What's hard to book is the part that only comes from knowing the city — which milonga is worth your Tuesday, which teacher will change how you dance, which barrio you want to wake up in.</p>
+
+      <div class="callout">
+        <p><strong>Very limited spaces.</strong> We want to build great relationships with our guests and tailor the experience to make it truly unique — so the group stays small.</p>
+      </div>
+
+      <ul class="reasons">
+        <li>
+          <span class="mark" aria-hidden="true">01</span>
+          <div>
+            <h3>People who live it</h3>
+            <p>Every one of our team was born in Buenos Aires, has lived there, or knows it well. The way to really know the soul of a city is to know its people.</p>
+          </div>
+        </li>
+        <li>
+          <span class="mark" aria-hidden="true">02</span>
+          <div>
+            <h3>Planned by specialists</h3>
+            <p>We have specialists in tourism working to make your journey as smooth and as well-informed as possible.</p>
+          </div>
+        </li>
+        <li>
+          <span class="mark" aria-hidden="true">03</span>
+          <div>
+            <h3>A barrio, not a hotel strip</h3>
+            <p>You stay in a beautiful, historic neighbourhood, with most of what you need and want already on your doorstep.</p>
+          </div>
+        </li>
+        <li>
+          <span class="mark" aria-hidden="true">04</span>
+          <div>
+            <h3>And above all — where to dance</h3>
+            <p>The best, most authentic milongas, inspirational classes, and we'll show you where to find all your dancing essentials.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="tint">
+    <div class="wrap">
+      <p class="eyebrow">What's included</p>
+      <h2>Everything but the flight.</h2>
+
+      <ul class="included">
+        <li><span>Accommodation in exclusive apartments in a typical San Telmo house, breakfast included<sup>*</sup></span></li>
+        <li><span>The best combination of milongas, carefully chosen from the heart of the tango scene</span></li>
+        <li><span>Welcome dinner at a traditional bodegón</span></li>
+        <li><span>Group classes at the Tango Integral school in Buenos Aires</span></li>
+        <li><span>Workshops with guest master teachers — world-class maestros</span></li>
+        <li><span>Tango shopping tour</span></li>
+        <li><span>City tour, including La Boca</span></li>
+        <li><span>Bike tour through the ecological reserve and the city's famous parks — or a day at a country house with a swimming pool</span></li>
+        <li><span>A daytime tour with a proper picnic, visiting one of the most famous and entertaining museums in Buenos Aires</span></li>
+        <li><span>Dinner at one of the best restaurants in Buenos Aires — or in the world</span></li>
+        <li><span>Farewell party: a traditional homemade Argentine asado</span></li>
+        <li><span>Transfer from the airport on arrival<sup>†</sup></span></li>
+      </ul>
+
+      <div class="footnotes">
+        <p><sup>*</sup> Pictures and details of the apartments at <a href="http://www.bairescolonial.com.ar/en/los-departamentos/" target="_blank" rel="noopener">bairescolonial.com.ar</a>.</p>
+        <p><sup>†</sup> The transfer back to the airport at the end of the trip is not included.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">From the last trip</p>
+      <h2>What it actually looks like.</h2>
+      <ul class="gallery">
+        <li><figure>
+          <img src="/img/ba-medialunas.jpg" alt="Medialunas, coffee and a mate on a breakfast table in Buenos Aires" width="900" height="1200" loading="lazy">
+          <figcaption>Breakfast in the San Telmo house, every morning.</figcaption>
+        </figure></li>
+        <li><figure>
+          <img src="/img/ba-group-breakfast.jpg" alt="The group sitting around a long table in a tiled Buenos Aires patio" width="895" height="594" loading="lazy">
+          <figcaption>Long lunches in the patio — half the trip happens here.</figcaption>
+        </figure></li>
+        <li><figure>
+          <img src="/img/ba-milonga-hall.jpg" alt="A Buenos Aires milonga hall with chandeliers and tall windows" width="899" height="1200" loading="lazy">
+          <figcaption>One of the milongas we take you to.</figcaption>
+        </figure></li>
+        <li><figure>
+          <img src="/img/ba-country-house-pool.jpg" alt="Swimming pool and garden at a country house outside Buenos Aires" width="1200" height="900" loading="lazy">
+          <figcaption>The country house day, for when your feet need a rest.</figcaption>
+        </figure></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHEN / HOW MUCH -->
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">The practical part</p>
+      <h2>When, and how much?</h2>
+      <div class="facts">
+        <div class="fact">
+          <h3>When</h3>
+          <p>New dates coming soon. Tell us you're interested and we'll write to you first, before the places go.</p>
+        </div>
+        <div class="fact">
+          <h3>How much</h3>
+          <p>Pricing for the next edition is being finalised. Ask us and we'll send it as soon as it's set.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY -->
+  <section id="enquire" class="tint">
+    <div class="wrap">
+      <p class="eyebrow">Interested?</p>
+      <h2>Contact us to save your place.</h2>
+
+      <div class="ask-grid" style="margin-top:2.5rem">
+        <div class="prompts">
+          <div class="prompt">
+            <h3>Not sure yet?</h3>
+            <p>That's fine. Tell us what you'd like to know and we'll answer honestly — including if we think this trip isn't for you.</p>
+          </div>
+          <div class="prompt">
+            <h3>Don't know who we are?</h3>
+            <p>Let's arrange a meeting, or come to a class and ask as many questions as you want.</p>
+          </div>
+          <div class="prompt">
+            <h3>Can I pay in instalments?</h3>
+            <p>We want to make it easy for you. Ask, and we'll work something out.</p>
+          </div>
+        </div>
+
+        <!-- Posts to a Formspree form separate from the one on /contact, so trip
+             enquiries land in their own thread instead of the general inbox. -->
+        <div class="form-card">
+          <h2>Ask about the trip</h2>
+          <p class="form-intro">Tell us a little about yourself and what you'd like to know.</p>
+
+          <form action="https://formspree.io/f/xrpgljpr" method="POST" data-ajax
+                data-success="Thanks — we've got it. We'll be in touch about the next trip.">
+            <input type="hidden" name="_subject" value="Buenos Aires trip enquiry — tangointegral.com">
+
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" autocomplete="name" required>
+                <span class="field-err" data-err-for="name"></span>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+                <span class="field-err" data-err-for="email"></span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" required
+                placeholder="Have you danced before? Travelling alone or with someone? Anything you want to ask."></textarea>
+              <span class="field-err" data-err-for="message"></span>
+            </div>
+
+            <!-- Formspree ignores submissions where _gotcha is filled in -->
+            <div class="hp" aria-hidden="true">
+              <label for="_gotcha">Leave this field empty</label>
+              <input id="_gotcha" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-solid" type="submit">Send enquiry</button>
+              <p class="form-note">We only use your details to reply. No lists, no sharing.</p>
+            </div>
+
+            <p class="form-msg" role="status" hidden></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="/img/logo-wordmark.png" alt="Tango Integral" width="136" height="49" style="margin-bottom:1rem">
+        <p style="color:var(--ink-dim);max-width:34ch">Argentine tango classes in London — friendly, professional, and rooted in Buenos Aires.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="foot-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/classes">Classes &amp; times</a></li>
+          <li><a href="/private-classes">Private lessons</a></li>
+          <li><a href="/method">Method</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+          <li><a href="/tango-in-london">Tango in London</a></li>
+          <li><a href="/buenos-aires-trip">Buenos Aires trip</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="foot-links">
+          <li><a href="mailto:info@tangointegral.com">info@tangointegral.com</a></li>
+          <li><a href="https://wa.me/447751672159">WhatsApp +44 7751 672159</a></li>
+          <li>Thistle London Bloomsbury Park, London WC1B 5AD</li>
+        </ul>
+        <div class="socials">
+          <a href="https://www.instagram.com/tangointegral">Instagram</a>
+          <a href="https://www.facebook.com/tangointegral">Facebook</a>
+          <a href="https://www.youtube.com/channel/UCO40L-Ul0BchGnplZlliX-g">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>© Tango Integral Ltd 2025. All rights reserved.</span>
+      <span>Argentine Tango School · London</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/form.js" defer></script>
+<script src="/js/nav.js" defer></script>
+</body>
+</html>

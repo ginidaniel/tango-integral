@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Method — How We Teach Argentine Tango | Tango Integral</title>
+<meta name="description" content="The Tango Integral teaching method: technique, connection, structure of movement and musicality — four aspects worked together in every class.">
+<link rel="canonical" href="https://www.tangointegral.com/method">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tango Integral">
+<meta property="og:title" content="Method — How We Teach Argentine Tango">
+<meta property="og:description" content="Technique, connection, structure of movement and musicality — four aspects, worked together in every class.">
+<meta property="og:url" content="https://www.tangointegral.com/method">
+<meta property="og:image" content="https://www.tangointegral.com/img/og-cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@tangointegral">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    /* Brand palette — from the logo */
+    --violet:#52498d; --violet-deep:#413a73;
+    --turq:#66c9c4; --turq-deep:#33a49e;
+    --coral:#ee7d61; --coral-deep:#e2694b;
+    --bg:#ffffff; --bg-tint:#f5f3fb; --bg-turq:#ecf7f6;
+    --ink:#1d1b2e; --ink-dim:#5c5772; --line:#e7e4f0;
+
+    --step--1:.86rem; --step-0:1.06rem; --step-1:1.32rem;
+    --step-2:clamp(1.5rem,1.1rem + 1.6vw,2rem);
+    --step-3:clamp(2rem,1.4rem + 2.6vw,2.9rem);
+    --wrap:1080px; --gutter:clamp(1.15rem,5vw,2.75rem);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Inter",system-ui,sans-serif;font-size:var(--step-0);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:"Fraunces",Georgia,serif;font-weight:500;line-height:1.12;margin:0;color:var(--ink)}
+  h1,h2{font-size:var(--step-3);letter-spacing:-.01em}
+  h3{font-size:var(--step-1);font-weight:600}
+  p{margin:0 0 1rem}
+  a{color:var(--violet)}
+  img{display:block;max-width:100%}
+  .wrap{max-width:var(--wrap);margin-inline:auto;padding-inline:var(--gutter)}
+  .skip{position:absolute;left:-9999px;top:0}
+  .skip:focus{left:1rem;top:1rem;z-index:99;background:var(--coral);color:var(--ink);padding:.6rem 1rem;border-radius:4px}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+
+  .btn{display:inline-block;text-decoration:none;font-weight:600;font-size:var(--step--1);padding:.72rem 1.25rem;border-radius:3px;border:0;font-family:inherit;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+  .btn-solid{background:var(--coral);color:var(--ink)}
+  .btn-solid:hover{background:var(--coral-deep);color:#fff}
+  .btn-outline{border:1px solid var(--violet);color:var(--violet);background:transparent}
+  .btn-outline:hover{background:var(--violet);color:#fff}
+
+  /* ---- Header ---- */
+  .site-head{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(9px);border-bottom:1px solid var(--line)}
+  .head-row{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.85rem}
+  .brand img{height:40px;width:auto}
+  .nav{display:flex;align-items:center;gap:1.6rem}
+  .nav a.nav-link{text-decoration:none;font-size:var(--step--1);letter-spacing:.01em;color:var(--ink);transition:color .2s}
+  .nav a.nav-link:hover{color:var(--violet)}
+  .nav a.nav-link[aria-current="page"]{color:var(--violet);border-bottom:2px solid var(--turq)}
+  @media(max-width:760px){.nav{gap:1rem}.nav .nav-link,.has-menu{display:none}}
+
+  /* ---- Page head + sections ---- */
+  .page-head{padding-block:clamp(2.5rem,6vw,4rem) 0}
+  .eyebrow{color:var(--violet);font-family:"Fraunces",serif;font-style:italic;font-size:var(--step-1);margin-bottom:.3rem}
+  .lead{color:var(--ink-dim);max-width:62ch;font-size:var(--step-1);margin-top:.9rem}
+  section{padding-block:clamp(2.5rem,6vw,4rem)}
+  .tint{background:var(--bg-tint)}
+  .prose{max-width:66ch;color:var(--ink-dim)}
+  .prose p{margin-bottom:1.1rem}
+
+  /* ---- Footer ---- */
+  .site-foot{background:var(--bg-tint);border-top:1px solid var(--line);padding-block:3.5rem 2.5rem}
+  .foot-grid{display:grid;gap:2rem}
+  @media(min-width:760px){.foot-grid{grid-template-columns:1.4fr 1fr 1fr}}
+  .site-foot h4{font-family:"Inter",sans-serif;font-size:var(--step--1);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);margin:0 0 .9rem;font-weight:600}
+  .site-foot a{color:var(--ink);text-decoration:none}
+  .site-foot a:hover{color:var(--violet)}
+  .foot-links{list-style:none;padding:0;margin:0;display:grid;gap:.55rem}
+  .socials{display:flex;gap:1rem;margin-top:.4rem}
+  .socials a{font-size:var(--step--1);color:var(--ink-dim)}
+  .foot-bar{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.6rem;justify-content:space-between;color:var(--ink-dim);font-size:var(--step--1)}
+
+  /* ---- The four aspects ---- */
+  .aspects{display:grid;gap:1.4rem;margin-top:2.5rem}
+  @media(min-width:640px){.aspects{grid-template-columns:1fr 1fr}}
+  @media(min-width:1000px){.aspects{grid-template-columns:repeat(4,1fr);gap:1.2rem}}
+  .aspect{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff;
+    display:flex;flex-direction:column}
+  /* the four source images are a photo, a diagram, a silhouette and a stock
+     illustration — contain keeps each one whole instead of cropping the
+     diagrams to pieces */
+  /* Fixed band height, and the image fills it with object-fit:contain so it is
+     letterboxed rather than cropped — the four sources are a photo, a diagram,
+     a silhouette and an illustration, in four different shapes. (A percentage
+     max-height does not resolve here, so it would not have held them in.) */
+  .aspect .shot{height:190px;background:var(--bg-tint);padding:.9rem}
+  .aspect .shot img{width:100%;height:100%;object-fit:contain}
+  .aspect .body{padding:1.1rem 1.2rem 1.3rem}
+  .aspect h3{margin-bottom:.35rem}
+  .aspect p{margin:0;color:var(--ink-dim);font-size:var(--step--1);line-height:1.6}
+  .aspect .n{font-family:"Fraunces",serif;color:var(--turq-deep);font-size:var(--step--1);
+    letter-spacing:.08em;display:block;margin-bottom:.15rem}
+
+  .pull{background:var(--bg-turq);border-radius:8px;padding:clamp(1.4rem,4vw,2.2rem);margin-top:2.5rem}
+  .pull p{margin:0;font-family:"Fraunces",serif;font-style:italic;font-size:var(--step-2);
+    line-height:1.35;color:var(--ink);max-width:34ch}
+
+  /* ---- Nav dropdowns ---- */
+  .has-menu{position:relative}
+  .menu-trigger{background:none;border:0;padding:0;font:inherit;font-size:var(--step--1);
+    letter-spacing:.01em;color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;
+    gap:.34rem;padding:.35rem 0;transition:color .2s}
+  .menu-trigger:hover{color:var(--violet)}
+  .menu-trigger.is-current{color:var(--violet);border-bottom:2px solid var(--turq)}
+  .caret{width:.36rem;height:.36rem;border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;transform:translateY(-.12em) rotate(45deg);transition:transform .2s}
+  .menu-trigger[aria-expanded="true"] .caret{transform:translateY(.06em) rotate(-135deg)}
+  /* The panel sits below the trigger with a gap. ::before bridges that gap with
+     an invisible strip so the pointer never actually leaves .has-menu on the way
+     down — without it, mouseleave fires mid-travel and the menu shuts before you
+     can reach it. */
+  .menu::before{content:"";position:absolute;left:0;right:0;top:-.9rem;height:.9rem}
+  .menu{position:absolute;top:calc(100% + .8rem);left:50%;transform:translateX(-50%);
+    min-width:11.5rem;list-style:none;margin:0;padding:.4rem;display:none;
+    background:var(--bg);border:1px solid var(--line);border-radius:6px;
+    box-shadow:0 12px 30px rgba(29,27,46,.13);z-index:50}
+  /* With JS off these keep the menus reachable by hover and by keyboard;
+     js/nav.js adds the `js` class and then drives aria-expanded itself. */
+  :root:not(.js) .has-menu:hover > .menu,
+  :root:not(.js) .has-menu:focus-within > .menu,
+  .menu-trigger[aria-expanded="true"] + .menu{display:block}
+  .menu a{display:block;padding:.46rem .7rem;border-radius:4px;text-decoration:none;
+    font-size:var(--step--1);color:var(--ink);white-space:nowrap}
+  .menu a:hover{background:var(--bg-tint);color:var(--violet)}
+  .menu a[aria-current="page"]{color:var(--violet);font-weight:600}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="/" aria-label="Tango Integral home">
+      <img src="/img/logo-wordmark.png" alt="Tango Integral" width="111" height="40">
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <div class="has-menu">
+        <button class="nav-link menu-trigger is-current" type="button" aria-expanded="false" aria-controls="about-menu">About us<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="about-menu">
+          <li><a href="/team">Team</a></li>
+          <li><a href="/method" aria-current="page">Method</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="has-menu">
+        <button class="nav-link menu-trigger" type="button" aria-expanded="false" aria-controls="classes-menu">Classes<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="classes-menu">
+          <li><a href="/classes">Group Classes</a></li>
+          <li><a href="/private-classes">Private Classes</a></li>
+        </ul>
+      </div>
+      <a class="nav-link" href="/tango-in-london">Tango in London</a>
+      <a class="nav-link" href="/contact">Contact Us</a>
+      <a class="nav-link" href="https://www.tangointegral.com/blog">Blog</a>
+      <a class="btn btn-solid" href="/contact">Come to a class</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap page-head">
+    <p class="eyebrow">Method</p>
+    <h1>How we do it.</h1>
+    <p class="lead">We are a group of professional dancers — specialists of the body, from different artistic backgrounds — who share the study and teaching of tango, as a dance and as an expression of human connection.</p>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="prose">
+      <p>We approach learning from several perspectives at once, on the assumption that <strong>we are as we dance, and we dance as we are</strong>. Integrating different approaches and methods lets us explore that process at its fullest, understand the very different needs each person arrives with, and offer tools that serve both individual and collective development.</p>
+      <p>From our teaching approach, four aspects are involved in the learning process.</p>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <div class="aspects">
+        <div class="aspect">
+          <div class="shot"><img src="/img/tango-technique.jpg" alt="Geometric lines traced over a dancer's posture" width="353" height="512" loading="lazy"></div>
+          <div class="body">
+            <span class="n">01</span>
+            <h3>Technique</h3>
+            <p>The individual bodily organisation that favours the biomechanics of a movement. It lets us coordinate the inner music of a movement with the music in the room, and widens the range of what we can do with confidence.</p>
+          </div>
+        </div>
+        <div class="aspect">
+          <div class="shot"><img src="/img/tango-connection.jpg" alt="Two facing profiles, illustrating connection" width="1400" height="875" loading="lazy"></div>
+          <div class="body">
+            <span class="n">02</span>
+            <h3>Connection</h3>
+            <p>Our channel of communication — the better it is, the better we understand each other. Dancing tango is having a conversation. Some of those conversations run deep enough to change a life; others pass without leaving a footprint.</p>
+          </div>
+        </div>
+        <div class="aspect">
+          <div class="shot"><img src="/img/tango-structure.jpg" alt="A diagram of tango footsteps on a pavement" width="1066" height="1600" loading="lazy"></div>
+          <div class="body">
+            <span class="n">03</span>
+            <h3>Structure of movement</h3>
+            <p>The grammar of the dance. Steps are the words and the elements are the letters: work the letters and you can write clear words, and then clearer sentences that are unmistakably your own.</p>
+          </div>
+        </div>
+        <div class="aspect">
+          <div class="shot"><img src="/img/tango-musicality.jpg" alt="A silhouette with musical notes" width="610" height="390" loading="lazy"></div>
+          <div class="body">
+            <span class="n">04</span>
+            <h3>Musicality</h3>
+            <p>Every movement has its own musicality, because it happens over time. Musicality is where that inner time meets the music you are hearing — and meets your partner inside it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tint">
+    <div class="wrap">
+      <h2>The focus is on one. The work is on all four.</h2>
+      <div class="prose" style="margin-top:1.2rem">
+        <p>Each aspect plays its own part, but they are strongly connected. A class is focused mainly on one of them while the work quietly involves the rest: technical work makes for a better connection, and a better connection clarifies the structure of a movement.</p>
+      </div>
+      <div class="pull">
+        <p>Connection, on a structure of movement, supported by its technique, expressing musicality.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Why do we dance tango?</h2>
+      <div class="prose" style="margin-top:1.2rem">
+        <p>Whatever we do while dancing has to lead somewhere — an expression, a direction. A dance without a motive is a house built without foundations: sooner or later it falls apart.</p>
+        <p>The school works across Buenos Aires and London, so that the exchange of knowledge and experience enriches both sides of the Atlantic. The ethos of Tango Integral, and of its classes, is the same in both places: creative, informative and dynamic explorations, every time we meet.</p>
+        <p style="margin-top:1.8rem"><a class="btn btn-outline" href="/classes">See the classes</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <img src="/img/logo-wordmark.png" alt="Tango Integral" width="136" height="49" style="margin-bottom:1rem">
+        <p style="color:var(--ink-dim);max-width:34ch">Argentine tango classes in London — friendly, professional, and rooted in Buenos Aires.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="foot-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/classes">Classes &amp; times</a></li>
+          <li><a href="/private-classes">Private lessons</a></li>
+          <li><a href="/method">Method</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+          <li><a href="/tango-in-london">Tango in London</a></li>
+          <li><a href="/buenos-aires-trip">Buenos Aires trip</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="foot-links">
+          <li><a href="mailto:info@tangointegral.com">info@tangointegral.com</a></li>
+          <li><a href="https://wa.me/447751672159">WhatsApp +44 7751 672159</a></li>
+          <li>Thistle London Bloomsbury Park, London WC1B 5AD</li>
+        </ul>
+        <div class="socials">
+          <a href="https://www.instagram.com/tangointegral">Instagram</a>
+          <a href="https://www.facebook.com/tangointegral">Facebook</a>
+          <a href="https://www.youtube.com/channel/UCO40L-Ul0BchGnplZlliX-g">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>&copy; Tango Integral Ltd 2025. All rights reserved.</span>
+      <span>Argentine Tango School &middot; London</span>
+    </div>
+  </div>
+</footer>
+<script src="/js/nav.js" defer></script>
+</body>
+</html>

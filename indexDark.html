@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tango Integral — Argentine Tango Classes in London</title>
-<meta name="description" content="A friendly, professional Argentine tango school in central London. Group and private classes for every level, trained in Argentina. Start with a free taster session.">
+<meta name="description" content="A friendly, professional Argentine tango school in central London. Group and private classes for every level, taught by teachers trained in Argentina. Saturdays in Bloomsbury.">
 <link rel="canonical" href="https://www.tangointegral.com/">
 
 <!-- Open Graph / social -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tango Integral">
 <meta property="og:title" content="Tango Integral — Argentine Tango Classes in London">
-<meta property="og:description" content="A friendly, professional Argentine tango school in central London. Group and private classes for every level. Start with a free taster session.">
+<meta property="og:description" content="A friendly, professional Argentine tango school in central London. Group and private classes for every level. Saturdays in Bloomsbury, central London.">
 <meta property="og:url" content="https://www.tangointegral.com/">
 <meta property="og:image" content="https://www.tangointegral.com/img/og-cover.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -130,7 +130,7 @@
   .theme-link:hover{background:var(--turq);color:#241f47;border-color:var(--turq)}
   @media(max-width:720px){
     .nav{gap:1rem}
-    .nav .nav-link{display:none}
+    .nav .nav-link,.has-menu{display:none}
   }
 
   /* ---- Hero (full-bleed, cinematic) ---- */
@@ -164,17 +164,6 @@
   .split img{border-radius:6px;width:100%;height:100%;object-fit:cover;max-height:460px}
   .eyebrow{color:var(--turq-1);font-family:"Fraunces",serif;font-style:italic;font-size:var(--step-1);margin-bottom:.4rem}
 
-  /* Path (ordered sequence) */
-  .path{border-top:1px solid var(--line)}
-  .path-item{
-    display:grid;grid-template-columns:auto 1fr;gap:1.2rem 1.6rem;
-    padding-block:2rem;border-bottom:1px solid var(--line);align-items:baseline;
-  }
-  .path-num{font-family:"Fraunces",serif;font-size:var(--step-3);color:var(--turq);line-height:1}
-  .path-item h3{margin-bottom:.35rem}
-  .path-item p{color:var(--text-dim);margin:0;max-width:60ch}
-  @media(min-width:860px){.path-item{grid-template-columns:auto 1fr auto;align-items:center}}
-  .path-item .go{white-space:nowrap}
 
   /* Panel section (method) */
   .panel{background:var(--panel)}
@@ -218,6 +207,35 @@
   .socials a{font-size:var(--step--1);color:var(--text-dim)}
   .foot-bar{margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid var(--line);
     display:flex;flex-wrap:wrap;gap:.6rem;justify-content:space-between;color:var(--text-dim);font-size:var(--step--1)}
+
+  /* ---- Nav dropdowns ---- */
+  .has-menu{position:relative}
+  .menu-trigger{background:none;border:0;padding:0;font:inherit;font-size:var(--step--1);
+    letter-spacing:.01em;color:var(--text-dim);cursor:pointer;display:inline-flex;align-items:center;
+    gap:.34rem;padding:.35rem 0;transition:color .2s}
+  .menu-trigger:hover{color:var(--text)}
+  .menu-trigger.is-current{color:var(--turq-1);border-bottom:2px solid var(--turq)}
+  .caret{width:.36rem;height:.36rem;border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;transform:translateY(-.12em) rotate(45deg);transition:transform .2s}
+  .menu-trigger[aria-expanded="true"] .caret{transform:translateY(.06em) rotate(-135deg)}
+  /* The panel sits below the trigger with a gap. ::before bridges that gap with
+     an invisible strip so the pointer never actually leaves .has-menu on the way
+     down — without it, mouseleave fires mid-travel and the menu shuts before you
+     can reach it. */
+  .menu::before{content:"";position:absolute;left:0;right:0;top:-.9rem;height:.9rem}
+  .menu{position:absolute;top:calc(100% + .8rem);left:50%;transform:translateX(-50%);
+    min-width:11.5rem;list-style:none;margin:0;padding:.4rem;display:none;
+    background:var(--panel);border:1px solid var(--line);border-radius:6px;
+    box-shadow:0 14px 34px rgba(0,0,0,.4);z-index:50}
+  /* With JS off these keep the menus reachable by hover and by keyboard;
+     js/nav.js adds the `js` class and then drives aria-expanded itself. */
+  :root:not(.js) .has-menu:hover > .menu,
+  :root:not(.js) .has-menu:focus-within > .menu,
+  .menu-trigger[aria-expanded="true"] + .menu{display:block}
+  .menu a{display:block;padding:.46rem .7rem;border-radius:4px;text-decoration:none;
+    font-size:var(--step--1);color:var(--text-dim);white-space:nowrap}
+  .menu a:hover{background:rgba(255,255,255,.07);color:var(--text)}
+  .menu a[aria-current="page"]{color:var(--turq-1);font-weight:600}
 </style>
 </head>
 <body>
@@ -229,11 +247,26 @@
       <img src="/img/logo-wordmark.png" alt="Tango Integral" width="100" height="36">
     </a>
     <nav class="nav" aria-label="Primary">
-      <a class="nav-link" href="/">Home</a>
-      <a class="nav-link" href="/classes">Classes</a>
-      <a class="nav-link" href="/contact">Contact</a>
+      <div class="has-menu">
+        <button class="nav-link menu-trigger" type="button" aria-expanded="false" aria-controls="about-menu">About us<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="about-menu">
+          <li><a href="/team">Team</a></li>
+          <li><a href="/method">Method</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+        </ul>
+      </div>
+      <div class="has-menu">
+        <button class="nav-link menu-trigger" type="button" aria-expanded="false" aria-controls="classes-menu">Classes<span class="caret" aria-hidden="true"></span></button>
+        <ul class="menu" id="classes-menu">
+          <li><a href="/classes">Group Classes</a></li>
+          <li><a href="/private-classes">Private Classes</a></li>
+        </ul>
+      </div>
+      <a class="nav-link" href="/tango-in-london">Tango in London</a>
+      <a class="nav-link" href="/contact">Contact Us</a>
+      <a class="nav-link" href="https://www.tangointegral.com/blog">Blog</a>
       <a class="theme-link" href="index.html" aria-label="View the light version" title="Light version">◑ Light</a>
-      <a class="btn btn-solid nav-cta" href="/contact">Free taster</a>
+      <a class="btn btn-solid nav-cta" href="/contact">Come to a class</a>
     </nav>
   </div>
 </header>
@@ -247,7 +280,7 @@
       <h1 class="rise d2">Tango, the way Buenos Aires dances it.</h1>
       <p class="lede rise d3">A warm, welcoming school in the heart of London — with teachers fully trained in Argentina. From your very first step to the deepest details of the embrace.</p>
       <div class="cta-row rise d3">
-        <a class="btn btn-solid" href="/contact">Book a free taster</a>
+        <a class="btn btn-solid" href="/contact">Come to a class</a>
         <a class="btn btn-outline" href="/classes">See class times</a>
       </div>
     </div>
@@ -263,41 +296,6 @@
         <p style="margin-top:1.4rem"><a class="btn btn-outline" href="/classes">Meet the classes</a></p>
       </div>
       <img src="/img/in-class-2.jpg" alt="Students and teachers together after a Tango Integral class in London" width="1400" height="1050" loading="lazy">
-    </div>
-  </section>
-
-  <!-- HOW TO BEGIN -->
-  <section class="path">
-    <div class="wrap">
-      <h2>New to tango? Three ways to begin.</h2>
-      <p class="lead-line">We recommend taking them in order — but you can also jump straight into weekly classes whenever you're ready.</p>
-
-      <div style="margin-top:2.5rem">
-        <div class="path-item">
-          <span class="path-num">01</span>
-          <div>
-            <h3>Free taster workshop</h3>
-            <p>Sixty minutes of pure tango flavour — enough to hook you into the dance. No experience, no partner, no pressure.</p>
-          </div>
-          <a class="btn btn-outline go" href="/contact">Book it free</a>
-        </div>
-        <div class="path-item">
-          <span class="path-num">02</span>
-          <div>
-            <h3>Beginners course</h3>
-            <p>An online module to take the first concepts home with you and arrive to class already moving.</p>
-          </div>
-          <a class="btn btn-outline go" href="/classes">Learn more</a>
-        </div>
-        <div class="path-item">
-          <span class="path-num">03</span>
-          <div>
-            <h3>Weekly classes</h3>
-            <p>The heart of the school. Learn, practise, enjoy, and meet the London tango community every week.</p>
-          </div>
-          <a class="btn btn-outline go" href="/classes">See times</a>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -321,7 +319,7 @@
           <p class="eyebrow">Every year</p>
           <h2>Buenos Aires tango holidays</h2>
           <p>We travel to the beating heart of tango during the Argentine summer — sleepless nights, packed days, and half a European winter skipped. Come with us.</p>
-          <p style="margin-top:1.4rem"><a class="btn btn-solid" href="/contact">Join the next trip</a></p>
+          <p style="margin-top:1.4rem"><a class="btn btn-solid" href="/buenos-aires-trip">Join the next trip</a></p>
         </div>
       </div>
     </div>
@@ -338,9 +336,9 @@
   <!-- FINAL CTA -->
   <section class="final">
     <div class="wrap">
-      <h2>Your first class is on us.</h2>
-      <p>Come to a free taster session and feel what tango is really about. Bring a friend or come on your own — everyone's welcome.</p>
-      <a class="btn btn-solid" href="/contact">Book a free taster</a>
+      <h2>We dance on Saturdays.</h2>
+      <p>Classes run two Saturdays a month by Russell Square, from 5.30pm — and the Paciencia milonga follows straight after. Bring a friend or come on your own; we rotate partners, so nobody sits out.</p>
+      <a class="btn btn-solid" href="/contact">Come to a class</a>
     </div>
   </section>
 </main>
@@ -357,6 +355,11 @@
         <ul class="foot-links">
           <li><a href="/">Home</a></li>
           <li><a href="/classes">Classes &amp; times</a></li>
+          <li><a href="/private-classes">Private lessons</a></li>
+          <li><a href="/method">Method</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+          <li><a href="/buenos-aires-trip">Buenos Aires trip</a></li>
           <li><a href="/contact">Contact</a></li>
           <li><a href="https://www.tangointegral.com/blog">Blog</a></li>
         </ul>
@@ -381,5 +384,6 @@
     </div>
   </div>
 </footer>
+<script src="/js/nav.js" defer></script>
 </body>
 </html>
