@@ -20,6 +20,8 @@ host, and easy to keep in version control.
 | `js/nav.js`             | Nav dropdowns, mobile menu, theme toggle                |
 | newsletter              | EmailOctopus embed, on `/contact#newsletter` only       |
 | `data/milongas.json`    | **Orphaned** — the old hand-kept sample data, superseded by the live API. Safe to delete. |
+| `blog.html`             | Blog index                                              |
+| `post/*.html`           | Blog posts — the path is load-bearing, see below        |
 | `404.html`              | Not found — also what makes Cloudflare stop soft-404ing  |
 | `robots.txt`            | Allow all, points at the sitemap                        |
 | `img/icon-*.png`        | Favicons, padded square from the brand symbol           |
@@ -263,6 +265,26 @@ other: the violet-tinted one read as a leftover slab between a white header and 
 white page, and a neutral one looks detached above a violet one. Light gets a
 neutral near-black and shows more of the photo; dark keeps the violet tint so the
 hero joins the page below it.
+
+## The blog
+One post, and its URL is the most valuable thing on the site: **~4,375 views**
+on Wix, and it is what brings search traffic in.
+
+> `/post/art-of-cabeceo-part-1-by-the-leader`
+
+That path is reproduced exactly — the file lives at
+`post/art-of-cabeceo-part-1-by-the-leader.html`, which Cloudflare Pages serves at
+the extensionless path. **Do not rename it.** A redirect would work but bleeds a
+little authority and costs a round trip; keeping the URL identical costs nothing.
+
+This is also where the root-relative image and script paths pay off: the post
+sits a directory deeper than everything else, and `/img/…` and `/js/…` resolve
+from there without a single change.
+
+The Wix post had no images of its own — its social image was a YouTube thumbnail
+— so it now uses `img/in-class-6.jpg`, a social dance floor, which is where the
+cabeceo actually happens. Published and updated dates are preserved in the
+`BlogPosting` schema (22 March 2018, updated 8 July 2020).
 
 ## Findability
 Measured against the deployed site, not assumed.
