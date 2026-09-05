@@ -54,5 +54,5 @@
 /indexDark                      /                   301
 /indexDark.html                 /                   301
 
-# --- TODO: /privacy-policy has no destination yet. It is deliberately absent
-#     from this file so it 404s loudly rather than redirecting somewhere wrong.
+# /privacy-policy keeps its URL — it is a real page again, rewritten to describe
+# this website rather than the mobile app the old one was about.

@@ -23,6 +23,7 @@ host, and easy to keep in version control.
 | `blog.html`             | Blog index                                              |
 | `post/*.html`           | Blog posts — the path is load-bearing, see below        |
 | `404.html`              | Not found — also what makes Cloudflare stop soft-404ing  |
+| `privacy-policy.html`   | Privacy policy — rewritten, describes this site         |
 | `_redirects`            | Old Wix URLs -> new ones (Cloudflare Pages)             |
 | `robots.txt`            | Allow all, points at the sitemap                        |
 | `img/icon-*.png`        | Favicons, padded square from the brand symbol           |
@@ -327,9 +328,31 @@ Pointing a pile of dead URLs at `/` reads as a soft 404 and throws away whatever
 ranking they carry, so old class and pricing pages land on `/classes`, old trips
 on `/buenos-aires-trip`, and so on.
 
-**`/privacy-policy` is deliberately not in the file.** The old site had one and
-the new site does not, so it is left to 404 loudly rather than redirected
-somewhere misleading. That is a gap to close, not a decision — see below.
+`/privacy-policy` keeps its URL, and needs no rule — see below.
+
+## The privacy policy
+The Wix page at `/privacy-policy` **was about the mobile app, not the website**.
+It was the standard app-store template: Google Play Services, log data from your
+phone, and the line *"The information that I request will be retained on your
+device and is not collected by me in any way"* — which is plainly untrue of a
+website with three contact forms and a newsletter. Publishing it as-is would
+have been worse than having nothing.
+
+So the URL is kept and the text is new, describing what this site actually does:
+Formspree for the three forms, EmailOctopus for the newsletter, Cloudflare for
+hosting, and the four things a visitor's browser fetches from elsewhere —
+including **Google Fonts, which sees every visitor's IP address on every page**.
+Self-hosting the two typefaces would remove that; it is the one disclosure here
+that could be engineered away rather than documented.
+
+The app has been discontinued, so nothing about it remains.
+
+The page is `noindex, follow` — a privacy policy has no business competing in
+search results, but its links should still be followed.
+
+**This is not legal advice.** It is an accurate description of the site's data
+handling written by the person who built it, which is a good starting point and
+not a substitute for someone qualified reading it.
 
 ## Findability
 Measured against the deployed site, not assumed.
@@ -493,10 +516,10 @@ URLs so SEO/rankings carry over.
       the footer again. Verify EmailOctopus's current API before starting.
 - [x] Migrate the blog post, keeping its URL
 - [x] Redirect map for the old Wix URLs
-- [ ] **Write a privacy policy.** The old site had `/privacy-policy`; the new one
-      has nothing. Three Formspree forms and an EmailOctopus newsletter collect
-      personal data, so under UK GDPR one is expected — and that URL currently
-      404s.
+- [x] Privacy policy, rewritten for the website and linked in every footer
+- [ ] Have someone qualified read the privacy policy
+- [ ] Consider self-hosting the two Google Fonts — they are the only thing
+      exposing every visitor's IP to a third party on every page
 - [ ] `_redirects` should include `/indexDark` and `/indexDark.html` -> `/`
       (Cloudflare currently answers those with the home page at 200)
 - [ ] Extract shared CSS to `css/styles.css` once design is locked
