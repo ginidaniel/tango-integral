@@ -501,9 +501,9 @@ URLs so SEO/rankings carry over.
 - [x] Redistribute the main nav — About us / Classes / Tango experiences
 - [x] Mobile menu — hamburger panel, generated from the desktop nav
 - [x] Bio for Eleonora
-- [ ] Bio for Dana — still the one-line placeholder, and now visibly shorter
-      than Eleonora's on `/team`
-- [ ] Add Dana's barre cycle — coming in a few days
+- [x] Bio for Dana
+- [ ] Add Dana's Tango Barre cycle — she is named as teaching it on `/team`,
+      but there are still no dates or a page for it
 - [ ] Consider a dedicated Paciencia page (the Wix one has DJ, transport and commuter detail this page only summarises)
 - [x] Download & re-host images (now self-hosted in `img/`)
 - [x] White/mono logo for dark backgrounds (CSS filter on `indexDark.html`)
