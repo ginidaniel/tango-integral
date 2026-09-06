@@ -269,7 +269,7 @@ neutral near-black and shows more of the photo; dark keeps the violet tint so th
 hero joins the page below it.
 
 ## The blog
-One post, and its URL is the most valuable thing on the site: **~4,375 views**
+The first post's URL is the most valuable thing on the site: **~4,375 views**
 on Wix, and it is what brings search traffic in.
 
 > `/post/art-of-cabeceo-part-1-by-the-leader`
@@ -287,6 +287,11 @@ The Wix post had no images of its own — its social image was a YouTube thumbna
 — so it now uses `img/in-class-6.jpg`, a social dance floor, which is where the
 cabeceo actually happens. Published and updated dates are preserved in the
 `BlogPosting` schema (22 March 2018, updated 8 July 2020).
+
+The four pillars on `/method` carry ids — `#technique`, `#connection`,
+`#structure`, `#musicality` — so posts can link to the exact point rather than
+the top of the page. They have `scroll-margin-top` so the sticky header does not
+cover the heading you just linked to.
 
 ### Adding a post
 The plan is roughly one a month, with the newsletter going out to carry the
@@ -515,6 +520,8 @@ URLs so SEO/rankings carry over.
 - [x] Mobile menu — hamburger panel, generated from the desktop nav
 - [x] Bio for Eleonora
 - [x] Bio for Dana
+- [ ] Write "The Walk Is an Advanced Class" — the follow-up, narrowing
+      "Fundamentals Are Not Basics" down to the walk itself
 - [ ] Add Dana's Tango Barre cycle — she is named as teaching it on `/team`,
       but there are still no dates or a page for it
 - [ ] Consider a dedicated Paciencia page (the Wix one has DJ, transport and commuter detail this page only summarises)

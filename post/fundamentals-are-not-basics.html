@@ -7,18 +7,35 @@
    wrong one. Also marks that JS is available, which the nav CSS keys off. */
 (function(){var d=document.documentElement;d.classList.add("js");
 try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribute("data-theme",t);}catch(e){}})();</script>
-<title>Blog — Notes on Argentine Tango | Tango Integral</title>
-<meta name="description" content="Notes on Argentine tango from Tango Integral, the tango school in central London.">
-<link rel="canonical" href="https://www.tangointegral.com/blog">
+<title>Fundamentals Are Not Basics | Tango Integral</title>
+<meta name="description" content="In tango, &quot;fundamentals&quot; became a synonym for &quot;beginner&quot;. Some of them cannot be taught early at all — not because they are complicated, but because a beginner cannot perceive them yet.">
+<link rel="canonical" href="https://www.tangointegral.com/post/fundamentals-are-not-basics">
 
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:site_name" content="Tango Integral">
-<meta property="og:title" content="Blog — Notes on Argentine Tango">
-<meta property="og:description" content="Notes on Argentine tango from Tango Integral, London.">
-<meta property="og:url" content="https://www.tangointegral.com/blog">
-<meta property="og:image" content="https://www.tangointegral.com/img/in-class-6.jpg">
+<meta property="og:title" content="Fundamentals Are Not Basics">
+<meta property="og:description" content="Some fundamentals cannot be taught to a beginner — not because they are complicated, but because a beginner cannot perceive them yet.">
+<meta property="og:url" content="https://www.tangointegral.com/post/fundamentals-are-not-basics">
+<meta property="og:image" content="https://www.tangointegral.com/img/in-class-4.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@tangointegral">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Fundamentals Are Not Basics",
+  "description": "In tango, \"fundamentals\" became a synonym for \"beginner\". Some of them cannot be taught early at all \u2014 not because they are complicated, but because a beginner cannot perceive them yet.",
+  "datePublished": "2026-09-06",
+  "dateModified": "2026-09-06",
+  "author": { "@type": "Organization", "name": "Tango Integral", "@id": "https://www.tangointegral.com/#school" },
+  "publisher": { "@id": "https://www.tangointegral.com/#school" },
+  "mainEntityOfPage": "https://www.tangointegral.com/post/fundamentals-are-not-basics",
+  "image": "https://www.tangointegral.com/img/in-class-4.jpg",
+  "articleSection": "The community",
+  "inLanguage": "en"
+}
+</script>
 
 <link rel="icon" href="/img/icon-32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="/img/icon-192.png" sizes="192x192" type="image/png">
@@ -284,6 +301,25 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   .post-card h2 a:hover{color:var(--violet)}
   .post-card p{color:var(--ink-dim);font-size:var(--step--1);margin:0}
   .post-card .byline{margin-top:.8rem}
+
+  /* ---- Video, loaded only on click ----
+     A plain YouTube embed would put Google's iframe and cookies on the page
+     before anyone asks for the video. This shows a self-hosted still and only
+     builds the (nocookie) player when the visitor presses play. It is also
+     faster: 28 KB instead of a megabyte of player. */
+  .video{margin:2rem 0 .6rem}
+  .video-frame{position:relative;width:100%;aspect-ratio:16/9;border:0;padding:0;
+    border-radius:8px;overflow:hidden;background:#000;cursor:pointer;display:block}
+  .video-frame img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .25s}
+  .video-frame:hover img{opacity:.82}
+  .video-frame .play{position:absolute;inset:0;display:grid;place-items:center}
+  .video-frame .play span{width:4.2rem;height:3rem;border-radius:8px;background:rgba(20,16,30,.72);
+    display:grid;place-items:center;transition:background .2s}
+  .video-frame:hover .play span{background:var(--coral)}
+  .video-frame .play svg{width:1.5rem;height:1.5rem;fill:#fff}
+  .video-frame:hover .play svg{fill:var(--ink)}
+  .video iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:8px;display:block}
+  .video figcaption{color:var(--ink-dim);font-size:var(--step--1);margin-top:.7rem}
 </style>
 </head>
 <body>
@@ -331,40 +367,40 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
 </header>
 
 <main id="main">
-  <div class="wrap page-head">
-    <p class="eyebrow">The community</p>
-    <h1>Writing about the dance.</h1>
-    <p class="lead">Notes on tango — where its habits come from, and what they are for.</p>
+  <div class="wrap post-head">
+    <a class="back" href="/blog">&larr; All entries</a>
+    <div class="tags"><span class="tag">The community</span><span class="tag">All levels</span></div>
+    <h1>Fundamentals Are Not Basics</h1>
+    <p class="byline">Tango Integral &middot; <time datetime="2026-09-06">6 September 2026</time> &middot; 2 min read</p>
+    <img class="cover" src="/img/in-class-4.jpg" alt="Dancers working on the walk during a class" width="1600" height="1200">
   </div>
 
-  <section>
-    <div class="wrap">
-      <ul class="post-list">
-        <li class="post-card">
-          <a href="/post/fundamentals-are-not-basics" aria-hidden="true" tabindex="-1">
-            <img src="/img/in-class-4.jpg" alt="" width="1600" height="1200" loading="lazy">
-          </a>
-          <div class="body">
-            <div class="tags"><span class="tag">The community</span><span class="tag">All levels</span></div>
-            <h2><a href="/post/fundamentals-are-not-basics">Fundamentals Are Not Basics</a></h2>
-            <p>Somewhere along the way "fundamentals" became a synonym for "beginner". Some of them cannot be taught early at all — and not because they are complicated.</p>
-            <p class="byline">Tango Integral &middot; <time datetime="2026-09-06">6 September 2026</time> &middot; 2 min read</p>
-          </div>
-        </li>
-        <li class="post-card">
-          <a href="/post/art-of-cabeceo-part-1-by-the-leader" aria-hidden="true" tabindex="-1">
-            <img src="/img/in-class-6.jpg" alt="" width="1600" height="1200" loading="lazy">
-          </a>
-          <div class="body">
-            <div class="tags"><span class="tag">The community</span><span class="tag">All levels</span></div>
-            <h2><a href="/post/art-of-cabeceo-part-1-by-the-leader">Art of Cabeceo</a></h2>
-            <p>In social tango, the cabeceo is the most common invitation to dance — and it is really an Argentine cultural gesture that goes well beyond tango.</p>
-            <p class="byline">Tango Integral &middot; <time datetime="2018-03-22">22 March 2018</time> &middot; 2 min read</p>
-          </div>
-        </li>
-      </ul>
+  <article class="wrap post-body">
+    <p>A student said to me in class the other day that it was good to come back to the fundamentals. She meant it kindly. She also meant something like: nice to revisit the easy part before we get on with the real material.</p>
+    <p>That is the whole misunderstanding, in one sentence.</p>
+
+    <h2>The word did the damage</h2>
+    <p>Somewhere along the way <strong>fundamentals</strong> became a synonym for <strong>basics</strong>, and <strong>basics</strong> became a synonym for <strong>beginner</strong>. A stage. Something you pass through and leave behind, like a driving test.</p>
+    <p>But the fundamentals of tango are not the start of the dance. They are the dance. The walk, the change of weight, the ocho — that is not the entrance hall you cross on the way somewhere better. That is the building.</p>
+
+    <h2>Some fundamentals cannot be taught early</h2>
+    <p>Here is the part that tends to surprise people. There are fundamentals we simply cannot teach a beginner — and not because we are holding anything back, and not because the material is complicated. It isn't complicated at all.</p>
+    <p>It is because they cannot perceive it yet.</p>
+    <p>You cannot work on the <em>quality</em> of a change of weight with someone who does not yet feel their own axis. You can say the words. They will hear the words. Nothing will land — in the way you can point out a chord to somebody who has never listened for harmony, and they will still hear only &ldquo;music&rdquo;. The information is not hidden from them. It is inaudible.</p>
+    <p>That perception gets built slowly, by dancing. Which is why a class on the walk for experienced dancers is not a remedial class. It is the only class in which that walk can actually be discussed.</p>
+
+    <h2>So what does &ldquo;advanced&rdquo; mean?</h2>
+    <p>Not a longer list of steps. Marina Kenny, writing about levels in tango, put it better than we could: <em>&ldquo;As advanced, you study basics; as beginners you long for complex stuff.&rdquo;</em></p>
+    <p>Advanced is noticing more. It is the same walk, seen at a resolution that was not available to you two years ago.</p>
+
+    <h2>Why our classes are built this way</h2>
+    <p>This is the reasoning behind <a href="/method#structure">the structure of movement</a> in our method: steps are the words and the elements are the letters, and you cannot write a clear sentence with letters you have never really looked at. We keep returning to the same small set of things because they are not small.</p>
+
+    <div class="post-end">
+      <p style="color:var(--ink-dim)">We work on exactly this two Saturdays a month, by Russell Square.</p>
+      <p style="margin-top:1.2rem"><a class="btn btn-solid" href="/classes">See the classes</a></p>
     </div>
-  </section>
+  </article>
 </main>
 
 <footer class="site-foot">
@@ -418,6 +454,59 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
     </div>
   </div>
 </footer>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-news" id="newsletter">
+      <div>
+        <h4>Newsletter</h4>
+        <p>Class dates, milongas worth going to, and the next Buenos Aires trip. Not more than that.</p>
+      </div>
+      <div class="eo-embed">
+        <script async src="https://eocampaign1.com/form/55e9988c-a91d-11f1-99d6-f92ba149cddb.js" data-form="55e9988c-a91d-11f1-99d6-f92ba149cddb"></script>
+      </div>
+    </div>
+
+    <div class="foot-grid">
+      <div>
+        <img src="/img/logo-wordmark.png" alt="Tango Integral" width="136" height="49" style="margin-bottom:1rem">
+        <p style="color:var(--ink-dim);max-width:34ch">Argentine tango classes in London — friendly, professional, and rooted in Buenos Aires.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul class="foot-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/classes">Classes &amp; times</a></li>
+          <li><a href="/private-classes">Private lessons</a></li>
+          <li><a href="/method">Method</a></li>
+          <li><a href="/team">Team</a></li>
+          <li><a href="/testimonials">Testimonials</a></li>
+          <li><a href="/tango-in-london">Tango in London</a></li>
+          <li><a href="/buenos-aires-trip">Buenos Aires trip</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get in touch</h4>
+        <ul class="foot-links">
+          <li><a href="mailto:info@tangointegral.com">info@tangointegral.com</a></li>
+          <li><a href="https://wa.me/447751672159">WhatsApp +44 7751 672159</a></li>
+          <li>Thistle London Bloomsbury Park, London WC1B 5AD</li>
+        </ul>
+        <div class="socials">
+          <a href="https://www.instagram.com/tangointegral">Instagram</a>
+          <a href="https://www.facebook.com/tangointegral">Facebook</a>
+          <a href="https://www.youtube.com/channel/UCO40L-Ul0BchGnplZlliX-g">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <span>&copy; Tango Integral Ltd 2026. All rights reserved.</span>
+      <span><a href="/privacy-policy">Privacy</a> &middot; Argentine Tango School &middot; London</span>
+    </div>
+  </div>
+</footer>
+
 <script src="/js/nav.js" defer></script>
 <!-- Cloudflare Web Analytics: cookieless, no personal data. -->
 <script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "05aa478f98254a3e9c49505a32adfc39"}'></script>

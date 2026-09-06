@@ -117,7 +117,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   .aspect .shot{height:190px;background:var(--bg-tint);padding:.9rem}
   .aspect .shot img{width:100%;height:100%;object-fit:contain}
   .aspect .body{padding:1.1rem 1.2rem 1.3rem}
-  .aspect h3{margin-bottom:.35rem}
+  .aspect h3{margin-bottom:.35rem;scroll-margin-top:6rem}
   .aspect p{margin:0;color:var(--ink-dim);font-size:var(--step--1);line-height:1.6}
   .aspect .n{font-family:"Fraunces",serif;color:var(--turq-deep);font-size:var(--step--1);
     letter-spacing:.08em;display:block;margin-bottom:.15rem}
@@ -324,7 +324,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
           <div class="shot"><img src="/img/tango-technique.jpg" alt="Geometric lines traced over a dancer's posture" width="353" height="512" loading="lazy"></div>
           <div class="body">
             <span class="n">01</span>
-            <h3>Technique</h3>
+            <h3 id="technique">Technique</h3>
             <p>The individual bodily organisation that favours the biomechanics of a movement. It lets us coordinate the inner music of a movement with the music in the room, and widens the range of what we can do with confidence.</p>
           </div>
         </div>
@@ -332,7 +332,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
           <div class="shot"><img src="/img/tango-connection.jpg" alt="Two facing profiles, illustrating connection" width="1400" height="875" loading="lazy"></div>
           <div class="body">
             <span class="n">02</span>
-            <h3>Connection</h3>
+            <h3 id="connection">Connection</h3>
             <p>Our channel of communication — the better it is, the better we understand each other. Dancing tango is having a conversation. Some of those conversations run deep enough to change a life; others pass without leaving a footprint.</p>
           </div>
         </div>
@@ -340,7 +340,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
           <div class="shot"><img src="/img/tango-structure.jpg" alt="A diagram of tango footsteps on a pavement" width="1066" height="1600" loading="lazy"></div>
           <div class="body">
             <span class="n">03</span>
-            <h3>Structure of movement</h3>
+            <h3 id="structure">Structure of movement</h3>
             <p>The grammar of the dance. Steps are the words and the elements are the letters: work the letters and you can write clear words, and then clearer sentences that are unmistakably your own.</p>
           </div>
         </div>
@@ -348,7 +348,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
           <div class="shot"><img src="/img/tango-musicality.jpg" alt="A silhouette with musical notes" width="610" height="390" loading="lazy"></div>
           <div class="body">
             <span class="n">04</span>
-            <h3>Musicality</h3>
+            <h3 id="musicality">Musicality</h3>
             <p>Every movement has its own musicality, because it happens over time. Musicality is where that inner time meets the music you are hearing — and meets your partner inside it.</p>
           </div>
         </div>
