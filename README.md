@@ -330,6 +330,19 @@ on `/buenos-aires-trip`, and so on.
 
 `/privacy-policy` keeps its URL, and needs no rule — see below.
 
+## Measuring visits
+**Cloudflare Web Analytics**, added by hand as a beacon on all thirteen pages
+rather than through the project's auto-injection toggle, which was not applying
+it. It is cookieless and does not fingerprint, which is why it was chosen over
+Google Analytics: no cookie banner, and nothing follows anyone between sites.
+
+Because it is another third party the browser contacts, it is named in the
+privacy policy — that page enumerates them, so anything added here has to be
+added there in the same commit or the policy is wrong the day it ships.
+
+The ~4,375 views the cabeceo post had on Wix **cannot be imported**; that number
+lives in Wix and disappears with it.
+
 ## The privacy policy
 The Wix page at `/privacy-policy` **was about the mobile app, not the website**.
 It was the standard app-store template: Google Play Services, log data from your

@@ -309,7 +309,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   <div class="wrap page-head">
     <p class="eyebrow">Legal</p>
     <h1>Privacy policy</h1>
-    <p class="updated">Last updated 5 September 2026</p>
+    <p class="updated">Last updated 6 September 2026</p>
   </div>
 
   <div class="wrap">
@@ -336,8 +336,9 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
       <li><strong>Leaving:</strong> every email carries an unsubscribe link, and it takes effect immediately.</li>
     </ul>
 
-    <h2>Hosting and server logs</h2>
+    <h2>Hosting and visitor numbers</h2>
     <p>The site is hosted on <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare Pages</a>. Like any web server, Cloudflare records requests, which includes your IP address, for security and to keep the site running.</p>
+    <p>We also use <strong>Cloudflare Web Analytics</strong> to count how many people visit and which pages they read. It sets <strong>no cookies</strong> and does not fingerprint you or follow you between sites: we see totals, never individuals. We chose it over Google Analytics for exactly that reason.</p>
 
     <h2>What your browser loads from elsewhere</h2>
     <p>A few things on the site are fetched from other companies. In each case your browser contacts them directly, which means they can see your IP address:</p>
@@ -346,6 +347,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
       <li><strong>Points of Tango</strong> — the milonga listings on <a href="/tango-in-london">Tango in London</a> and the class dates on <a href="/classes">Classes</a> are requested from their API when the page opens.</li>
       <li><strong>YouTube</strong> — the video on the blog post loads <em>only if you press play</em>. Until then nothing reaches YouTube. When it does load, it uses their no-cookie player.</li>
       <li><strong>EmailOctopus</strong> — the newsletter form in the footer is loaded from their servers.</li>
+      <li><strong>Cloudflare</strong> — the small analytics script described above.</li>
     </ul>
 
     <h2>Cookies</h2>
@@ -417,5 +419,7 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   </div>
 </footer>
 <script src="/js/nav.js" defer></script>
+<!-- Cloudflare Web Analytics: cookieless, no personal data. -->
+<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "05aa478f98254a3e9c49505a32adfc39"}'></script>
 </body>
 </html>
