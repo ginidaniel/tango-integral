@@ -82,6 +82,13 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
   .note{background:var(--bg-turq);border:1px solid var(--ok-line);color:var(--ok-ink);padding:.7rem 1rem;border-radius:6px;font-size:var(--step--1);margin:0 0 1.6rem}
   .empty{color:var(--ink-dim)}
   .note-bad{background:var(--err-bg);border-color:var(--err-line);color:var(--err-ink)}
+  /* The listings arrive from the API after first paint, and go from one line of
+     "Loading…" to roughly 2,500px of events. Everything below — the Points of
+     Tango band — used to be shoved down by that. Reserving a screenful keeps the
+     next section below the fold while the list fills in, so the jump happens
+     off-screen and stops counting as layout shift. Real users saw CLS 0.39 on
+     #points-of-tango, which is in the "poor" band. */
+  #milongas{min-height:60vh}
   .tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.3rem}
   .tag{font-size:.72rem;letter-spacing:.03em;text-transform:uppercase;font-weight:600;
     color:var(--turq-deep);background:var(--bg-turq);border-radius:3px;padding:.12rem .45rem}
