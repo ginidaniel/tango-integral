@@ -423,12 +423,6 @@ function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;","
 function dayKey(d){return fmtDayKey.format(d);}
 function clock(d){return fmtClock.format(d);}
 
-/* Some listings end a minute before the hour (23:59, 00:59) to mean "on the
-   hour". Show what they mean. */
-function endClock(d){
-  const t = clock(d);
-  return t.endsWith(":59") ? clock(new Date(d.getTime() + 60000)) : t;
-}
 
 /* Addresses are entered by hand, so a few carry a country on the end and stray
    whitespace. On a London-only page the country is noise. */
@@ -492,7 +486,7 @@ function normalise(results){
         name: String(ev.name || "").trim() || "Untitled event",
         key: dayKey(start),
         startsAt: ev.from.seconds,
-        time: end ? `${clock(start)}–${endClock(end)}` : clock(start),
+        time: end ? `${clock(start)}–${clock(end)}` : clock(start),
         where: whereLine(ev),
         url: safeUrl(ev.link),
         types: Array.isArray(ev.types) ? ev.types : [],
