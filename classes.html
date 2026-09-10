@@ -617,12 +617,16 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
  * from.seconds is London wall-clock time encoded as UTC, so it is read back as
  * UTC and printed as-is. Same as tango-in-london.html — see the README. */
 (function () {
-  /* Deliberately no `offset` parameter, unlike tango-in-london.html. Once the
-     weekly endpoint is live, offset pages the response one week at a time, and
-     the next class dates are often further out than that — today they are the
-     5th and the 19th. Without pagination the API returns everything, which is
-     what this needs. */
-  const SOURCE = "https://api.pointsoftango.app/events?country=GBR&region=ENG_GLN";
+  /* The Paciencia series, rather than the London-wide listings tango-in-london
+     uses. Those now page one week at a time, and the next class dates are
+     regularly further out than a week, so they would drop off this page — as
+     they did the day the weekly endpoint went live. The series endpoint is
+     scoped to Paciencia and unbounded in time, which is exactly what this
+     needs: 3.5 KB against 54 KB, and no filtering by name at this end.
+
+     It answers with a bare array, not the { results: [...] } envelope the
+     listings endpoint uses. Both shapes are accepted below. */
+  const SOURCE = "https://api.pointsoftango.app/events/series/P42073401";
   const CLASS_START = "17:30", CLASS_END = "19:00";
   const el = document.getElementById("next-dates");
   if (!el) return;
@@ -638,13 +642,12 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
     const res = await fetch(SOURCE, { headers: { Accept: "application/json" } });
     if (!res.ok) throw new Error("HTTP " + res.status);
     const body = await res.json();
-    const results = (body && body.results) || [];
+    const results = Array.isArray(body) ? body : (body && body.results) || [];
     const now = Math.floor(Date.now() / 1000);
 
     const dates = results
       .filter(e => e && e.from && e.from.seconds && !e.cancelled)
-      .filter(e => e.domain === "paciencia" || /paciencia/i.test(e.name || ""))
-      .filter(e => e.from.seconds >= now)
+      .filter(e => e.from.seconds >= now)   // the series includes past dates
       .sort((a, b) => a.from.seconds - b.from.seconds)
       .slice(0, 4);
 
