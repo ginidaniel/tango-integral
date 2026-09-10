@@ -388,10 +388,11 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
 <script>
 /* This week's London milongas, from the Points of Tango API.
  *
- * The endpoint currently returns every listed London event — 175 of them at the
- * time of writing, about a year ahead, in one 424 KB response — so we filter to
- * the coming week here. `offset=0` on the URL asks for just this week: it does
- * nothing until the weekly endpoint is live, and needs no change here when it is.
+ * `offset=0` asks the API for one week and that is all it returns — 21 events
+ * in 54 KB, against roughly 150 events and 380 KB when the endpoint still sent
+ * the whole horizon in one response. The week is the server's to define, so the
+ * days are grouped from whatever comes back rather than from a window computed
+ * here; see render().
  *
  * Response shape: { responseCode, message, hits, results: [event] }
  * Event fields we use:
@@ -401,13 +402,8 @@ try{var t=localStorage.getItem("theme");if(t==="dark"||t==="light")d.setAttribut
  * Times arrive as London wall-clock time encoded as UTC, so they are read back
  * as UTC and shown as-is — see the note on TZ below. */
 const CONFIG = {
-  /* offset=0 means "this week". The parameter is inert until the weekly
-     endpoint ships — without pagination the API returns everything — and from
-     then on it narrows the response to one week, which is all this page shows.
-     filterToWeek stays on either way: today it does the narrowing, afterwards
-     it is a harmless no-op. */
-  source: "https://api.pointsoftango.app/events?country=GBR&region=ENG_GLN&offset=0",
-  filterToWeek: true
+  /* offset pages the listings one week at a time; 0 is the current week. */
+  source: "https://api.pointsoftango.app/events?country=GBR&region=ENG_GLN&offset=0"
 };
 
 /* The API already sends London wall-clock time, encoded in the epoch as if it
@@ -449,17 +445,6 @@ function tidy(text){
 /* Calendar dates are handled at noon UTC so that adding days can't be knocked
    sideways by a daylight-saving change. */
 function keyToNoon(key){const [y,m,d]=key.split("-").map(Number);return new Date(Date.UTC(y,m-1,d,12));}
-function addDays(date,n){const d=new Date(date);d.setUTCDate(d.getUTCDate()+n);return d;}
-function keyOf(noon){return noon.toISOString().slice(0,10);}
-
-/* The next seven London days, today first. Deliberately a rolling window rather
-   than the Mon-Sun calendar week: on a Saturday, "this week" would otherwise be
-   five days of events that have already happened. */
-function weekKeys(){
-  const todayNoon = keyToNoon(dayKey(new Date()));
-  return Array.from({length:7}, (_,i)=>keyOf(addDays(todayNoon,i)));
-}
-
 function labelFor(key){
   const noon = keyToNoon(key);
   return {
@@ -533,18 +518,22 @@ function render(events){
   const el = document.getElementById("milongas");
   if(!el) return;
 
-  const keys = weekKeys();
-  const inWeek = CONFIG.filterToWeek ? events.filter(e => keys.includes(e.key)) : events;
-  const byDay = keys
-    .map(key => ({ key, events: inWeek.filter(e => e.key === key).sort((a,b)=>a.startsAt-b.startsAt) }))
-    .filter(g => g.events.length);
+  /* The days come from the response, not from a week worked out here. The API
+     decides which seven days `offset=0` covers, and a window computed locally
+     would silently drop anything that fell outside it. */
+  const keys = Array.from(new Set(events.map(e => e.key))).sort();
 
-  let html = `<p class="week-range">Next seven days · ${rangeLabel(keys[0], keys[6])}</p>`;
-
-  if(!byDay.length){
-    el.innerHTML = html + `<p class="empty">Nothing listed for the next seven days yet — check back in a day or two.</p>`;
+  if(!keys.length){
+    el.innerHTML = `<p class="empty">Nothing listed for this week yet — check back in a day or two.</p>`;
     return;
   }
+
+  const byDay = keys.map(key => ({
+    key,
+    events: events.filter(e => e.key === key).sort((a,b)=>a.startsAt-b.startsAt)
+  }));
+
+  let html = `<p class="week-range">This week · ${rangeLabel(keys[0], keys[keys.length-1])}</p>`;
 
   for(const g of byDay){
     const label = labelFor(g.key);
